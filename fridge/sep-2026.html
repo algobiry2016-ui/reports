@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>تقرير ثلاجة الورد | سبتمبر 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{
+  --bg:#F1F4EE; --surface:#FFFFFF; --ink:#1E3326; --text:#2A332C; --muted:#69736A; --line:#DCE2D7;
+  --leaf:#2F5A3F; --rose:#B8436B; --amber:#B97E1E; --loss:#A6383C; --soft:#E7EDE3;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#111813; --surface:#19231C; --ink:#E4EDE4; --text:#D3DCD3; --muted:#9AA79C; --line:#2C3A30;
+  --leaf:#7DB592; --rose:#E487A8; --amber:#E0AE55; --loss:#E57B7E; --soft:#213028; }}
+:root[data-theme="dark"]{ --bg:#111813; --surface:#19231C; --ink:#E4EDE4; --text:#D3DCD3; --muted:#9AA79C; --line:#2C3A30;
+  --leaf:#7DB592; --rose:#E487A8; --amber:#E0AE55; --loss:#E57B7E; --soft:#213028; }
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"IBM Plex Sans Arabic",Tahoma,"Segoe UI",sans-serif;font-size:16px;line-height:1.7;font-variant-numeric:tabular-nums}
+h1,h2,h3{font-family:"Reem Kufi","IBM Plex Sans Arabic",Tahoma,sans-serif;color:var(--ink);margin:0;font-weight:600;line-height:1.3}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header.top{padding:40px 0 22px}
+.brand{color:var(--leaf);font-weight:600;font-size:15px}
+h1{font-size:clamp(30px,5vw,46px);margin:6px 0 6px}
+.period{color:var(--muted);font-size:15px;margin:0}
+/* petal strip */
+.strip-box{margin-top:26px}
+.strip-cap{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.strip-cap h2{font-size:18px}
+.strip-cap span{color:var(--muted);font-size:14px}
+.strip{display:flex;height:64px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.strip div{position:relative;min-width:2px;transition:flex-grow .9s cubic-bezier(.2,.7,.2,1)}
+.strip div:hover{filter:brightness(1.06)}
+.strip-legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-size:13.5px;color:var(--muted)}
+.sw{display:inline-block;width:12px;height:12px;border-radius:50%;vertical-align:-1px;margin-inline-end:6px;border:1px solid rgba(0,0,0,.12)}
+/* nav */
+nav.sec{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav.sec .wrap{display:flex;gap:4px;overflow-x:auto;padding-top:8px;padding-bottom:8px;scrollbar-width:none}
+nav.sec a{white-space:nowrap;text-decoration:none;color:var(--muted);font-size:14.5px;padding:7px 12px;border-radius:999px}
+nav.sec a:hover,nav.sec a:focus-visible{color:var(--ink);background:var(--soft);outline:none}
+/* kpis */
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin:18px 0 8px;border-top:2px solid var(--ink)}
+.kpi{padding:14px 14px 4px;border-inline-start:1px solid var(--line)}
+.kpi:first-child{border-inline-start:0;padding-inline-start:0}
+.kpi b{display:block;font-size:clamp(22px,3vw,30px);color:var(--ink);font-weight:700;line-height:1.2}
+.kpi span{font-size:13.5px;color:var(--muted)}
+.kpi.loss b{color:var(--loss)}
+section{padding:46px 0 10px}
+section>.wrap>h2{font-size:clamp(22px,3vw,28px);margin-bottom:6px}
+.lead{color:var(--muted);max-width:70ch;margin:0 0 20px}
+.grid2{display:grid;grid-template-columns:1.25fr 1fr;gap:20px}
+.grid2.even{grid-template-columns:1fr 1fr}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px}
+.panel h3{font-size:17px;margin-bottom:4px}
+.panel .sub{font-size:13.5px;color:var(--muted);margin:0 0 12px}
+.chart{position:relative;height:320px}
+.chart.tall{height:420px}
+/* findings */
+.finds{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.find{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;border-inline-start:5px solid var(--leaf)}
+.find.w{border-inline-start-color:var(--amber)} .find.l{border-inline-start-color:var(--loss)} .find.r{border-inline-start-color:var(--rose)}
+.find h3{font-size:16.5px;margin-bottom:4px}
+.find p{margin:0;font-size:14.5px}
+/* table */
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.tools input{font:inherit;font-size:15px;padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--text);min-width:200px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font:inherit;font-size:13.5px;border:1px solid var(--line);background:var(--surface);color:var(--text);padding:5px 11px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.chip:focus-visible,.tools input:focus-visible{outline:2px solid var(--rose);outline-offset:2px}
+.tscroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface);max-height:640px;overflow-y:auto}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{padding:9px 12px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th{position:sticky;top:0;background:var(--soft);color:var(--ink);font-weight:600;font-size:13.5px;cursor:pointer;user-select:none}
+th:focus-visible{outline:2px solid var(--rose)}
+td.n,th.n{text-align:left}
+tr:hover td{background:color-mix(in srgb,var(--soft) 55%,transparent)}
+.rank{color:var(--muted);font-size:13px}
+.split{display:inline-flex;width:110px;height:8px;border-radius:4px;overflow:hidden;background:var(--soft);vertical-align:middle;margin-inline-start:8px}
+.split i{display:block;height:100%}
+.tag{font-size:12.5px;padding:2px 8px;border-radius:999px;background:var(--soft);color:var(--muted)}
+.tag.low{background:color-mix(in srgb,var(--loss) 16%,transparent);color:var(--loss)}
+.tag.high{background:color-mix(in srgb,var(--amber) 18%,transparent);color:var(--amber)}
+.neg{color:var(--loss);font-weight:600}
+ul.clean{margin:0;padding:0;list-style:none}
+ul.clean li{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+ul.clean li:last-child{border-bottom:0}
+ul.clean li b{color:var(--ink);font-weight:600}
+.recs{counter-reset:r;display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.recs li{counter-increment:r;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
+.recs li::before{content:counter(r);font-family:"Reem Kufi",sans-serif;font-size:22px;color:var(--rose);line-height:1.2;min-width:22px}
+.recs h3{font-size:16.5px;margin-bottom:2px}
+.recs p{margin:0;font-size:14.5px}
+.notes{font-size:13.5px;color:var(--muted);max-width:80ch}
+.notes li{margin-bottom:4px}
+.analysis{margin:14px 0 0;padding:12px 14px;background:var(--soft);border-radius:10px;font-size:14.5px;line-height:1.85}
+.analysis b{color:var(--ink)}
+.recs dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:10px 0 0;font-size:14.5px}
+.recs dt{color:var(--rose);font-weight:600}
+.recs dd{margin:0}
+nav.sec button{font:inherit;white-space:nowrap;border:0;background:none;color:var(--muted);font-size:14.5px;padding:7px 13px;border-radius:999px;cursor:pointer}
+nav.sec button:hover{color:var(--ink);background:var(--soft)}
+nav.sec button[aria-selected="true"]{background:var(--ink);color:var(--surface)}
+nav.sec button:focus-visible{outline:2px solid var(--rose);outline-offset:2px}
+section[hidden]{display:none}
+.strip-cap h3{font-size:17px}
+footer{padding:36px 0 48px;color:var(--muted);font-size:13px}
+@media (max-width:900px){.grid2,.grid2.even,.finds{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}.kpi{border-inline-start:0;padding-inline-start:0;border-bottom:1px solid var(--line)}}
+@media (prefers-reduced-motion:reduce){.strip div{transition:none}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="brand">مقدَّم من إدارة التخطيط والتطوير، دوكمنتيشن فلاورز</div>
+  <h1>تقرير ثلاجة الورد لشهر سبتمبر</h1>
+  <p class="period">حركة الثلاجة من 13 إلى 30 سبتمبر 2026، والتالف من 1 سبتمبر</p>
+</div></header>
+
+<nav class="sec" aria-label="أقسام التقرير"><div class="wrap" role="tablist" id="tabs">
+  <button role="tab" data-s="all" aria-selected="true">التقرير كامل</button>
+  <button role="tab" data-s="finds" aria-selected="false">الملخص</button>
+  <button role="tab" data-s="items" aria-selected="false">الأصناف بألوانها</button>
+  <button role="tab" data-s="demand" aria-selected="false">الطلب والأيام</button>
+  <button role="tab" data-s="buy" aria-selected="false">المشتريات</button>
+  <button role="tab" data-s="stock" aria-selected="false">المخزون</button>
+  <button role="tab" data-s="waste" aria-selected="false">التالف</button>
+  <button role="tab" data-s="recs" aria-selected="false">التوصيات</button>
+</div></nav>
+
+<section id="finds"><div class="wrap">
+  <h2>الملخص</h2>
+  <div class="kpis" id="kpis"></div>
+  <div class="strip-box">
+    <div class="strip-cap"><h3>الشهر بالأصناف وألوانها</h3><span>عرض كل شريحة حسب عدد الأغصان المنصرفة</span></div>
+    <div class="strip" id="strip" role="img" aria-label="توزيع الاستهلاك حسب الصنف واللون"></div>
+    <div class="strip-legend" id="stripLegend"></div>
+    <p class="analysis" id="stripNote"></p>
+  </div>
+  <h3 style="margin:30px 0 12px;font-size:19px">أهم النتائج</h3>
+  <div class="finds">
+    <div class="find"><h3>ثلاثة أصناف تحمل التشغيل</h3><p>بيبي روز 43% من الاستهلاك، والجوري 13%، والجربيرا 10%. الثلاثة معاً يمثلون 66% من كل الورد المنصرف.</p></div>
+    <div class="find r"><h3>بيبي روز سكري وجوري أحمر في الصدارة</h3><p>أعلى صنف بلونه بيبي روز سكري (680 غصن)، ثم جوري أحمر (510)، ثم بيبي روز دبل كلر (480) وبيبي روز فوشي غامق (440). أكثر 15 صنفاً بلونها تغطي 65% من الطلب.</p></div>
+    <div class="find w"><h3>الشراء لا يتبع الاستهلاك</h3><p>أصناف مطلوبة نفد رصيدها تقريباً (جوري أبيض، بيبي روز دبل كلر، بيبي جاردن وردي)، مقابل مخزون راكد بقيمة تقارب 5,300 ريال، أبرزه كريز هولندي موف وقرنفل موف.</p></div>
+    <div class="find l"><h3>80% من التالف بعد خروج الورد</h3><p>التلف يحدث في المحل والثلاجة الخارجية أكثر من المخزن، وهناك مؤشرات على تالف غير مسجّل في الجربيرا ودوار الشمس.</p></div>
+  </div>
+</div></section>
+
+<section id="items"><div class="wrap">
+  <h2>الأصناف بألوانها</h2>
+  <p class="lead">كل صنف بلونه، مرتبة من الأكثر استهلاكاً. اضغط على عنوان أي عمود لإعادة الترتيب، أو اختر صنفاً لعرض ألوانه فقط.</p>
+  <div class="grid2" style="margin-bottom:20px">
+    <div class="panel"><h3>أكثر 15 صنفاً بلونها</h3><p class="sub">بالغصن، ولون كل عمود هو لون الورد نفسه</p><div class="chart tall"><canvas id="cTop"></canvas></div>
+    <p class="analysis"><b>التحليل:</b> 9 من أصل 15 في القائمة من البيبي روز. أعلى ثلاثة: بيبي روز سكري (680) وجوري أحمر (510) وبيبي روز دبل كلر (480). هذه الأصناف الخمسة عشر تمثل 65% من كل الأغصان المنصرفة، فضبط توفرها يعني ضبط ثلثي الطلب.</p></div>
+    <div class="panel"><h3>الاستهلاك حسب الصنف</h3><p class="sub">بالغصن، مجموع كل ألوان الصنف</p><div class="chart tall"><canvas id="cType"></canvas></div>
+    <p class="analysis"><b>التحليل:</b> البيبي روز وحده 43% من الاستهلاك، ثم الجوري 13% والجربيرا 10%. بعد ذلك ينخفض الاستهلاك بسرعة، فلا يتجاوز أي صنف من التوليب فما دونه 6%. يعني أن ثلاثة أصناف تحدد أغلب تكلفة الشراء ومخاطر النقص.</p></div>
+  </div>
+  <div class="tools"><input id="q" type="search" placeholder="ابحث باسم الصنف أو اللون" aria-label="بحث"><div class="chips" id="chips"></div></div>
+  <div class="tscroll"><table id="tbl"><thead><tr>
+    <th data-k="rank" class="n">#</th><th data-k="t">الصنف</th><th data-k="c">اللون</th><th data-k="u">الوحدة</th>
+    <th data-k="out" class="n">الصادر</th><th data-k="share" class="n">الحصة</th><th data-k="st">الموقع / المحل</th>
+    <th data-k="w" class="n">التالف</th><th data-k="cl" class="n">المتبقي نظرياً</th><th data-k="cov" class="n">يكفي (يوم)</th>
+  </tr></thead><tbody></tbody></table></div>
+  <p class="analysis"><b>قراءة الجدول:</b> الجدول يجمع كل صنف بلونه في سطر واحد. عمود "يكفي" يوضح عدد الأيام التي يغطيها الرصيد المتبقي بمعدل الاستهلاك الحالي: الأحمر أقل من 3 أيام ويحتاج طلباً عاجلاً، والبرتقالي أكثر من 10 أيام ويحتاج تصريفاً قبل أن يتلف. الشريط الأخضر في عمود الوجهة للمتجر الإلكتروني، والوردي للمحل.</p>
+  <h3 style="margin:34px 0 4px;font-size:19px">توزيع الألوان داخل كل صنف</h3>
+  <p class="lead">لكل صنف رئيسي، نسبة كل لون من استهلاكه.</p>
+  <div class="panel"><div class="chart tall"><canvas id="cStack"></canvas></div>
+  <p class="analysis"><b>التحليل:</b> في <b>بيبي روز</b> الطلب موزع على عشرة ألوان، أقواها السكري (20%) والدبل كلر (14%) والفوشي الغامق (13%)، وأضعفها الأورنج (4%). في <b>الجوري</b> الأحمر وحده نصف الاستهلاك (51%) ثم الأبيض (26%) والفوشي (24%). في <b>الجربيرا</b> السكري والأبيض والوردي تمثل 70%، بينما الموف 3% فقط. في <b>القرنفل</b> الوردي 56% والموف 11%. وفي <b>الكريز الهولندي</b> الموف هو الأعلى استهلاكاً (42%) لكنه أيضاً الأكبر رصيداً، لأن الكمية المتوفرة منه كانت أكبر بكثير من حاجته.</p></div>
+  <div class="grid2 even" style="margin-top:20px">
+    <div class="panel"><h3>المتجر الإلكتروني مقابل المحل</h3><p class="sub">توزيع الأغصان المنصرفة حسب الوجهة</p><div class="chart" style="height:260px"><canvas id="cDest"></canvas></div>
+    <p class="analysis"><b>التحليل:</b> المتجر الإلكتروني يستهلك 74% من الورد مقابل 26% للمحل، لذلك أي نقص في أصناف الموقع الرئيسية (بيبي روز بدرجات الوردي) يؤثر مباشرة على الطلبات أونلاين.</p></div>
+    <div class="panel"><h3>أصناف بلونها يعتمد عليها المحل</h3><p class="sub">نسبة ما ذهب للمحل من كل صنف ولون (50 غصن فأكثر)</p><ul class="clean" id="shopList"></ul>
+    <p class="analysis"><b>التحليل:</b> المحل يعتمد أكثر على الجوري الأبيض والكريز بألوانه والكريسبديا، أي على الأبيض والفيلر في التنسيقات، بينما يعتمد الموقع على البيبي روز. تجهيز طلبية المحل يحتاج حساباً مستقلاً لهذه الأصناف.</p></div>
+  </div>
+</div></section>
+
+<section id="demand"><div class="wrap">
+  <h2>الطلب على مدار الشهر</h2>
+  <p class="lead">متوسط الصرف اليومي 458 غصن، مع ارتفاع واضح في آخر الشهر.</p>
+  <div class="grid2">
+    <div class="panel"><h3>الصادر اليومي</h3><p class="sub">بالغصن، و23 سبتمبر إجازة اليوم الوطني</p><div class="chart"><canvas id="cDaily"></canvas></div>
+    <p class="analysis"><b>التحليل:</b> متوسط الأيام من 27 إلى 30 سبتمبر بلغ 613 غصناً يومياً مقابل حوالي 410 في بقية الشهر، أي بزيادة تقارب 50%. أعلى يوم كان 27 سبتمبر (711 غصن) وهو يوم نزول الرواتب. أقل الأيام 20 و14 و26 سبتمبر (بين 236 و256 غصن). إذا تكرر النمط في أكتوبر يصبح قاعدة لتخطيط الطلبيات.</p></div>
+    <div class="panel"><h3>متوسط أيام الأسبوع</h3><p class="sub">مؤشر فقط، كل يوم تكرر مرتين أو ثلاث</p><div class="chart"><canvas id="cWeek"></canvas></div>
+    <p class="analysis"><b>التحليل:</b> الخميس والأربعاء الأعلى (594 و524 غصن)، والسبت الأقل (339). الفرق بين أقوى يوم وأضعفه حوالي 75%، لذلك الأفضل أن تصل الطلبيات الكبيرة قبل الأربعاء. الأرقام مؤشر أولي لأن كل يوم تكرر مرتين أو ثلاث فقط.</p></div>
+  </div>
+</div></section>
+
+<section id="buy"><div class="wrap">
+  <h2>المشتريات والموردين</h2>
+  <p class="lead">إجمالي المشتريات 24,439 ريال. رفيق المورد الرئيسي، وفلوراناو الأعلى في تقييم الجودة عند الاستلام.</p>
+  <div class="grid2 even">
+    <div class="panel"><h3>جودة الوارد حسب المورد</h3><p class="sub">عدد الأغصان حسب تقييم الاستلام</p><div class="chart"><canvas id="cQual"></canvas></div>
+    <p class="analysis"><b>التحليل:</b> رفيق يورّد 71% من المشتريات، لكن 53% فقط من بضاعته قُيّمت ممتازة، و463 غصناً (13%) متوسطة، منها جربيرا سكري 120 وبيبي روز فوشي فاتح 100 وقرنفل وردي 80. فلوراناو كل بضاعته ممتازة، وإيتاء بدأ آخر الشهر بجودة جيدة في الغالب.</p></div>
+    <div class="panel"><h3>نصيب المشتريات مقابل نصيب الاستهلاك</h3><p class="sub">إذا كان الشراء أعلى من الاستهلاك، فالصنف ينطلب أكثر من حاجته</p><div class="chart"><canvas id="cBuy"></canvas></div>
+    <p class="analysis"><b>التحليل:</b> الجربيرا أخذت 18% من المشتريات بينما تمثل 10% من تكلفة الاستهلاك، أي شراء زائد بحوالي 1,200 ريال. والعكس في البيبي روز: 28% من المشتريات مقابل 38% من الاستهلاك، وتغطى الفرق من الرصيد الافتتاحي الذي انتهى تقريباً، لذلك يحتاج البيبي روز رفع كميات الشراء في أكتوبر.</p></div>
+  </div>
+</div></section>
+
+<section id="stock"><div class="wrap">
+  <h2>المخزون نهاية الشهر</h2>
+  <p class="lead">الرصيد النظري = الافتتاحي + الوارد − الصادر − التالف. يحتاج جرداً فعلياً للتأكد، لأن أي فرق بين الجرد والرصيد النظري هو تالف لم يُسجّل.</p>
+  <div class="grid2 even">
+    <div class="panel"><h3>معرّضة للنقص</h3><p class="sub">أصناف بلونها رصيدها يكفي أقل من 3 أيام</p><ul class="clean" id="lowList"></ul>
+    <p class="analysis"><b>التحليل:</b> القائمة تضم أعلى الأصناف طلباً: جوري أبيض وبيبي روز وردي فاتح نفدا، وبيبي روز دبل كلر وبيبي جاردن وردي شبه منتهيين، وبيبي روز سكري يكفي يوماً وربع. النقص في هذه الأصناف يعني طلبات متأخرة أو استبدال ألوان دون رغبة العميل.</p></div>
+    <div class="panel"><h3>راكدة وتحتاج تصريفاً</h3><p class="sub">أصناف بلونها رصيدها يكفي أكثر من 10 أيام</p><ul class="clean" id="highList"></ul>
+    <p class="analysis"><b>التحليل:</b> قيمة هذا المخزون الراكد حوالي 5,300 ريال. كريز هولندي موف وحده 340 غصناً يكفي 41 يوماً، وقرنفل موف 180 غصناً يكفي 77 يوماً. الأخطر الجربيرا الأحمر والأصفر لأن عمرها في الثلاجة قصير، فهي غالباً تالفة أو قريبة من التلف.</p></div>
+</div></section>
+
+<section id="waste"><div class="wrap">
+  <h2>التالف</h2>
+  <p class="lead">إجمالي الشهر 142 غصناً و29 حبة، بتكلفة تقديرية حوالي 825 ريال. التكلفة الفعلية أعلى، لأن دوار الشمس والهيدرنجا لا يوجد لها سعر في النظام.</p>
+  <div class="grid2">
+    <div class="panel"><h3>التالف حسب الصنف واللون</h3><p class="sub">النظام (13 إلى 30)، والسجل اليدوي (1 إلى 12) بدون ألوان</p><div class="chart tall"><canvas id="cWaste"></canvas></div>
+    <p class="analysis"><b>التحليل:</b> أعلى صنف بلونه في التالف بيبي روز فوشي غامق (18 غصن)، ثم جربيرا وردي (14) وبيبي روز سكري (11) وجربيرا سكري (10) وبيبي روز أورنج (10). أما أعلى خسارة مالية فهي 15 غصن بيوني في يوم واحد (10 سبتمبر) بتكلفة تقارب 310 ريال، أي ما يعادل كل تالف النظام في النصف الثاني من الشهر تقريباً.</p></div>
+    <div class="panel"><h3>أسباب التالف</h3><p class="sub">من سجلات النظام، بالغصن والحبة</p><div class="chart" style="height:380px"><canvas id="cReason"></canvas></div>
+    <p class="analysis"><b>التحليل:</b> الذبول هو السبب الأول (62 غصن، 65% من الأغصان التالفة). بعده إهمال في الحفظ (12 غصن، مثل ورد تُرك في الثلاجة يوم إجازة المسؤول أو وُجد في سلة المهملات) وورد راجع من التنسيق أو التصوير. مشكلة الجودة كانت في دوار الشمس (21 حبة)، و6 أغصان استوميريا سُجّلت تالفاً بسبب لون غير مطلوب، وهذا خطأ شراء وليس تلفاً.</p></div>
+  </div>
+  <div class="grid2 even" style="margin-top:20px">
+    <div class="panel"><h3>أين يتلف الورد</h3><p class="sub">من سجلات النظام</p><ul class="clean" id="whereList"></ul>
+    <p class="analysis"><b>التحليل:</b> 80% من الأغصان التالفة تلفت بعد صرفها من الثلاجة، أي في المحل أو الثلاجة الخارجية. يعني أن المشكلة الأساسية في استخدام الورد بعد خروجه وترتيب صرفه، وليست في التخزين.</p></div>
+    <div class="panel"><h3>أعلى نسب تلف بالصنف واللون</h3><p class="sub">التالف من إجمالي المتاح (الافتتاحي + الوارد)</p><ul class="clean" id="rateList"></ul>
+    <p class="analysis"><b>التحليل:</b> دوار الشمس الأعلى نسبةً (15%) بسبب طول بقائه في الثلاجة وجودة الحبات، ثم هيدرنجا سماوي (14%) وجربيرا وردي (10%). هذه النسب محسوبة من التالف المسجّل فقط، والنسبة الحقيقية تظهر بعد الجرد.</p></div>
+  </div>
+  <h3 style="margin:30px 0 10px;font-size:19px">سجل التالف التفصيلي</h3>
+  <div class="tscroll" style="max-height:420px"><table id="wtbl"><thead><tr><th>التاريخ</th><th>الصنف</th><th>اللون</th><th class="n">الكمية</th><th>السبب</th><th>متى</th></tr></thead><tbody></tbody></table></div>
+</div></section>
+
+<section id="recs"><div class="wrap">
+  <h2>التوصيات لشهر أكتوبر</h2>
+  <p class="lead">مرتبة حسب الأثر المتوقع على التكلفة واستمرارية التوفر. لكل توصية النتيجة التي بُنيت عليها، والإجراء المطلوب، والجهة المسؤولة، والمؤشر الذي نتابع به التنفيذ.</p>
+  <ol class="recs">
+    <li><div><h3>جرد فعلي شامل واعتماده رصيداً افتتاحياً لأكتوبر</h3>
+      <p>الرصيد الحالي نظري، وفيه مؤشرات على تالف لم يُسجّل، خصوصاً حوالي 280 غصن جربيرا عمرها أكثر من 12 يوماً و56 حبة دوار شمس عمرها أكثر من 17 يوماً.</p>
+      <dl><dt>الإجراء</dt><dd>عدّ كل صنف بلونه في الثلاجة الرئيسية والخارجية، ومقارنته بالرصيد النظري، وتسجيل الفرق كـ"فرق جرد"، ثم اعتماد العدد الفعلي بداية لأكتوبر. ويتكرر الجرد أسبوعياً للأصناف الرئيسية.</dd>
+      <dt>المسؤول</dt><dd>مسؤول الثلاجة، بإشراف إدارة التخطيط والتطوير</dd>
+      <dt>المؤشر</dt><dd>فرق الجرد كنسبة من الرصيد النظري، والهدف أقل من 3%</dd></dl></div></li>
+    <li><div><h3>بناء الطلبية على الصنف واللون وفق الاستهلاك الفعلي</h3>
+      <p>الأصناف الأعلى طلباً نفدت تقريباً، بينما الأصناف الضعيفة تتكدس. متوسط الاستهلاك اليومي للأصناف الرئيسية: بيبي روز سكري 40 غصناً، جوري أحمر 30، بيبي روز دبل كلر 28، بيبي روز فوشي غامق 26، بيبي روز أبيض 22، بيبي جاردن وردي 21، جوري أبيض 15.</p>
+      <dl><dt>الإجراء</dt><dd>اعتماد حد أدنى لكل صنف بلونه يغطي 4 أيام من الاستهلاك، وحد أعلى لا يتجاوز 7 أيام، ولا تُرفع الطلبية إلا لتعويض ما تحت الحد الأدنى. ورفع كميات البيبي روز (سكري، دبل كلر، فوشي غامق، أبيض) والجوري الأحمر والأبيض، وتخفيض الموف والأورنج والأخضر في كل الأصناف.</dd>
+      <dt>المسؤول</dt><dd>المشتريات، بناءً على تقرير أسبوعي من النظام</dd>
+      <dt>المؤشر</dt><dd>عدد الأصناف الرئيسية التي نفد رصيدها، وأيام التغطية لكل صنف</dd></dl></div></li>
+    <li><div><h3>تصريف المخزون الراكد بقيمة تقارب 5,300 ريال</h3>
+      <p>كريز هولندي موف (340 غصن)، قرنفل موف (180)، كريز أصفر (140)، قرنفل أخضر (138)، جربيرا أصفر (106) وأحمر (75)، بيبي روز أورنج (100)، إضافة إلى أصناف لم يُصرف منها شيء: كالا أسود ووردي، استبلي، بانيكم.</p>
+      <dl><dt>الإجراء</dt><dd>إيقاف طلب هذه الأصناف حتى ينخفض رصيدها، وإدخالها في تنسيقات المحل والفيلر وباقات العروض خلال الأسبوع الأول من أكتوبر، أو تحويل جزء منها لمتجر ورد إكسبرس إن أمكن، مع البدء بالجربيرا لأنها الأقصر عمراً.</dd>
+      <dt>المسؤول</dt><dd>المشتريات والمحل والتسويق</dd>
+      <dt>المؤشر</dt><dd>قيمة المخزون الذي يكفي أكثر من 10 أيام، والهدف خفضه للنصف خلال أكتوبر</dd></dl></div></li>
+    <li><div><h3>ضبط شراء الجربيرا</h3>
+      <p>الجربيرا أخذت 18% من المشتريات مقابل 10% من الاستهلاك، ولها أعلى نسبة تلف بين الأصناف الأساسية. وصل منها 593 غصناً دفعة واحدة يوم 18 سبتمبر.</p>
+      <dl><dt>الإجراء</dt><dd>الشراء على دفعات صغيرة مرتين أسبوعياً بدل دفعة كبيرة، والتركيز على السكري والأبيض والوردي (70% من استهلاكها)، والأحمر والأصفر والموف عند الطلب فقط.</dd>
+      <dt>المسؤول</dt><dd>المشتريات</dd>
+      <dt>المؤشر</dt><dd>نسبة مشتريات الجربيرا من إجمالي المشتريات، والهدف قريب من نسبة استهلاكها (10% إلى 12%)</dd></dl></div></li>
+    <li><div><h3>تطبيق قاعدة "الأقدم يُصرف أولاً" وضبط الثلاجة الخارجية</h3>
+      <p>80% من التالف يحدث بعد خروج الورد من الثلاجة، وتكررت حالات ورد في الثلاجة الخارجية لم يُستخدم وتُرك حتى ذبل، وورد وُجد في سلة المهملات.</p>
+      <dl><dt>الإجراء</dt><dd>لا يُصرف ورد جديد من نفس الصنف واللون إذا وُجد منه في الثلاجة الخارجية. ومراجعة يومية للثلاجة الخارجية آخر كل وردية، وتسجيل أي تالف في نفس اليوم مع سببه، ووجود بديل معتمد للتسجيل في أيام إجازة مسؤول الثلاجة.</dd>
+      <dt>المسؤول</dt><dd>مشرف المحل ومسؤول الثلاجة</dd>
+      <dt>المؤشر</dt><dd>التالف بعد الخروج كنسبة من الصادر، والهدف أقل من 1%</dd></dl></div></li>
+    <li><div><h3>تخطيط الطلبيات على نمط الطلب الأسبوعي والشهري</h3>
+      <p>الطلب يرتفع حوالي 50% من يوم 27 حتى نهاية الشهر، والأربعاء والخميس أعلى أيام الأسبوع.</p>
+      <dl><dt>الإجراء</dt><dd>طلبية مضاعفة من الأصناف الرئيسية تصل يوم 25 أو 26 من كل شهر، وجدولة وصول الطلبيات الأسبوعية قبل الأربعاء. ومتابعة هل يتكرر نمط آخر الشهر في أكتوبر لاعتماده بشكل دائم.</dd>
+      <dt>المسؤول</dt><dd>المشتريات</dd>
+      <dt>المؤشر</dt><dd>عدد مرات نفاد الأصناف الرئيسية في أيام الذروة</dd></dl></div></li>
+    <li><div><h3>تقييم الموردين بالجودة والتالف</h3>
+      <p>رفيق يورّد 71% من المشتريات، و13% من بضاعته قُيّمت متوسطة، بينما كل بضاعة فلوراناو ممتازة. ولا يمكن حالياً معرفة أي مورد يتلف ورده أكثر، لأن خانة المورد في سجلات التالف تحمل بلد المنشأ.</p>
+      <dl><dt>الإجراء</dt><dd>رفض أو خصم البضاعة المتوسطة عند الاستلام، ومشاركة تقرير الجودة الشهري مع رفيق، وتجربة نقل جزء من البيبي روز والجربيرا إلى فلوراناو أو إيتاء للمقارنة، وتسجيل المورد الفعلي في كل سجل تالف.</dd>
+      <dt>المسؤول</dt><dd>المشتريات ومسؤول الثلاجة</dd>
+      <dt>المؤشر</dt><dd>نسبة البضاعة الممتازة لكل مورد، ونسبة تالف كل مورد</dd></dl></div></li>
+    <li><div><h3>تطوير نظام مخزون الثلاجة</h3>
+      <p>بعض النتائج في هذا التقرير تقديرية بسبب نقص في البيانات المُدخلة.</p>
+      <dl><dt>الإجراء</dt><dd>قوائم ثابتة للأصناف والألوان والموردين وأسباب التلف، وإلزامية سعر الوحدة، ومنع الصرف بأكثر من الرصيد، ورقم دفعة لكل وارد لمعرفة عمر الورد، وشاشة جرد، وتنبيهات للنقص والعمر، ووجهة مستقلة لطلبات الواتساب، وصلاحية تسجيل لأكثر من شخص.</dd>
+      <dt>المسؤول</dt><dd>إدارة التخطيط والتطوير</dd>
+      <dt>المؤشر</dt><dd>تقرير أكتوبر يصدر كاملاً من النظام دون تقديرات يدوية</dd></dl></div></li>
+  </ol>
+</div></section>
+
+<footer><div class="wrap">
+  <ul class="notes">
+    <li>مصدر البيانات: نظام مخزون الثلاجة (من 13 سبتمبر) وسجل التالف اليدوي (من 1 إلى 12 سبتمبر).</li>
+    <li>التكاليف تقديرية، محسوبة بمتوسط سعر شراء كل صنف خلال سبتمبر. الأصناف بدون فاتورة شراء ما دخلت في حساب التكلفة.</li>
+    <li>"يكفي (يوم)" = المتبقي نظرياً ÷ متوسط الصادر اليومي خلال 17 يوم عمل.</li>
+  </ul>
+</div></footer>
+
+<script>
+const D = {"items": [{"t": "استاتس", "c": "ابيض", "u": "ربطة", "op": 2, "inn": 0, "out": 2, "st": 2, "sh": 0, "w": 0, "cl": 0, "cost": 0.0, "p": null}, {"t": "استاتس", "c": "موف", "u": "ربطة", "op": 37, "inn": 0, "out": 8, "st": 8, "sh": 0, "w": 0, "cl": 29, "cost": 0.0, "p": null}, {"t": "استاتس", "c": "وردي", "u": "ربطة", "op": 2, "inn": 0, "out": 2, "st": 2, "sh": 0, "w": 0, "cl": 0, "cost": 0.0, "p": null}, {"t": "استبلي", "c": "وردي", "u": "غصن", "op": 0, "inn": 50, "out": 0, "st": 0, "sh": 0, "w": 0, "cl": 50, "cost": 189.18, "p": 3.78}, {"t": "استر", "c": "ابيض", "u": "ربطة", "op": 1, "inn": 5, "out": 4, "st": 4, "sh": 0, "w": 0, "cl": 2, "cost": 172.5, "p": 34.5}, {"t": "استر", "c": "موف", "u": "ربطة", "op": 1, "inn": 3, "out": 3, "st": 2, "sh": 1, "w": 0, "cl": 1, "cost": 103.5, "p": 34.5}, {"t": "استوما", "c": "ابيض", "u": "غصن", "op": 10, "inn": 0, "out": 10, "st": 0, "sh": 10, "w": 0, "cl": 0, "cost": 0.0, "p": null}, {"t": "استوميريا", "c": "ابيض", "u": "غصن", "op": 13, "inn": 30, "out": 45, "st": 16, "sh": 29, "w": 6, "cl": -8, "cost": 103.5, "p": 3.45}, {"t": "استوميريا", "c": "موف", "u": "غصن", "op": 15, "inn": 10, "out": 15, "st": 11, "sh": 4, "w": 0, "cl": 10, "cost": 34.5, "p": 3.45}, {"t": "استوميريا", "c": "وردي", "u": "غصن", "op": 9, "inn": 60, "out": 64, "st": 36, "sh": 28, "w": 0, "cl": 5, "cost": 207.0, "p": 3.45}, {"t": "بانيكم", "c": "—", "u": "غصن", "op": 0, "inn": 50, "out": 0, "st": 0, "sh": 0, "w": 0, "cl": 50, "cost": 181.12, "p": 3.62}, {"t": "بنسيوم", "c": "—", "u": "ربطة", "op": 1, "inn": 0, "out": 1, "st": 0, "sh": 1, "w": 0, "cl": 0, "cost": 0.0, "p": null}, {"t": "بيبي جاردن", "c": "وردي", "u": "غصن", "op": 145, "inn": 220, "out": 363, "st": 328, "sh": 35, "w": 0, "cl": 2, "cost": 1012.0, "p": 4.6}, {"t": "بيبي روز", "c": "ابيض", "u": "غصن", "op": 120, "inn": 290, "out": 370, "st": 270, "sh": 100, "w": 2, "cl": 38, "cost": 1100.55, "p": 3.75}, {"t": "بيبي روز", "c": "احمر", "u": "غصن", "op": 90, "inn": 220, "out": 240, "st": 210, "sh": 30, "w": 5, "cl": 65, "cost": 823.4, "p": 3.75}, {"t": "بيبي روز", "c": "اصفر", "u": "غصن", "op": 170, "inn": 180, "out": 300, "st": 250, "sh": 50, "w": 0, "cl": 50, "cost": 678.5, "p": 3.75}, {"t": "بيبي روز", "c": "اورنج", "u": "غصن", "op": 260, "inn": 0, "out": 150, "st": 110, "sh": 40, "w": 10, "cl": 100, "cost": 0.0, "p": 3.75}, {"t": "بيبي روز", "c": "دبل كلر", "u": "غصن", "op": 240, "inn": 250, "out": 480, "st": 420, "sh": 60, "w": 3, "cl": 7, "cost": 937.25, "p": 3.75}, {"t": "بيبي روز", "c": "سكري", "u": "غصن", "op": 590, "inn": 150, "out": 680, "st": 530, "sh": 150, "w": 11, "cl": 49, "cost": 494.5, "p": 3.75}, {"t": "بيبي روز", "c": "فوشي غامق", "u": "غصن", "op": 470, "inn": 50, "out": 440, "st": 340, "sh": 100, "w": 18, "cl": 62, "cost": 189.75, "p": 3.75}, {"t": "بيبي روز", "c": "فوشي فاتح", "u": "غصن", "op": 40, "inn": 250, "out": 250, "st": 190, "sh": 60, "w": 0, "cl": 40, "cost": 948.75, "p": 3.75}, {"t": "بيبي روز", "c": "وردي", "u": "غصن", "op": 70, "inn": 255, "out": 290, "st": 230, "sh": 60, "w": 0, "cl": 35, "cost": 982.68, "p": 3.75}, {"t": "بيبي روز", "c": "وردي فاتح", "u": "غصن", "op": 0, "inn": 180, "out": 180, "st": 140, "sh": 40, "w": 0, "cl": 0, "cost": 683.1, "p": 3.75}, {"t": "بيوني", "c": "ابيض", "u": "غصن", "op": 0, "inn": 20, "out": 14, "st": 0, "sh": 14, "w": 0, "cl": 6, "cost": 414.0, "p": 20.7}, {"t": "تانا", "c": "—", "u": "ربطة", "op": 2, "inn": 3, "out": 5, "st": 5, "sh": 0, "w": 0, "cl": 0, "cost": 120.75, "p": 40.25}, {"t": "توليب", "c": "ابيض", "u": "غصن", "op": 50, "inn": 100, "out": 150, "st": 110, "sh": 40, "w": 2, "cl": -2, "cost": 690.0, "p": 6.9}, {"t": "توليب", "c": "اصفر", "u": "غصن", "op": 30, "inn": 100, "out": 100, "st": 85, "sh": 15, "w": 3, "cl": 27, "cost": 690.0, "p": 6.9}, {"t": "توليب", "c": "موف", "u": "غصن", "op": 27, "inn": 100, "out": 87, "st": 77, "sh": 10, "w": 0, "cl": 40, "cost": 690.0, "p": 6.9}, {"t": "توليب", "c": "وردي", "u": "غصن", "op": 50, "inn": 120, "out": 140, "st": 110, "sh": 30, "w": 4, "cl": 26, "cost": 828.0, "p": 6.9}, {"t": "جربيرا", "c": "ابيض", "u": "غصن", "op": 46, "inn": 180, "out": 162, "st": 134, "sh": 28, "w": 2, "cl": 62, "cost": 859.74, "p": 4.4}, {"t": "جربيرا", "c": "احمر", "u": "غصن", "op": 22, "inn": 110, "out": 57, "st": 54, "sh": 3, "w": 0, "cl": 75, "cost": 523.71, "p": 4.4}, {"t": "جربيرا", "c": "اصفر", "u": "غصن", "op": 24, "inn": 148, "out": 66, "st": 52, "sh": 14, "w": 0, "cl": 106, "cost": 484.38, "p": 4.4}, {"t": "جربيرا", "c": "اورنج", "u": "غصن", "op": 36, "inn": 60, "out": 82, "st": 63, "sh": 19, "w": 3, "cl": 11, "cost": 274.62, "p": 4.4}, {"t": "جربيرا", "c": "سكري", "u": "غصن", "op": 15, "inn": 327, "out": 229, "st": 198, "sh": 31, "w": 10, "cl": 103, "cost": 1449.34, "p": 4.4}, {"t": "جربيرا", "c": "موف", "u": "غصن", "op": 0, "inn": 60, "out": 23, "st": 12, "sh": 11, "w": 0, "cl": 37, "cost": 274.62, "p": 4.4}, {"t": "جربيرا", "c": "وردي", "u": "غصن", "op": 13, "inn": 133, "out": 129, "st": 91, "sh": 38, "w": 14, "cl": 3, "cost": 614.59, "p": 4.4}, {"t": "جوري", "c": "ابيض", "u": "غصن", "op": 260, "inn": 0, "out": 260, "st": 120, "sh": 140, "w": 0, "cl": 0, "cost": 0.0, "p": 2.77}, {"t": "جوري", "c": "احمر", "u": "غصن", "op": 350, "inn": 220, "out": 510, "st": 360, "sh": 150, "w": 0, "cl": 60, "cost": 607.2, "p": 2.77}, {"t": "جوري", "c": "فوشي", "u": "غصن", "op": 130, "inn": 90, "out": 240, "st": 170, "sh": 70, "w": 0, "cl": -20, "cost": 253.0, "p": 2.77}, {"t": "دوار الشمس", "c": "—", "u": "حبة", "op": 165, "inn": 0, "out": 84, "st": 44, "sh": 40, "w": 25, "cl": 56, "cost": 0.0, "p": null}, {"t": "راس كاس", "c": "—", "u": "غصن", "op": 0, "inn": 50, "out": 30, "st": 30, "sh": 0, "w": 0, "cl": 20, "cost": 132.25, "p": 2.65}, {"t": "سلدجو", "c": "—", "u": "ربطة", "op": 14, "inn": 10, "out": 24, "st": 17, "sh": 7, "w": 0, "cl": 0, "cost": 287.5, "p": 28.75}, {"t": "سمبيديوم", "c": "اخضر", "u": "غصن", "op": 6, "inn": 8, "out": 6, "st": 6, "sh": 0, "w": 0, "cl": 8, "cost": 736.0, "p": 92.0}, {"t": "قرنفل", "c": "اخضر", "u": "غصن", "op": 260, "inn": 0, "out": 120, "st": 80, "sh": 40, "w": 2, "cl": 138, "cost": 0.0, "p": 3.45}, {"t": "قرنفل", "c": "موف", "u": "غصن", "op": 220, "inn": 0, "out": 40, "st": 20, "sh": 20, "w": 0, "cl": 180, "cost": 0.0, "p": 3.45}, {"t": "قرنفل", "c": "وردي", "u": "غصن", "op": 180, "inn": 80, "out": 200, "st": 160, "sh": 40, "w": 0, "cl": 60, "cost": 276.0, "p": 3.45}, {"t": "كاب", "c": "—", "u": "ربطة", "op": 21, "inn": 0, "out": 9, "st": 3, "sh": 6, "w": 0, "cl": 12, "cost": 0.0, "p": null}, {"t": "كازا", "c": "ابيض", "u": "غصن", "op": 10, "inn": 80, "out": 70, "st": 50, "sh": 20, "w": 0, "cl": 20, "cost": 690.0, "p": 8.62}, {"t": "كالا", "c": "ابيض", "u": "غصن", "op": 0, "inn": 10, "out": 10, "st": 6, "sh": 4, "w": 0, "cl": 0, "cost": 291.52, "p": 17.23}, {"t": "كالا", "c": "اسود", "u": "غصن", "op": 0, "inn": 10, "out": 0, "st": 0, "sh": 0, "w": 0, "cl": 10, "cost": 170.2, "p": 17.23}, {"t": "كالا", "c": "اصفر", "u": "غصن", "op": 0, "inn": 10, "out": 10, "st": 0, "sh": 10, "w": 0, "cl": 0, "cost": 154.45, "p": 17.23}, {"t": "كالا", "c": "اورنج", "u": "غصن", "op": 0, "inn": 10, "out": 10, "st": 0, "sh": 10, "w": 0, "cl": 0, "cost": 146.51, "p": 17.23}, {"t": "كالا", "c": "موف", "u": "غصن", "op": 0, "inn": 10, "out": 10, "st": 0, "sh": 10, "w": 0, "cl": 0, "cost": 124.43, "p": 17.23}, {"t": "كالا", "c": "وردي", "u": "غصن", "op": 0, "inn": 10, "out": 0, "st": 0, "sh": 0, "w": 0, "cl": 10, "cost": 146.51, "p": 17.23}, {"t": "كاليبتوس", "c": "—", "u": "ربطة", "op": 10, "inn": 20, "out": 28, "st": 23, "sh": 5, "w": 0, "cl": 2, "cost": 747.5, "p": 37.38}, {"t": "كريز", "c": "ابيض", "u": "غصن", "op": 50, "inn": 50, "out": 95, "st": 70, "sh": 25, "w": 0, "cl": 5, "cost": 172.5, "p": 2.32}, {"t": "كريز", "c": "اخضر", "u": "غصن", "op": 0, "inn": 160, "out": 73, "st": 53, "sh": 20, "w": 0, "cl": 87, "cost": 276.0, "p": 2.32}, {"t": "كريز", "c": "اصفر", "u": "غصن", "op": 190, "inn": 0, "out": 50, "st": 30, "sh": 20, "w": 0, "cl": 140, "cost": 0.0, "p": 2.32}, {"t": "كريز", "c": "فوشي", "u": "غصن", "op": 130, "inn": 70, "out": 180, "st": 150, "sh": 30, "w": 0, "cl": 20, "cost": 201.83, "p": 2.32}, {"t": "كريز", "c": "موف", "u": "غصن", "op": 130, "inn": 0, "out": 60, "st": 40, "sh": 20, "w": 0, "cl": 70, "cost": 0.0, "p": 2.32}, {"t": "كريز كاليستفوس", "c": "ابيض", "u": "غصن", "op": 0, "inn": 50, "out": 23, "st": 0, "sh": 23, "w": 0, "cl": 27, "cost": 149.5, "p": 2.99}, {"t": "كريز هولندي", "c": "ابيض", "u": "غصن", "op": 0, "inn": 50, "out": 50, "st": 30, "sh": 20, "w": 0, "cl": 0, "cost": 201.25, "p": 4.27}, {"t": "كريز هولندي", "c": "اخضر", "u": "غصن", "op": 0, "inn": 50, "out": 35, "st": 0, "sh": 35, "w": 0, "cl": 15, "cost": 267.95, "p": 4.27}, {"t": "كريز هولندي", "c": "فوشي", "u": "غصن", "op": 20, "inn": 40, "out": 60, "st": 40, "sh": 20, "w": 0, "cl": 0, "cost": 128.8, "p": 4.27}, {"t": "كريز هولندي", "c": "موف", "u": "غصن", "op": 480, "inn": 0, "out": 140, "st": 100, "sh": 40, "w": 0, "cl": 340, "cost": 0.0, "p": 4.27}, {"t": "كريز هولندي", "c": "وردي", "u": "غصن", "op": 130, "inn": 0, "out": 50, "st": 20, "sh": 30, "w": 0, "cl": 80, "cost": 0.0, "p": 4.27}, {"t": "كريسبديا", "c": "—", "u": "غصن", "op": 50, "inn": 50, "out": 55, "st": 5, "sh": 50, "w": 0, "cl": 45, "cost": 220.8, "p": 4.42}, {"t": "لياتريس", "c": "ابيض", "u": "غصن", "op": 0, "inn": 20, "out": 10, "st": 0, "sh": 10, "w": 0, "cl": 10, "cost": 48.3, "p": 2.47}, {"t": "لياتريس", "c": "موف", "u": "غصن", "op": 0, "inn": 10, "out": 10, "st": 0, "sh": 10, "w": 0, "cl": 0, "cost": 25.88, "p": 2.47}, {"t": "ليليوم", "c": "—", "u": "غصن", "op": 0, "inn": 230, "out": 161, "st": 141, "sh": 20, "w": 0, "cl": 69, "cost": 977.39, "p": 4.22}, {"t": "ليليوم", "c": "اصفر", "u": "غصن", "op": 0, "inn": 10, "out": 10, "st": 10, "sh": 0, "w": 0, "cl": 0, "cost": 35.07, "p": 4.22}, {"t": "ماثيولا", "c": "سكري", "u": "غصن", "op": 40, "inn": 0, "out": 26, "st": 6, "sh": 20, "w": 0, "cl": 14, "cost": 0.0, "p": null}, {"t": "ماثيولا", "c": "موف", "u": "غصن", "op": 20, "inn": 0, "out": 10, "st": 0, "sh": 10, "w": 0, "cl": 10, "cost": 0.0, "p": null}, {"t": "ماثيولا", "c": "وردي", "u": "غصن", "op": 40, "inn": 0, "out": 30, "st": 4, "sh": 26, "w": 0, "cl": 10, "cost": 0.0, "p": null}, {"t": "هابريكوم", "c": "ابيض", "u": "ربطة", "op": 6, "inn": 0, "out": 3, "st": 1, "sh": 2, "w": 0, "cl": 3, "cost": 0.0, "p": null}, {"t": "هابريكوم", "c": "احمر", "u": "ربطة", "op": 5, "inn": 0, "out": 2, "st": 2, "sh": 0, "w": 0, "cl": 3, "cost": 0.0, "p": null}, {"t": "هابريكوم", "c": "اخضر", "u": "ربطة", "op": 4, "inn": 0, "out": 0, "st": 0, "sh": 0, "w": 0, "cl": 4, "cost": 0.0, "p": null}, {"t": "هابريكوم", "c": "وردي", "u": "ربطة", "op": 5, "inn": 0, "out": 3, "st": 1, "sh": 2, "w": 0, "cl": 2, "cost": 0.0, "p": null}, {"t": "هيدرنجا", "c": "اخضر", "u": "حبة", "op": 14, "inn": 0, "out": 12, "st": 10, "sh": 2, "w": 0, "cl": 2, "cost": 0.0, "p": null}, {"t": "هيدرنجا", "c": "سماوي", "u": "حبة", "op": 21, "inn": 0, "out": 8, "st": 2, "sh": 6, "w": 3, "cl": 10, "cost": 0.0, "p": null}, {"t": "هيدرنجا", "c": "وردي", "u": "حبة", "op": 22, "inn": 0, "out": 23, "st": 18, "sh": 5, "w": 1, "cl": -2, "cost": 0.0, "p": null}, {"t": "واكس فلاور", "c": "ابيض", "u": "غصن", "op": 0, "inn": 25, "out": 25, "st": 0, "sh": 25, "w": 0, "cl": 0, "cost": 215.63, "p": 8.63}], "daily": [["13/09", 482], ["14/09", 251], ["15/09", 348], ["16/09", 466], ["17/09", 619], ["18/09", 405], ["19/09", 422], ["20/09", 236], ["21/09", 462], ["22/09", 393], ["24/09", 570], ["25/09", 423], ["26/09", 256], ["27/09", 711], ["28/09", 476], ["29/09", 683], ["30/09", 582]], "week": [["السبت", 339], ["الأحد", 476], ["الإثنين", 396], ["الثلاثاء", 475], ["الأربعاء", 524], ["الخميس", 594], ["الجمعة", 414]], "qual": {"ايتاء": {"ممتازة": 130, "جيدة": 258, "متوسطة": 0}, "رفيق": {"ممتازة": 1863, "جيدة": 1220, "متوسطة": 463}, "فلوراناو": {"ممتازة": 1213, "جيدة": 0, "متوسطة": 0}}, "wl": [{"date": "13/09", "t": "بيبي روز", "c": "دبل كلر", "q": 3, "u": "غصن", "reason": "طرحوه في الثلاجة يوم اجازتي", "after": true}, {"date": "13/09", "t": "بيبي روز", "c": "اورنج", "q": 4, "u": "غصن", "reason": "طرحوه في الثلاجة يوم اجازتي", "after": true}, {"date": "13/09", "t": "توليب", "c": "وردي", "q": 1, "u": "غصن", "reason": "ضمور", "after": true}, {"date": "16/09", "t": "استوميريا", "c": "ابيض", "q": 6, "u": "غصن", "reason": "الون ماله احتياج", "after": false}, {"date": "17/09", "t": "بيبي روز", "c": "فوشي غامق", "q": 2, "u": "غصن", "reason": "ذبول", "after": true}, {"date": "17/09", "t": "جربيرا", "c": "سكري", "q": 4, "u": "غصن", "reason": "راجع من تنصيق", "after": true}, {"date": "20/09", "t": "جربيرا", "c": "اورنج", "q": 3, "u": "غصن", "reason": "ذبول طبيعي", "after": true}, {"date": "20/09", "t": "هيدرنجا", "c": "سماوي", "q": 3, "u": "حبة", "reason": "راجع من تصوير", "after": true}, {"date": "20/09", "t": "توليب", "c": "وردي", "q": 3, "u": "غصن", "reason": "ذبول طبيعي", "after": true}, {"date": "20/09", "t": "دوار الشمس", "c": "—", "q": 5, "u": "حبة", "reason": "مده في الثلاجه لم يتم استعماله", "after": false}, {"date": "21/09", "t": "بيبي روز", "c": "سكري", "q": 7, "u": "غصن", "reason": "ذبول طبيعي", "after": false}, {"date": "21/09", "t": "جربيرا", "c": "سكري", "q": 3, "u": "غصن", "reason": "راجع من تنصيق", "after": false}, {"date": "22/09", "t": "قرنفل", "c": "اخضر", "q": 2, "u": "غصن", "reason": "راجع من تنصيق", "after": true}, {"date": "22/09", "t": "بيبي روز", "c": "اورنج", "q": 4, "u": "غصن", "reason": "ذبول", "after": true}, {"date": "24/09", "t": "جربيرا", "c": "وردي", "q": 4, "u": "غصن", "reason": "ذبول طبيعي", "after": true}, {"date": "24/09", "t": "جربيرا", "c": "وردي", "q": 4, "u": "غصن", "reason": "ذبول طبيعي", "after": true}, {"date": "24/09", "t": "جربيرا", "c": "سكري", "q": 3, "u": "غصن", "reason": "ذبول طبيعي", "after": true}, {"date": "24/09", "t": "بيبي روز", "c": "ابيض", "q": 2, "u": "غصن", "reason": "ذبول طبيعي", "after": true}, {"date": "25/09", "t": "هيدرنجا", "c": "وردي", "q": 1, "u": "حبة", "reason": "تساقط اغصان", "after": false}, {"date": "25/09", "t": "بيبي روز", "c": "سكري", "q": 4, "u": "غصن", "reason": "ذبول طبيعي", "after": true}, {"date": "27/09", "t": "دوار الشمس", "c": "—", "q": 20, "u": "حبة", "reason": "غصن صغيروكميه كبيره جدن تساقط اوراق", "after": false}, {"date": "27/09", "t": "بيبي روز", "c": "فوشي غامق", "q": 8, "u": "غصن", "reason": "ذبول طبيعي.  والكميه كبيره", "after": true}, {"date": "28/09", "t": "جربيرا", "c": "وردي", "q": 4, "u": "غصن", "reason": "موجود في الثلاجه الخارجيه ولم يتم استعماله ويرفضوا ياخذوه وستخدموا غيره حتي تذبل", "after": true}, {"date": "28/09", "t": "جربيرا", "c": "ابيض", "q": 2, "u": "غصن", "reason": "ذبول طبيعي", "after": true}, {"date": "29/09", "t": "بيبي روز", "c": "اورنج", "q": 2, "u": "غصن", "reason": "ذبول طبيعي", "after": true}, {"date": "29/09", "t": "بيبي روز", "c": "فوشي غامق", "q": 5, "u": "غصن", "reason": "ذبول طبيعي", "after": true}, {"date": "29/09", "t": "بيبي روز", "c": "احمر", "q": 5, "u": "غصن", "reason": "حصلته في كيس الزباله", "after": true}, {"date": "29/09", "t": "توليب", "c": "ابيض", "q": 2, "u": "غصن", "reason": "ذبول طبيعي في الثلاجه الخارجيه لم يتم استعماله", "after": true}, {"date": "29/09", "t": "توليب", "c": "اصفر", "q": 3, "u": "غصن", "reason": "ذبول طبيعي", "after": true}, {"date": "30/09", "t": "بيبي روز", "c": "فوشي غامق", "q": 3, "u": "غصن", "reason": "ذبول طبيعي", "after": false}, {"date": "30/09", "t": "جربيرا", "c": "وردي", "q": 2, "u": "غصن", "reason": "ذبول طبيعي", "after": true}], "price": {"استاتس": null, "استبلي": 3.78, "استر": 34.5, "استوما": null, "استوميريا": 3.45, "بانيكم": 3.62, "بنسيوم": null, "بيبي جاردن": 4.6, "بيبي روز": 3.75, "بيوني": 20.7, "تانا": 40.25, "توليب": 6.9, "جربيرا": 4.4, "جوري": 2.77, "دوار الشمس": null, "راس كاس": 2.65, "سلدجو": 28.75, "سمبيديوم": 92.0, "قرنفل": 3.45, "كاب": null, "كازا": 8.62, "كالا": 17.23, "كاليبتوس": 37.38, "كريز": 2.32, "كريز كاليستفوس": 2.99, "كريز هولندي": 4.27, "كريسبديا": 4.42, "لياتريس": 2.47, "ليليوم": 4.22, "ماثيولا": null, "هابريكوم": null, "هيدرنجا": null, "واكس فلاور": 8.63}};
+const MANUAL = [["بيوني",15],["بيبي روز",14],["جوري",6],["توليب",5],["استوميريا",5],["جربيرا",2]];
+const FC = {"ابيض":"#F4F1E8","وردي":"#EE9AB5","سكري":"#F3C3BA","احمر":"#C0283A","اصفر":"#F2C94C","فوشي":"#D63384","فوشي غامق":"#9E1F60","فوشي فاتح":"#F07AB4","موف":"#9B7BC4","اورنج":"#EE8A3B","اخضر":"#7FA65A","دبل كلر":"#E8A23F","وردي فاتح":"#F8D0DD","اسود":"#2E2A2B","سماوي":"#86C2E4","—":"#B7BFB3"};
+const fc = c => FC[c] || "#B7BFB3";
+const nf = n => Number(n).toLocaleString("ar-SA-u-nu-latn");
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const items = D.items.map(i => ({...i, daily:i.out/17}));
+const stems = items.filter(i=>i.u==="غصن");
+const totStems = stems.reduce((a,i)=>a+i.out,0);
+items.forEach(i=>{ if(i.cl<0) i.cl=null; });
+items.forEach(i=>{ i.share = i.u==="غصن" ? i.out/totStems*100 : null; i.cov = (i.daily>0 && i.cl!=null) ? i.cl/i.daily : null; i.avail=i.op+i.inn; });
+const byType = {}; stems.forEach(i=>{ (byType[i.t] ||= {out:0,cost:0,val:0,items:[]}); byType[i.t].out+=i.out; byType[i.t].items.push(i); });
+items.forEach(i=>{ if(byType[i.t]){ byType[i.t].cost+=i.cost; byType[i.t].val+= i.p? i.out*i.p:0; } });
+const typesSorted = Object.entries(byType).sort((a,b)=>b[1].out-a[1].out);
+
+/* KPIs */
+const consVal = items.reduce((a,i)=>a+(i.p? i.out*i.p:0),0);
+document.getElementById("kpis").innerHTML = [
+ [nf(totStems),"غصن انصرف من الثلاجة"],[nf(Math.round(totStems/17)),"غصن متوسط يومي"],[nf(Math.round(consVal/10)*10),"ريال تكلفة الورد المنصرف"],
+ [nf(24439),"ريال مشتريات"],["825","ريال تالف مسجّل","loss"]].map(k=>`<div class="kpi ${k[2]||""}"><b>${k[0]}</b><span>${k[1]}</span></div>`).join("");
+
+/* type+color strip */
+const PALT = ["#2F5A3F","#B8436B"];
+const topTC = [...stems].sort((a,b)=>b.out-a.out).slice(0,12);
+const restTC = totStems - topTC.reduce((a,i)=>a+i.out,0);
+const lbl = i => `${i.t}${i.c==="—"?"":" "+i.c}`;
+const bg = c => c==="دبل كلر"?"linear-gradient(180deg,#F2C94C,#E0607E)":fc(c);
+const strip = document.getElementById("strip");
+strip.innerHTML = topTC.map(i=>`<div title="${lbl(i)}: ${nf(i.out)} غصن (${(i.out/totStems*100).toFixed(1)}%)" style="flex-grow:0;background:${bg(i.c)}" data-g="${i.out}"></div>`).join("") + `<div title="باقي الأصناف: ${nf(restTC)} غصن" style="flex-grow:0;background:repeating-linear-gradient(135deg,var(--soft) 0 6px,var(--line) 6px 12px)" data-g="${restTC}"></div>`;
+requestAnimationFrame(()=>setTimeout(()=>strip.querySelectorAll("div").forEach(d=>d.style.flexGrow=d.dataset.g),60));
+document.getElementById("stripLegend").innerHTML = topTC.map(i=>`<span><i class="sw" style="background:${bg(i.c)}"></i>${lbl(i)} ${(i.out/totStems*100).toFixed(1)}%</span>`).join("") + `<span><i class="sw" style="background:var(--line)"></i>باقي الأصناف ${(restTC/totStems*100).toFixed(0)}%</span>`;
+document.getElementById("stripNote").innerHTML = `<b>التحليل:</b> أكثر 12 صنفاً بلونها تمثل ${((totStems-restTC)/totStems*100).toFixed(0)}% من كل الأغصان المنصرفة، و8 منها من البيبي روز بألوانه المختلفة. بقية الأصناف والألوان (أكثر من 60 صنفاً بلونه) تتقاسم ${(restTC/totStems*100).toFixed(0)}% فقط، وهي التي يتكدس أغلبها في المخزون.`;
+
+/* table */
+let fType = null, sortK="out", sortDir=-1;
+const chips = document.getElementById("chips");
+chips.innerHTML = `<button class="chip" aria-pressed="true" data-t="">الكل</button>` + typesSorted.slice(0,12).map(([t])=>`<button class="chip" aria-pressed="false" data-t="${t}">${t}</button>`).join("");
+chips.addEventListener("click",e=>{const b=e.target.closest(".chip"); if(!b) return; fType=b.dataset.t||null; chips.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x===b)); drawTable();});
+document.getElementById("q").addEventListener("input",drawTable);
+document.querySelectorAll("#tbl th").forEach(th=>{th.tabIndex=0; const go=()=>{const k=th.dataset.k; if(k==="rank") return; sortDir = sortK===k? -sortDir : -1; sortK=k; drawTable();}; th.addEventListener("click",go); th.addEventListener("keydown",e=>{if(e.key==="Enter")go();});});
+const ranked = [...items].filter(i=>i.out>0||i.cl>0).sort((a,b)=>b.out-a.out); ranked.forEach((i,k)=>i.rank=k+1);
+function drawTable(){
+  const q=document.getElementById("q").value.trim();
+  let rows = ranked.filter(i=>(!fType||i.t===fType)&&(!q||(i.t+" "+i.c).includes(q)));
+  rows.sort((a,b)=>{let x=a[sortK],y=b[sortK]; if(x==null)x=-1e9; if(y==null)y=-1e9; return typeof x==="string"? sortDir*x.localeCompare(y,"ar") : sortDir*(x-y);});
+  const leaf=css("--leaf"), rose=css("--rose");
+  document.querySelector("#tbl tbody").innerHTML = rows.map(i=>{
+    const tot=i.st+i.sh||1, cov=i.cov;
+    const covTag = (cov==null||i.cl<0)? `<span class="tag">—</span>` : cov<3? `<span class="tag low">${cov.toFixed(1)}</span>` : cov>10? `<span class="tag high">${cov.toFixed(1)}</span>` : `<span class="tag">${cov.toFixed(1)}</span>`;
+    return `<tr><td class="n rank">${i.rank}</td><td>${i.t}</td><td><i class="sw" style="background:${fc(i.c)}"></i>${i.c}</td><td>${i.u}</td>
+    <td class="n"><b>${nf(i.out)}</b></td><td class="n">${i.share==null?"—":i.share.toFixed(1)+"%"}</td>
+    <td>${nf(i.st)} موقع، ${nf(i.sh)} محل<span class="split"><i style="width:${i.st/tot*100}%;background:${leaf}"></i><i style="width:${i.sh/tot*100}%;background:${rose}"></i></span></td>
+    <td class="n">${i.w||"—"}</td><td class="n">${i.cl==null?"—":nf(i.cl)}</td><td class="n">${covTag}</td></tr>`;}).join("");
+}
+drawTable();
+
+/* lists */
+const li = (a,b)=>`<li><span>${a}</span><b>${b}</b></li>`;
+const tCov = typesSorted.map(([t,v])=>{const cl=v.items.reduce((a,i)=>a+(i.cl||0),0); return {t,cl,cov:cl/(v.out/17)}});
+document.getElementById("lowList").innerHTML = items.filter(i=>i.u==="غصن"&&i.cov!=null&&i.cov<3&&i.out>=80).sort((a,b)=>a.cov-b.cov).map(i=>li(`<i class="sw" style="background:${fc(i.c)}"></i>${i.t} ${i.c==="—"?"":i.c}`, i.cl===0?`<span class="neg">نفد</span> (يُصرف ${(i.daily).toFixed(0)} يومياً)`:`${nf(i.cl)} غصن، يكفي ${i.cov.toFixed(1)} يوم`)).join("");
+document.getElementById("highList").innerHTML = items.filter(i=>i.u==="غصن"&&i.cl>=40&&(i.cov==null||i.cov>10)).sort((a,b)=>b.cl-a.cl).slice(0,10).map(i=>li(`<i class="sw" style="background:${fc(i.c)}"></i>${i.t} ${i.c==="—"?"":i.c}`, `${nf(i.cl)} غصن${i.cov?`، ${i.cov.toFixed(0)} يوم`:"، ما انصرف منه شي"}`)).join("");
+document.getElementById("shopList").innerHTML = stems.filter(i=>i.out>=50).map(i=>({...i,p:i.sh/i.out*100})).sort((a,b)=>b.p-a.p).slice(0,7).map(i=>li(`<i class="sw" style="background:${fc(i.c)}"></i>${i.t} ${i.c==="—"?"":i.c}`, `${i.p.toFixed(0)}% (${nf(i.sh)} من ${nf(i.out)} غصن)`)).join("");
+
+/* waste */
+const cat = r => /ذبول|ضمور/.test(r) && !/الخارجيه/.test(r) ? "ذبول" : /تنصيق|تصوير/.test(r) ? "راجع من تنسيق أو تصوير" : /الخارجيه|لم يتم استعماله/.test(r) ? "ورد ما انستخدم" : /اجازتي|الزباله/.test(r) ? "إهمال في الحفظ" : /تساقط|صغير/.test(r) ? "جودة الورد" : /احتياج/.test(r) ? "خطأ في الشراء" : "أخرى";
+const reasons = {}; D.wl.forEach(w=>{const c=cat(w.reason); reasons[c]=(reasons[c]||0)+w.q;});
+const after = D.wl.filter(w=>w.after&&w.u==="غصن").reduce((a,w)=>a+w.q,0), before = D.wl.filter(w=>!w.after&&w.u==="غصن").reduce((a,w)=>a+w.q,0);
+const ah = D.wl.filter(w=>w.after&&w.u!=="غصن").reduce((a,w)=>a+w.q,0), bh = D.wl.filter(w=>!w.after&&w.u!=="غصن").reduce((a,w)=>a+w.q,0);
+document.getElementById("whereList").innerHTML = li("بعد الخروج (المحل والثلاجة الخارجية)", `${after} غصن (${Math.round(after/(after+before)*100)}%) و${ah} حبة`) + li("داخل الثلاجة قبل الخروج", `${before} غصن و${bh} حبة`) + li("السجل اليدوي 1 إلى 12 (المكان غير مسجّل)", "47 غصن");
+document.getElementById("rateList").innerHTML = items.filter(i=>i.w>0&&i.avail>0).map(i=>({...i,r:i.w/i.avail*100})).sort((a,b)=>b.r-a.r).slice(0,7).map(i=>li(`<i class="sw" style="background:${fc(i.c)}"></i>${i.t} ${i.c==="—"?"":i.c}`, `${i.r.toFixed(1)}% (${i.w} ${i.u})`)).join("");
+document.querySelector("#wtbl tbody").innerHTML = D.wl.map(w=>`<tr><td>${w.date}</td><td>${w.t}</td><td><i class="sw" style="background:${fc(w.c)}"></i>${w.c}</td><td class="n">${w.q} ${w.u}</td><td>${cat(w.reason)}</td><td>${w.after?"بعد الخروج":"قبل الخروج"}</td></tr>`).join("");
+
+/* charts */
+let charts=[];
+function render(){
+  charts.forEach(c=>c.destroy()); charts=[];
+  const text=css("--text"), muted=css("--muted"), line=css("--line"), leaf=css("--leaf"), rose=css("--rose"), amber=css("--amber"), loss=css("--loss"), ink=css("--ink");
+  Chart.defaults.font.family='"IBM Plex Sans Arabic",Tahoma,sans-serif'; Chart.defaults.font.size=13; Chart.defaults.color=muted; Chart.defaults.borderColor=line;
+  const base = {responsive:true,maintainAspectRatio:false,locale:"ar-SA-u-nu-latn",plugins:{legend:{rtl:true,labels:{color:text,usePointStyle:true,boxWidth:10}},tooltip:{rtl:true,textDirection:"rtl"}}};
+  const edge = "rgba(0,0,0,.18)";
+  const top = ranked.filter(i=>i.u==="غصن").slice(0,15);
+  charts.push(new Chart(cTop,{type:"bar",data:{labels:top.map(i=>`${i.t} ${i.c==="—"?"":i.c}`),datasets:[{data:top.map(i=>i.out),backgroundColor:top.map(i=>fc(i.c)),borderColor:edge,borderWidth:1,borderRadius:4}]},options:{...base,indexAxis:"y",plugins:{...base.plugins,legend:{display:false}},scales:{x:{reverse:true,grid:{color:line}},y:{position:"right",ticks:{color:text},grid:{display:false}}}}}));
+  const tt = typesSorted.slice(0,12);
+  charts.push(new Chart(cType,{type:"bar",data:{labels:tt.map(t=>t[0]),datasets:[{data:tt.map(t=>t[1].out),backgroundColor:tt.map((t,k)=>k<3?leaf:css("--soft")),borderColor:leaf,borderWidth:1,borderRadius:4}]},options:{...base,indexAxis:"y",plugins:{...base.plugins,legend:{display:false},tooltip:{...base.plugins.tooltip,callbacks:{label:c=>`${nf(c.raw)} غصن (${(c.raw/totStems*100).toFixed(1)}%)`}}},scales:{x:{reverse:true,grid:{color:line}},y:{position:"right",ticks:{color:text},grid:{display:false}}}}}));
+  const st = typesSorted.slice(0,8).map(t=>t[0]);
+  const cols = [...new Set(st.flatMap(t=>byType[t].items.map(i=>i.c)))];
+  charts.push(new Chart(cStack,{type:"bar",data:{labels:st,datasets:cols.map(c=>({label:c,data:st.map(t=>{const it=byType[t].items.find(i=>i.c===c); return it? it.out/byType[t].out*100 : 0;}),raw:st.map(t=>{const it=byType[t].items.find(i=>i.c===c); return it?it.out:0;}),backgroundColor:fc(c),borderColor:edge,borderWidth:1}))},options:{...base,indexAxis:"y",plugins:{...base.plugins,tooltip:{...base.plugins.tooltip,filter:c=>c.raw>0,callbacks:{label:c=>`${c.dataset.label}: ${nf(c.dataset.raw[c.dataIndex])} غصن (${c.raw.toFixed(0)}%)`}}},scales:{x:{stacked:true,reverse:true,max:100,ticks:{callback:v=>v+"%"},grid:{color:line}},y:{stacked:true,position:"right",ticks:{color:text},grid:{display:false}}}}}));
+  const sSt=stems.reduce((a,i)=>a+i.st,0), sSh=stems.reduce((a,i)=>a+i.sh,0);
+  charts.push(new Chart(cDest,{type:"doughnut",data:{labels:["المتجر الإلكتروني","المحل"],datasets:[{data:[sSt,sSh],backgroundColor:[leaf,rose],borderColor:css("--surface"),borderWidth:3}]},options:{...base,cutout:"62%",plugins:{...base.plugins,tooltip:{...base.plugins.tooltip,callbacks:{label:c=>`${c.label}: ${nf(c.raw)} غصن (${(c.raw/(sSt+sSh)*100).toFixed(0)}%)`}}}}}));
+  charts.push(new Chart(cDaily,{type:"line",data:{labels:D.daily.map(d=>d[0]),datasets:[{label:"غصن",data:D.daily.map(d=>d[1]),borderColor:leaf,backgroundColor:leaf,tension:.3,pointRadius:D.daily.map(d=>d[0]==="27/09"?7:3),pointBackgroundColor:D.daily.map(d=>d[0]==="27/09"?rose:leaf)},{label:"المتوسط",data:D.daily.map(()=>458),borderColor:muted,borderDash:[5,5],pointRadius:0,borderWidth:1.5}]},options:{...base,scales:{x:{reverse:true,grid:{display:false}},y:{position:"right",grid:{color:line}}}}}));
+  charts.push(new Chart(cWeek,{type:"bar",data:{labels:D.week.map(w=>w[0]),datasets:[{data:D.week.map(w=>w[1]),backgroundColor:D.week.map(w=>w[1]>=500?leaf:css("--soft")),borderColor:leaf,borderWidth:1,borderRadius:4}]},options:{...base,plugins:{...base.plugins,legend:{display:false}},scales:{x:{reverse:true,grid:{display:false}},y:{position:"right",grid:{color:line}}}}}));
+  const sup = Object.keys(D.qual);
+  charts.push(new Chart(cQual,{type:"bar",data:{labels:sup,datasets:[["ممتازة",leaf],["جيدة",amber],["متوسطة",loss]].map(([k,c])=>({label:k,data:sup.map(s=>D.qual[s][k]),backgroundColor:c,borderRadius:3}))},options:{...base,scales:{x:{stacked:true,reverse:true,grid:{display:false}},y:{stacked:true,position:"right",grid:{color:line}}}}}));
+  const bt = typesSorted.slice(0,8).map(t=>t[0]); const cTot=items.reduce((a,i)=>a+i.cost,0);
+  charts.push(new Chart(cBuy,{type:"bar",data:{labels:bt,datasets:[{label:"من المشتريات",data:bt.map(t=>byType[t].cost/cTot*100),backgroundColor:amber,borderRadius:3},{label:"من تكلفة الاستهلاك",data:bt.map(t=>byType[t].val/consVal*100),backgroundColor:leaf,borderRadius:3}]},options:{...base,plugins:{...base.plugins,tooltip:{...base.plugins.tooltip,callbacks:{label:c=>`${c.dataset.label}: ${c.raw.toFixed(1)}%`}}},scales:{x:{reverse:true,grid:{display:false}},y:{position:"right",ticks:{callback:v=>v+"%"},grid:{color:line}}}}}));
+  const sysW = {}; D.wl.filter(w=>w.u==="غصن").forEach(w=>{const k=`${w.t}${w.c==="—"?"":" "+w.c}`; (sysW[k] ||= {q:0,c:w.c}); sysW[k].q+=w.q;});
+  const wt = [...Object.entries(sysW).map(([k,v])=>[k,0,v.q,v.c]), ...MANUAL.map(m=>[m[0]+" (يدوي)",m[1],0,"—"])].sort((a,b)=>(b[1]+b[2])-(a[1]+a[2])).slice(0,14);
+  charts.push(new Chart(cWaste,{type:"bar",data:{labels:wt.map(w=>w[0]),datasets:[{label:"النظام 13 إلى 30",data:wt.map(w=>w[2]),backgroundColor:wt.map(w=>fc(w[3])),borderColor:loss,borderWidth:1.5,borderRadius:3},{label:"يدوي 1 إلى 12 (بدون لون)",data:wt.map(w=>w[1]),backgroundColor:amber,borderRadius:3}]},options:{...base,indexAxis:"y",scales:{x:{stacked:true,reverse:true,grid:{color:line}},y:{stacked:true,position:"right",ticks:{color:text},grid:{display:false}}}}}));
+  const rs = Object.entries(reasons).sort((a,b)=>b[1]-a[1]);
+  charts.push(new Chart(cReason,{type:"doughnut",data:{labels:rs.map(r=>r[0]),datasets:[{data:rs.map(r=>r[1]),backgroundColor:[loss,amber,rose,leaf,"#8C7AB8","#6FA3B8","#999"],borderColor:css("--surface"),borderWidth:3}]},options:{...base,cutout:"58%",plugins:{...base.plugins,legend:{...base.plugins.legend,position:"bottom"}}}}));
+}
+const tabs=document.getElementById("tabs"), secs=[...document.querySelectorAll("section[id]")];
+function show(s){
+  tabs.querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected",b.dataset.s===s));
+  secs.forEach(x=>x.hidden = !(s==="all"||x.id===s));
+  if(window.Chart) render();
+  if(location.hash!=="#"+s) history.replaceState(null,"","#"+s);
+  window.scrollTo({top:0});
+}
+tabs.addEventListener("click",e=>{const b=e.target.closest("button"); if(b) show(b.dataset.s);});
+const h=location.hash.slice(1); show(["all",...secs.map(s=>s.id)].includes(h)?h:"all");
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>{render();drawTable();});
+</script>
+</body>
+</html>
