@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>تقرير المشتريات الشهري | سبتمبر 2026 | دوكمنتيشن فلاورز</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --leaf:#1F4A36; --leaf-2:#2E6B4F; --sage:#9DB5A6; --mist:#E7EFEA;
+  --petal:#B4436C; --petal-soft:#F6E3EA; --amber:#B7791F; --amber-soft:#FBF0DC;
+  --ink:#16201B; --ink-2:#4B5A52; --line:#DCE4DF; --paper:#FFFFFF; --bg:#F5F8F6;
+  --sans:'IBM Plex Sans Arabic',Tahoma,'Segoe UI',sans-serif;
+  --serif:'Noto Naskh Arabic','Traditional Arabic',serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.75}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+header.top{background:var(--leaf);color:#fff;padding:40px 0 34px}
+.org{font-size:14px;opacity:.85;margin:0 0 6px}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(28px,4.4vw,44px);line-height:1.3;margin:0}
+.period{margin:8px 0 0;font-size:16px;opacity:.9}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;margin-top:30px;align-items:end}
+.hero .big{font-family:var(--serif);font-size:clamp(44px,7vw,76px);line-height:1;font-weight:700}
+.hero .big small{font-size:.35em;font-family:var(--sans);font-weight:500;opacity:.85;margin-inline-start:8px}
+.hero .lbl{font-size:15px;opacity:.85;margin-top:8px}
+.mini{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.mini div{border:1px solid rgba(255,255,255,.22);border-radius:10px;padding:10px 14px}
+.mini b{display:block;font-size:22px;font-weight:600}
+.mini span{font-size:13px;opacity:.85}
+.bouquet{display:flex;height:46px;border-radius:8px;overflow:hidden;margin-top:28px;background:rgba(255,255,255,.1)}
+.bouquet i{display:block;height:100%;position:relative;transition:filter .2s}
+.bouquet i:hover{filter:brightness(1.12)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:12px;font-size:13px;opacity:.95}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--c);margin-inline-end:6px;vertical-align:-1px}
+nav.toc{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+nav.toc .wrap{display:flex;gap:4px;overflow-x:auto;padding-block:8px}
+nav.toc a{white-space:nowrap;color:var(--ink-2);text-decoration:none;font-size:14px;padding:6px 12px;border-radius:999px}
+nav.toc a:hover,nav.toc a:focus-visible{background:var(--mist);color:var(--leaf);outline:none}
+section{padding:42px 0 8px}
+h2{font-family:var(--serif);font-size:clamp(22px,3vw,28px);color:var(--leaf);margin:0 0 6px;line-height:1.4}
+.sub{color:var(--ink-2);margin:0 0 20px;max-width:75ch}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.exec p{margin:0 0 12px;max-width:80ch}
+.exec ul{margin:0;padding-inline-start:20px}
+.exec li{margin-bottom:8px}
+.bar-row{display:grid;grid-template-columns:150px 1fr 120px;gap:12px;align-items:center;padding:7px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.bar-row:last-child{border-bottom:0}
+.track{height:14px;background:var(--mist);border-radius:7px;overflow:hidden}
+.track i{display:block;height:100%;border-radius:7px}
+.bar-row .v{text-align:left;font-variant-numeric:tabular-nums;direction:ltr}
+.bar-row .v small{color:var(--ink-2);font-size:12px;margin-inline-start:4px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.kpi{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px}
+.kpi b{display:block;font-size:24px;font-weight:600;color:var(--leaf);font-variant-numeric:tabular-nums}
+.kpi span{color:var(--ink-2);font-size:14px}
+.split{display:flex;height:34px;border-radius:8px;overflow:hidden;margin:14px 0 8px}
+.split i{display:flex;align-items:center;justify-content:center;color:#fff;font-style:normal;font-size:14px;font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{padding:9px 10px;text-align:right;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--mist);color:var(--leaf);font-weight:600;position:sticky;top:0}
+td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.scroll{overflow-x:auto;max-width:100%}
+.tbl-scroll{max-height:560px;overflow:auto;border:1px solid var(--line);border-radius:10px}
+.up{color:var(--petal);font-weight:600}
+.down{color:var(--leaf-2);font-weight:600}
+.tag{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;background:var(--mist);color:var(--leaf);white-space:nowrap}
+.tag.w{background:var(--amber-soft);color:#7A4D0B}
+.tag.r{background:var(--petal-soft);color:#7D2547}
+.note{background:var(--amber-soft);border-inline-start:4px solid var(--amber);padding:12px 16px;border-radius:8px;font-size:14.5px;margin-top:16px}
+.recs{counter-reset:r;display:grid;gap:14px}
+.rec{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 20px;display:grid;grid-template-columns:auto 1fr;gap:4px 16px}
+.rec::before{counter-increment:r;content:counter(r);grid-row:span 3;width:34px;height:34px;border-radius:50%;background:var(--leaf);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600}
+.rec h3{margin:0;font-size:17px}
+.rec p{margin:0;color:var(--ink-2);font-size:15px}
+.rec .meta{font-size:13px;color:var(--ink-2)}
+.rec .meta b{color:var(--ink)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.filters input,.filters select{font-family:inherit;font-size:15px;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;min-width:200px;flex:1}
+.filters input:focus-visible,.filters select:focus-visible{outline:2px solid var(--leaf-2);outline-offset:1px}
+.count{font-size:13px;color:var(--ink-2);margin:0 0 8px}
+footer{padding:36px 0 50px;color:var(--ink-2);font-size:13.5px}
+@media (max-width:820px){
+  .hero,.grid2{grid-template-columns:1fr}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .bar-row{grid-template-columns:110px 1fr 96px;font-size:14px}
+}
+@media print{
+  nav.toc{display:none} body{background:#fff}
+  .panel,.kpi,.rec{break-inside:avoid}
+  header.top{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .tbl-scroll{max-height:none;overflow:visible}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <p class="org">دوكمنتيشن فلاورز | إدارة التخطيط والتطوير</p>
+    <h1>تقرير المشتريات الشهري</h1>
+    <p class="period">الفترة: سبتمبر 2026 | المصدر: نظام المشتريات المشترك</p>
+    <div class="hero">
+      <div>
+        <div class="big" id="grandTotal">—<small>ر.س</small></div>
+        <div class="lbl">إجمالي المشتريات خلال الفترة شاملاً ضريبة القيمة المضافة</div>
+      </div>
+      <div class="mini">
+        <div><b>251</b><span>فاتورة</span></div>
+        <div><b>170</b><span>صنفاً مشترى</span></div>
+        <div><b>11</b><span>تصنيفاً</span></div>
+        <div><b id="avgInv">—</b><span>متوسط قيمة الفاتورة (ر.س)</span></div>
+      </div>
+    </div>
+    <div class="bouquet" id="bouquet" role="img" aria-label="توزيع المشتريات حسب التصنيف"></div>
+    <div class="legend" id="legend"></div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="أقسام التقرير">
+  <div class="wrap">
+    <a href="#exec">الملخص التنفيذي</a>
+    <a href="#cats">التصنيفات</a>
+    <a href="#conc">تركّز الإنفاق</a>
+    <a href="#flowers">الورد</a>
+    <a href="#prices">تحركات الأسعار</a>
+    <a href="#pay">النقدي والآجل</a>
+    <a href="#recs">التوصيات</a>
+    <a href="#detail">الجدول التفصيلي</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="exec">
+  <h2>الملخص التنفيذي</h2>
+  <p class="sub">أبرز ما تكشفه بيانات مشتريات الشهر، مرتبةً حسب أثرها على التكلفة والقرار.</p>
+  <div class="panel exec">
+    <p>بلغ إجمالي المشتريات <b>94,935.30 ر.س</b> موزعةً على 251 فاتورة و170 صنفاً ضمن 11 تصنيفاً. ويستحوذ الورد الطبيعي وحده على قرابة نصف الإنفاق، تليه العطور والشوكولاتة، لتشكّل هذه التصنيفات الثلاثة معاً <b>76.9%</b> من إجمالي المشتريات.</p>
+    <ul>
+      <li><b>تركّز مرتفع:</b> عشرة أصناف فقط تمثّل 45.4% من الإنفاق، و46 صنفاً (27% من الأصناف) تمثّل 80% منه؛ مما يعني أن ضبط أسعار هذه الأصناف المحدودة هو الرافعة الأكبر لخفض التكلفة.</li>
+      <li><b>الورد الهولندي يمثّل 35.8% من مشتريات الورد</b> (15,655 ر.س)، والكريز الكيني أرخص من نظيره الهولندي بنحو 15% للغصن الواحد.</li>
+      <li><b>منتجات الهدايا عالية القيمة</b> (العطور والإكسسوارات) بلغت 21,247 ر.س، أي 22.4% من المشتريات، وهي أصناف بطيئة الدوران نسبياً وتحتاج إلى متابعة نسبة البيع منها.</li>
+      <li><b>المشتريات الآجلة</b> بلغت 34,763.58 ر.س (36.6%)، وهي التزامات قائمة على المنشأة تستوجب جدولة سدادها.</li>
+      <li><b>تذبذب في الأسعار</b> لعدد من الأصناف، أبرزها فازة الجبس المقعّر (ارتفع آخر سعر بنسبة 94%) وشوكولاتة بستاني ربع (+26%)، مقابل انخفاضات ملموسة في البيونيا والتوليب.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="cats">
+  <h2>توزيع المشتريات حسب التصنيف</h2>
+  <p class="sub">قيمة المشتريات ونسبتها من الإجمالي، مع عدد الأصناف في كل تصنيف.</p>
+  <div class="grid2">
+    <div class="panel" id="catBars"></div>
+    <div class="panel scroll">
+      <table>
+        <thead><tr><th>التصنيف</th><th>الأصناف</th><th>القيمة (ر.س)</th><th>النسبة</th></tr></thead>
+        <tbody id="catTable"></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="note">تصنيف «مشتريات أخرى» يضم 44 صنفاً بقيمة 4,652 ر.س، منها نحو 1,198 ر.س مصروفات تشغيلية لا تدخل في تكلفة المنتج (وقود، زيت سيارة، وجبات، مشروبات، أدوات نظافة، ورق طباعة). خلط هذه المصروفات بمشتريات البضاعة يرفع تكلفة المنتج ظاهرياً ويُضعف دقة حساب هامش الربح.</div>
+</section>
+
+<section id="conc">
+  <h2>تركّز الإنفاق</h2>
+  <p class="sub">الأصناف العشرة الأعلى إنفاقاً، وهي محور أي تفاوض مع الموردين.</p>
+  <div class="kpis" style="margin-bottom:18px">
+    <div class="kpi"><b>45.4%</b><span>حصة أعلى 10 أصناف</span></div>
+    <div class="kpi"><b>46 صنفاً</b><span>تغطي 80% من الإنفاق</span></div>
+    <div class="kpi"><b>54 صنفاً</b><span>قيمة كل منها أقل من 100 ر.س</span></div>
+    <div class="kpi"><b>1,994 ر.س</b><span>إجمالي الأصناف الصغيرة (2.1%)</span></div>
+  </div>
+  <div class="panel" id="topBars"></div>
+  <div class="note">صنف «بيبي جوري» وحده بلغ 8,735 ر.س (9.2% من إجمالي المشتريات و20% من مشتريات الورد) بكمية 2,200 غصن. أي تحسين في سعره بمقدار 0.25 ر.س للغصن يوفّر نحو 550 ر.س شهرياً، أي قرابة 6,600 ر.س سنوياً عند ثبات الكميات.</div>
+</section>
+
+<section id="flowers">
+  <h2>تحليل مشتريات الورد</h2>
+  <p class="sub">الورد هو التصنيف الأكبر (43,736 ر.س، 56 صنفاً)، ويستحق قراءة مستقلة حسب المنشأ والنوع.</p>
+  <div class="grid2">
+    <div class="panel">
+      <h3 style="margin:0 0 4px;font-size:17px">حسب المنشأ المذكور في اسم الصنف</h3>
+      <div class="split">
+        <i style="background:var(--leaf);width:35.8%">35.8%</i>
+        <i style="background:var(--petal);width:7.1%" title="كيني 7.1%"></i>
+        <i style="background:var(--sage);width:57.1%;color:var(--ink)">57.1%</i>
+      </div>
+      <div class="legend" style="color:var(--ink)">
+        <span style="--c:var(--leaf)">هولندي 15,655 ر.س</span>
+        <span style="--c:var(--petal)">كيني 3,105 ر.س (7.1%)</span>
+        <span style="--c:var(--sage)">غير محدد المنشأ 24,976 ر.س</span>
+      </div>
+      <p style="font-size:14.5px;color:var(--ink-2);margin:14px 0 0">57% من مشتريات الورد لا يتضمن اسمها منشأ الورد، مما يحول دون مقارنة تكلفة الاستيراد الهولندي بالكيني بدقة. تثبيت المنشأ في اسم الصنف أو في حقل مستقل شرط أساسي لهذه المقارنة.</p>
+    </div>
+    <div class="panel">
+      <h3 style="margin:0 0 10px;font-size:17px">مقارنات سعرية داخل الورد</h3>
+      <div class="scroll"><table>
+        <thead><tr><th>الصنف</th><th>هولندي</th><th>كيني</th><th>الفرق</th></tr></thead>
+        <tbody>
+          <tr><td>كريز (غصن)</td><td class="n">4.03</td><td class="n">3.43</td><td class="n down">−15%</td></tr>
+          <tr><td>جربيرا (غصن)</td><td class="n">5.18</td><td class="n">—</td><td class="n">—</td></tr>
+        </tbody>
+      </table></div>
+      <p style="font-size:14.5px;color:var(--ink-2);margin:14px 0 0">الجربيرا بجميع ألوانها بلغت <b>8,473 ر.س</b> (1,795 غصناً) موزعةً على 9 أصناف، ويتراوح سعر الغصن بين 2.83 ر.س (أصفر) و5.18 ر.س (هولندي)، أي بفارق 83% بين أرخص لون وأغلاه. وتوزيع الكالا على 6 ألوان بإجمالي 1,034 ر.س فقط يشير إلى تشتت في الطلب يمكن ضبطه.</p>
+    </div>
+  </div>
+</section>
+
+<section id="prices">
+  <h2>تحركات الأسعار خلال الشهر</h2>
+  <p class="sub">الأصناف التي اختلف فيها آخر سعر شراء عن متوسط سعر الشهر بنسبة 5% فأكثر. الارتفاع مؤشر على ضغط سعري أو تغيّر مورد، والانخفاض فرصة لتثبيت السعر الجديد.</p>
+  <div class="panel tbl-scroll" style="padding:0">
+    <table>
+      <thead><tr><th>الصنف</th><th>التصنيف</th><th>متوسط السعر</th><th>آخر سعر</th><th>التغير</th><th>قيمة المشتريات</th><th>القراءة</th></tr></thead>
+      <tbody id="priceTable"></tbody>
+    </table>
+  </div>
+  <div class="note">بعض الانخفاضات الحادة (الكازابلانكا −30%، الماثيولا −33%) قد لا تعكس انخفاضاً حقيقياً في السعر، بل اختلاف وحدة الإدخال بين فاتورة وأخرى (غصن مقابل ربطة). يُوصى بالتحقق من الفواتير الأصلية قبل اعتماد هذه الأرقام في التفاوض.</div>
+</section>
+
+<section id="pay">
+  <h2>المشتريات النقدية والآجلة</h2>
+  <p class="sub">طريقة السداد تحدد حجم الالتزامات القائمة على المنشأة للموردين.</p>
+  <div class="panel">
+    <div class="split">
+      <i style="background:var(--leaf);width:63.4%">نقدي 63.4%</i>
+      <i style="background:var(--amber);width:36.6%">آجل 36.6%</i>
+    </div>
+    <div class="grid2" style="margin-top:14px">
+      <div><b style="font-size:22px;color:var(--leaf)">60,171.72 ر.س</b><br><span style="color:var(--ink-2)">مشتريات نقدية</span></div>
+      <div><b style="font-size:22px;color:var(--amber)">34,763.58 ر.س</b><br><span style="color:var(--ink-2)">مشتريات آجلة مستحقة للموردين</span></div>
+    </div>
+    <p style="font-size:14.5px;color:var(--ink-2);margin:16px 0 0">التقرير الحالي لا يوضح توزيع الآجل على الموردين ولا تواريخ استحقاقه. إضافة هذا التفصيل يتيح بناء جدول سداد ومعرفة الموردين الذين تُستفاد من مهلتهم الائتمانية فعلاً.</p>
+  </div>
+</section>
+
+
+<section id="recs">
+  <h2>التوصيات</h2>
+  <p class="sub">مرتبة حسب الأثر المالي المتوقع وسهولة التنفيذ.</p>
+  <div class="recs">
+    <div class="rec"><h3>التفاوض على عقد سعري شهري للأصناف العشرة الأعلى إنفاقاً</h3><p>تمثّل هذه الأصناف 45% من المشتريات، وأبرزها البيبي جوري والتوليب والجربيرا الهولندي. تثبيت السعر لكمية شهرية متوقعة يقلّل التذبذب ويحسّن الهامش.</p><p class="meta"><b>الأثر:</b> مرتفع | <b>المدة:</b> خلال الشهر القادم</p></div>
+    <div class="rec"><h3>اختبار البديل الكيني للأصناف المتاحة من المنشأين</h3><p>الكريز الكيني أرخص من الهولندي بنحو 15%. يُقترح تجربة الإحلال الجزئي في الأصناف ذات الاستخدام الكثيف مع قياس العمر الافتراضي في الثلاجة ونسبة التالف، لأن السعر الأقل لا يعني بالضرورة تكلفة أقل إذا ارتفع التالف.</p><p class="meta"><b>الأثر:</b> متوسط إلى مرتفع | <b>المدة:</b> تجربة لمدة شهر</p></div>
+    <div class="rec"><h3>ربط مشتريات العطور والإكسسوارات بمعدل البيع الفعلي</h3><p>بلغت 21,247 ر.س في شهر واحد، منها 5,849 ر.س لصنف واحد (سلسال فايندرا، 39 حبة). يُوصى بعدم إعادة الشراء إلا بعد مراجعة الكمية المباعة والمتبقية، ووضع حد أعلى لمخزون كل صنف.</p><p class="meta"><b>الأثر:</b> مرتفع على السيولة | <b>المدة:</b> فوري</p></div>
+    <div class="rec"><h3>فصل المصروفات التشغيلية عن مشتريات البضاعة</h3><p>إنشاء تصنيف مستقل في نظام المشتريات للوقود والوجبات والنظافة والقرطاسية، حتى تعكس تكلفة المنتج الأصناف الداخلة فيه فعلاً.</p><p class="meta"><b>الأثر:</b> دقة التقارير وحساب الهامش | <b>المدة:</b> تعديل بسيط في النظام</p></div>
+    <div class="rec"><h3>توحيد قائمة الأصناف ووحدات القياس</h3><p>اعتماد قائمة أصناف ثابتة يُختار منها عند الإدخال بدل الكتابة الحرة، مع تحديد وحدة افتراضية لكل صنف. هذا شرط لنجاح الربط مع نظام المخزون ولتقرير مقارنة أسعار الموردين.</p><p class="meta"><b>الأثر:</b> جوهري لكل التقارير اللاحقة | <b>المدة:</b> أسبوع</p></div>
+    <div class="rec"><h3>مراجعة ارتفاعات الأسعار غير المبررة</h3><p>فازة الجبس المقعّر (+94%)، وشوكولاتة بستاني ربع (+26%)، وفازة 12*20 (+10%). يُطلب من المسؤول عن الشراء توضيح سبب الارتفاع أو البحث عن مورد بديل.</p><p class="meta"><b>الأثر:</b> متوسط | <b>المدة:</b> فوري</p></div>
+    <div class="rec"><h3>تقليص تشتت ألوان الجربيرا والكالا</h3><p>شراء الجربيرا بتسعة أصناف لونية والكالا بستة ألوان يرفع احتمالية التالف في الألوان قليلة الطلب. يُقترح ربط ألوان الشراء بالألوان الأكثر طلباً في المتجر والواتساب.</p><p class="meta"><b>الأثر:</b> خفض التالف | <b>المدة:</b> الشهر القادم</p></div>
+    <div class="rec"><h3>تجميع الفواتير الصغيرة</h3><p>54 صنفاً تقل قيمة كل منها عن 100 ر.س، ومتوسط الفاتورة 378 ر.س. تجميع مشتريات المستلزمات في طلب أسبوعي موحّد يقلّل عدد الفواتير ووقت الإدخال والمشاوير.</p><p class="meta"><b>الأثر:</b> كفاءة تشغيلية | <b>المدة:</b> فوري</p></div>
+    <div class="rec"><h3>تطوير التقرير الشهري نفسه</h3><p>إضافة أبعاد غير متاحة حالياً: المورد، والفرع (الرئيسي والرياض)، ومنشأ الورد، وتواريخ استحقاق الآجل، والمقارنة مع الشهر السابق. بدون هذه الأبعاد يتعذر قياس أداء الموردين أو الفروع.</p><p class="meta"><b>الأثر:</b> جودة القرار الإداري | <b>المدة:</b> قبل تقرير أكتوبر</p></div>
+  </div>
+  <div class="note"><b>حدود التحليل:</b> بيانات التقرير لا تتضمن المورد ولا الفرع ولا تاريخ كل فاتورة ولا بيانات المبيعات، لذا فإن الاستنتاجات المتعلقة بدوران العطور والإكسسوارات ونسب التالف تقديرية وتحتاج إلى مطابقتها مع تقارير المبيعات ونظام المخزون. كما أن هذا هو أول تقرير شهري، فلا تتوفر مقارنة مع فترة سابقة.</div>
+</section>
+
+<section id="detail">
+  <h2>الجدول التفصيلي للأصناف</h2>
+  <p class="sub">جميع الأصناف المشتراة خلال الفترة، قابلة للبحث والتصفية حسب التصنيف.</p>
+  <div class="filters">
+    <input type="search" id="q" placeholder="ابحث باسم الصنف" aria-label="ابحث باسم الصنف">
+    <select id="catSel" aria-label="التصنيف"><option value="">جميع التصنيفات</option></select>
+  </div>
+  <p class="count" id="count"></p>
+  <div class="tbl-scroll">
+    <table>
+      <thead><tr><th>الصنف</th><th>التصنيف</th><th>الكمية</th><th>الوحدة</th><th>متوسط السعر</th><th>آخر سعر</th><th>الإجمالي (ر.س)</th></tr></thead>
+      <tbody id="detailTable"></tbody>
+    </table>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    أُعدّ هذا التقرير لإدارة التخطيط والتطوير في دوكمنتيشن فلاورز استناداً إلى بيانات نظام المشتريات المشترك. جميع المبالغ بالريال السعودي وتشمل ضريبة القيمة المضافة.
+  </div>
+</footer>
+
+<script>
+const ITEMS = [{"cat": "مشتريات الورد", "name": "بيبي جوري", "qty": 2200, "unit": "غصن", "avg": 3.97, "last": 4.03, "total": 8735.4}, {"cat": "مشتريات الورد", "name": "توليب هولندي", "qty": 949, "unit": "غصن", "avg": 7.59, "last": 6.9, "total": 7200.07}, {"cat": "مشتريات الورد", "name": "جربيرا هولندي", "qty": 1135, "unit": "غصن", "avg": 5.18, "last": 5.18, "total": 5873.63}, {"cat": "مشتريات الورد", "name": "كريز كيني", "qty": 550, "unit": "غصن", "avg": 3.43, "last": 3.45, "total": 1886.0}, {"cat": "مشتريات الورد", "name": "بيونيا", "qty": 65, "unit": "حبة", "avg": 26.27, "last": 20.7, "total": 1707.75}, {"cat": "مشتريات الورد", "name": "جاردن روز", "qty": 320, "unit": "غصن", "avg": 4.78, "last": 4.6, "total": 1529.5}, {"cat": "مشتريات الورد", "name": "كاليبتوس هولندي", "qty": 36, "unit": "ربطة", "avg": 37.69, "last": 40.25, "total": 1357.0}, {"cat": "مشتريات الورد", "name": "جوري سوباتي", "qty": 390, "unit": "غصن", "avg": 2.88, "last": 2.88, "total": 1121.25}, {"cat": "مشتريات الورد", "name": "قرنفل", "qty": 300, "unit": "غصن", "avg": 3.45, "last": 3.45, "total": 1035.0}, {"cat": "مشتريات الورد", "name": "ليليوم كيني", "qty": 180, "unit": "غصن", "avg": 5.14, "last": 4.6, "total": 925.75}, {"cat": "مشتريات الورد", "name": "ستاتيس", "qty": 24, "unit": "ربطة", "avg": 32.1, "last": 34.5, "total": 770.5}, {"cat": "مشتريات الورد", "name": "كريز هولندي", "qty": 170, "unit": "غصن", "avg": 4.03, "last": 4.03, "total": 684.25}, {"cat": "مشتريات الورد", "name": "سمبيديوم", "qty": 7, "unit": "غصن", "avg": 86.25, "last": 86.25, "total": 603.75}, {"cat": "مشتريات الورد", "name": "استوميريا", "qty": 160, "unit": "غصن", "avg": 3.45, "last": 3.45, "total": 552.0}, {"cat": "مشتريات الورد", "name": "جربيرا ابيض", "qty": 120, "unit": "غصن", "avg": 4.58, "last": 4.58, "total": 549.24}, {"cat": "مشتريات الورد", "name": "كازيلانكا", "qty": 42, "unit": "ربطة", "avg": 12.32, "last": 8.63, "total": 517.5}, {"cat": "مشتريات الورد", "name": "بيبي روز", "qty": 13, "unit": "ربطة", "avg": 39.72, "last": 40.25, "total": 516.35}, {"cat": "مشتريات الورد", "name": "استر", "qty": 13, "unit": "ربطة", "avg": 34.5, "last": 34.5, "total": 448.5}, {"cat": "مشتريات الورد", "name": "ليليوم اورنج ومنوع", "qty": 120, "unit": "غصن", "avg": 3.45, "last": 3.45, "total": 414.0}, {"cat": "مشتريات الورد", "name": "جربيرا سكري", "qty": 120, "unit": "غصن", "avg": 3.15, "last": 3.15, "total": 378.12}, {"cat": "مشتريات الورد", "name": "جربيرا اصفر", "qty": 120, "unit": "غصن", "avg": 2.83, "last": 2.83, "total": 339.48}, {"cat": "مشتريات الورد", "name": "جلبيرا هولندي", "qty": 60, "unit": "غصن", "avg": 5.18, "last": 5.18, "total": 310.5}, {"cat": "مشتريات الورد", "name": "ماثيولا", "qty": 5, "unit": "غصن", "avg": 60.17, "last": 40.25, "total": 300.84}, {"cat": "مشتريات الورد", "name": "كالا ابيض", "qty": 10, "unit": "غصن", "avg": 29.15, "last": 29.15, "total": 291.52}, {"cat": "مشتريات الورد", "name": "كريز اخضر", "qty": 160, "unit": "غصن", "avg": 1.73, "last": 1.73, "total": 276.8}, {"cat": "مشتريات الورد", "name": "جربيرا موف", "qty": 60, "unit": "غصن", "avg": 4.58, "last": 4.58, "total": 274.62}, {"cat": "مشتريات الورد", "name": "جربيرا اورنج", "qty": 60, "unit": "غصن", "avg": 4.58, "last": 4.58, "total": 274.62}, {"cat": "مشتريات الورد", "name": "سانتيني", "qty": 50, "unit": "غصن", "avg": 5.36, "last": 5.36, "total": 267.95}, {"cat": "مشتريات الورد", "name": "جربيرا حمراء", "qty": 60, "unit": "غصن", "avg": 4.42, "last": 4.42, "total": 264.96}, {"cat": "مشتريات الورد", "name": "راس كاس", "qty": 100, "unit": "غصن", "avg": 2.65, "last": 2.65, "total": 264.5}, {"cat": "مشتريات الورد", "name": "دوار الشمس", "qty": 5, "unit": "ربطة", "avg": 51.75, "last": 51.75, "total": 258.75}, {"cat": "مشتريات الورد", "name": "استوما هولندي", "qty": 20, "unit": "حبة", "avg": 11.5, "last": 11.5, "total": 230.0}, {"cat": "مشتريات الورد", "name": "هابريكوم", "qty": 70, "unit": "حبة", "avg": 3.29, "last": 3.45, "total": 230.0}, {"cat": "مشتريات الورد", "name": "سيلداجو", "qty": 8, "unit": "ربطة", "avg": 28.75, "last": 28.75, "total": 230.0}, {"cat": "مشتريات الورد", "name": "كراسبيديا", "qty": 50, "unit": "غصن", "avg": 4.42, "last": 4.42, "total": 220.8}, {"cat": "مشتريات الورد", "name": "واكس فلاور", "qty": 25, "unit": "غصن", "avg": 8.63, "last": 8.63, "total": 215.63}, {"cat": "مشتريات الورد", "name": "جربيرا وردي", "qty": 60, "unit": "غصن", "avg": 3.46, "last": 3.46, "total": 207.69}, {"cat": "مشتريات الورد", "name": "هيدرنجا", "qty": 10, "unit": "حبة", "avg": 20.7, "last": 20.7, "total": 207.0}, {"cat": "مشتريات الورد", "name": "تانا", "qty": 5, "unit": "ربطة", "avg": 40.25, "last": 40.25, "total": 201.25}, {"cat": "مشتريات الورد", "name": "استلبي", "qty": 50, "unit": "غصن", "avg": 3.78, "last": 3.78, "total": 189.18}, {"cat": "مشتريات الورد", "name": "بانيكم", "qty": 50, "unit": "غصن", "avg": 3.62, "last": 3.62, "total": 181.13}, {"cat": "مشتريات الورد", "name": "كازبلانكا كينيا", "qty": 20, "unit": "غصن", "avg": 8.91, "last": 8.63, "total": 178.25}, {"cat": "مشتريات الورد", "name": "كالا اسود", "qty": 10, "unit": "غصن", "avg": 17.02, "last": 17.02, "total": 170.2}, {"cat": "مشتريات الورد", "name": "كالا اصفر", "qty": 10, "unit": "غصن", "avg": 15.44, "last": 15.44, "total": 154.45}, {"cat": "مشتريات الورد", "name": "كاليستفوس", "qty": 50, "unit": "غصن", "avg": 2.99, "last": 2.99, "total": 149.5}, {"cat": "مشتريات الورد", "name": "كالا اورنج", "qty": 10, "unit": "غصن", "avg": 14.65, "last": 14.65, "total": 146.51}, {"cat": "مشتريات الورد", "name": "كالا وردي", "qty": 10, "unit": "غصن", "avg": 14.65, "last": 14.65, "total": 146.51}, {"cat": "مشتريات الورد", "name": "هيدرنجا اخضر", "qty": 7, "unit": "حبة", "avg": 18.4, "last": 18.4, "total": 128.8}, {"cat": "مشتريات الورد", "name": "كالا موف", "qty": 10, "unit": "غصن", "avg": 12.44, "last": 12.44, "total": 124.43}, {"cat": "مشتريات الورد", "name": "جوري كينيا 18", "qty": 40, "unit": "غصن", "avg": 2.88, "last": 2.88, "total": 115.0}, {"cat": "مشتريات الورد", "name": "كاب", "qty": 3, "unit": "ربطة", "avg": 34.5, "last": 34.5, "total": 103.5}, {"cat": "مشتريات الورد", "name": "استوما ابيض", "qty": 10, "unit": "حبة", "avg": 9.2, "last": 9.2, "total": 92.0}, {"cat": "مشتريات الورد", "name": "ساق بامبو 60 سم", "qty": 1, "unit": "ربطة", "avg": 74.75, "last": 74.75, "total": 74.75}, {"cat": "مشتريات الورد", "name": "لياترتيس ابيض", "qty": 20, "unit": "غصن", "avg": 2.42, "last": 2.42, "total": 48.4}, {"cat": "مشتريات الورد", "name": "ليليوم اصفر", "qty": 10, "unit": "غصن", "avg": 3.51, "last": 3.51, "total": 35.08}, {"cat": "مشتريات الورد", "name": "لياترتيس موف", "qty": 10, "unit": "غصن", "avg": 2.59, "last": 2.59, "total": 25.9}, {"cat": "مشتريات العطور", "name": "عطر بلو دي شانيل", "qty": 5, "unit": "حبة", "avg": 653.2, "last": 649.75, "total": 3266.0}, {"cat": "مشتريات العطور", "name": "عطر كوكو شانيل", "qty": 9, "unit": "حبة", "avg": 299.0, "last": 299.0, "total": 2691.0}, {"cat": "مشتريات العطور", "name": "عطر برادا باردوكس", "qty": 5, "unit": "حبة", "avg": 411.5, "last": 425.0, "total": 2057.5}, {"cat": "مشتريات العطور", "name": "عطر توم فورد", "qty": 2, "unit": "حبة", "avg": 534.75, "last": 534.75, "total": 1069.5}, {"cat": "مشتريات العطور", "name": "عطر كالفن كلاين بيوتي 100مل", "qty": 9, "unit": "حبة", "avg": 92.0, "last": 92.0, "total": 828.0}, {"cat": "مشتريات العطور", "name": "عطر جورجيو ارماني اس اي اودي بارفيوم 100مل", "qty": 2, "unit": "غصن", "avg": 345.0, "last": 345.0, "total": 690.0}, {"cat": "مشتريات العطور", "name": "بلو دي شانيل", "qty": 1, "unit": "حبة", "avg": 649.75, "last": 649.75, "total": 649.75}, {"cat": "مشتريات العطور", "name": "عطر دولتشي اند غابانا", "qty": 2, "unit": "حبة", "avg": 287.5, "last": 287.5, "total": 575.0}, {"cat": "مشتريات العطور", "name": "عطر جيفنشي جنتلمان", "qty": 2, "unit": "حبة", "avg": 276.0, "last": 253.0, "total": 552.0}, {"cat": "مشتريات العطور", "name": "عطر سوفاج تواليت", "qty": 1, "unit": "حبة", "avg": 414.0, "last": 414.0, "total": 414.0}, {"cat": "مشتريات العطور", "name": "عطر سان لوران ليبر", "qty": 1, "unit": "حبة", "avg": 402.5, "last": 402.5, "total": 402.5}, {"cat": "مشتريات العطور", "name": "عطر جورجيو ارماني سترونجر ويذ يو 100مل", "qty": 1, "unit": "حبة", "avg": 391.0, "last": 391.0, "total": 391.0}, {"cat": "مشتريات العطور", "name": "عطر تستر باكوربان", "qty": 1, "unit": "حبة", "avg": 345.0, "last": 345.0, "total": 345.0}, {"cat": "مشتريات العطور", "name": "عطر غوتشي جولتي ابسولوت الرجالي 90مل", "qty": 1, "unit": "حبة", "avg": 287.5, "last": 287.5, "total": 287.5}, {"cat": "مشتريات العطور", "name": "دولسي جابانا", "qty": 1, "unit": "حبة", "avg": 287.0, "last": 287.0, "total": 287.0}, {"cat": "مشتريات العطور", "name": "عطر مانسيرا روز فانيليا", "qty": 1, "unit": "حبة", "avg": 253.0, "last": 253.0, "total": 253.0}, {"cat": "مشتريات العطور", "name": "غوتشي جولتي بور", "qty": 1, "unit": "حبة", "avg": 201.25, "last": 201.25, "total": 201.25}, {"cat": "مشتريات العطور", "name": "عطر ماي بربري - تستر", "qty": 1, "unit": "حبة", "avg": 200.1, "last": 200.1, "total": 200.1}, {"cat": "مشتريات الشوكولاتة", "name": "شوكلت باتشي ربع", "qty": 46, "unit": "حبة", "avg": 69.5, "last": 69.5, "total": 3197.0}, {"cat": "مشتريات الشوكولاتة", "name": "شوكلت هانوفريان مكس براند", "qty": 18, "unit": "حبة", "avg": 126.0, "last": 126.0, "total": 2268.0}, {"cat": "مشتريات الشوكولاتة", "name": "شوكلت أنوش وردي", "qty": 78, "unit": "حبة", "avg": 25.38, "last": 24.75, "total": 1979.81}, {"cat": "مشتريات الشوكولاتة", "name": "شوكلت انوش اخضر", "qty": 58, "unit": "حبة", "avg": 25.38, "last": 24.75, "total": 1472.2}, {"cat": "مشتريات الشوكولاتة", "name": "انوش اخضر كبير -روكي بايتس", "qty": 15, "unit": "حبة", "avg": 91.46, "last": 63.49, "total": 1371.83}, {"cat": "مشتريات الشوكولاتة", "name": "شوكلت آني وداني", "qty": 17, "unit": "حبة", "avg": 55.24, "last": 55.24, "total": 939.06}, {"cat": "مشتريات الشوكولاتة", "name": "شوكلت بستاني ربع", "qty": 18, "unit": "حبة", "avg": 43.56, "last": 55.0, "total": 783.99}, {"cat": "مشتريات الشوكولاتة", "name": "شوكلت باتشي ماكرون", "qty": 12, "unit": "حبة", "avg": 64.0, "last": 64.0, "total": 768.0}, {"cat": "مشتريات الشوكولاتة", "name": "شوكلت باتشي بار", "qty": 20, "unit": "حبة", "avg": 38.0, "last": 38.0, "total": 760.0}, {"cat": "مشتريات الشوكولاتة", "name": "شوكلت بستاني روز", "qty": 10, "unit": "حبة", "avg": 25.57, "last": 25.57, "total": 255.7}, {"cat": "مشتريات الشوكولاتة", "name": "شوكلت فهدة صغير- كراميل", "qty": 3, "unit": "حبة", "avg": 65.7, "last": 65.7, "total": 197.1}, {"cat": "مشتريات الشوكولاتة", "name": "شوكلت فهدة كبير", "qty": 1, "unit": "حبة", "avg": 93.15, "last": 93.15, "total": 93.15}, {"cat": "مشتريات الإكسسوارات", "name": "سلسال فايندرا فضي قديم", "qty": 39, "unit": "حبة", "avg": 149.98, "last": 150.01, "total": 5849.41}, {"cat": "مشتريات الإكسسوارات", "name": "قلم حبر جاف", "qty": 1, "unit": "حبة", "avg": 237.0, "last": 237.0, "total": 237.0}, {"cat": "مشتريات أخرى", "name": "سمك", "qty": 89, "unit": "حبة", "avg": 8.11, "last": 8.0, "total": 722.0}, {"cat": "مشتريات أخرى", "name": "بنزين", "qty": 264.65, "unit": "لتر", "avg": 2.19, "last": 2.18, "total": 579.98}, {"cat": "مشتريات أخرى", "name": "بوكس اكريليك مسكه", "qty": 5, "unit": "حبة", "avg": 100.0, "last": 100.0, "total": 500.0}, {"cat": "مشتريات أخرى", "name": "فلين", "qty": 7, "unit": "حبة", "avg": 69.57, "last": 60.0, "total": 487.01}, {"cat": "مشتريات أخرى", "name": "المعازيم دهن 30 مل", "qty": 1, "unit": "حبة", "avg": 296.0, "last": 296.0, "total": 296.0}, {"cat": "مشتريات أخرى", "name": "عشب صناعي", "qty": 5, "unit": "حبة", "avg": 34.99, "last": 34.99, "total": 174.97}, {"cat": "مشتريات أخرى", "name": "حبة دجاج ع الفحم رز بشاور", "qty": 4, "unit": "حبة", "avg": 42.25, "last": 42.0, "total": 169.0}, {"cat": "مشتريات أخرى", "name": "حبة دجاج شواية رز مشكل", "qty": 4, "unit": "حبة", "avg": 41.75, "last": 42.0, "total": 167.0}, {"cat": "مشتريات أخرى", "name": "ستاند اكرلك", "qty": 2, "unit": "حبة", "avg": 80.01, "last": 80.01, "total": 160.01}, {"cat": "مشتريات أخرى", "name": "أكل سمك 100 جرام", "qty": 11, "unit": "كيلو", "avg": 11.36, "last": 12.5, "total": 125.0}, {"cat": "مشتريات أخرى", "name": "شحنه من الرياض اكياس دي ام", "qty": 1, "unit": "حبة", "avg": 120.0, "last": 120.0, "total": 120.0}, {"cat": "مشتريات أخرى", "name": "حجر ابيض 10 كيلو", "qty": 4, "unit": "كيس", "avg": 24.0, "last": 24.0, "total": 96.0}, {"cat": "مشتريات أخرى", "name": "شطرطون لصقة كبير", "qty": 4, "unit": "حبة", "avg": 20.0, "last": 20.0, "total": 80.0}, {"cat": "مشتريات أخرى", "name": "ورق فالكون A4", "qty": 1, "unit": "حبة", "avg": 75.0, "last": 75.0, "total": 75.0}, {"cat": "مشتريات أخرى", "name": "علب اكل سمك", "qty": 4, "unit": "درزن", "avg": 18.4, "last": 18.4, "total": 73.6}, {"cat": "مشتريات أخرى", "name": "تغريسات اكريلك", "qty": 3, "unit": "درزن", "avg": 24.0, "last": 24.0, "total": 72.0}, {"cat": "مشتريات أخرى", "name": "ستيكر لاصق", "qty": 7, "unit": "حبة", "avg": 10.0, "last": 10.01, "total": 70.01}, {"cat": "مشتريات أخرى", "name": "حامل كارت", "qty": 12, "unit": "حبة", "avg": 5.75, "last": 5.5, "total": 69.0}, {"cat": "مشتريات أخرى", "name": "تيب قماش 25 يارده", "qty": 5, "unit": "حبة", "avg": 9.2, "last": 9.2, "total": 46.0}, {"cat": "مشتريات أخرى", "name": "زيت 20/50 سوبر جي تي", "qty": 1, "unit": "حبة", "avg": 45.0, "last": 45.0, "total": 45.0}, {"cat": "مشتريات أخرى", "name": "بيبسي وسط", "qty": 8, "unit": "حبة", "avg": 5.56, "last": 5.0, "total": 44.5}, {"cat": "مشتريات أخرى", "name": "اومنيو منظف سجاد", "qty": 2, "unit": "حبة", "avg": 21.0, "last": 21.0, "total": 42.0}, {"cat": "مشتريات أخرى", "name": "تربة", "qty": 2, "unit": "حبة", "avg": 20.0, "last": 20.0, "total": 40.0}, {"cat": "مشتريات أخرى", "name": "اعواد خشبية طويلة", "qty": 4, "unit": "حبة", "avg": 9.01, "last": 9.01, "total": 36.02}, {"cat": "مشتريات أخرى", "name": "بخاخ ملمع نباتات", "qty": 1, "unit": "حبة", "avg": 35.1, "last": 35.1, "total": 35.1}, {"cat": "مشتريات أخرى", "name": "سلة خسف 2*1 مستطيل", "qty": 1, "unit": "حبة", "avg": 35.0, "last": 35.0, "total": 35.0}, {"cat": "مشتريات أخرى", "name": "قيطان جميع الالوان", "qty": 1, "unit": "رول", "avg": 30.0, "last": 30.0, "total": 30.0}, {"cat": "مشتريات أخرى", "name": "شطرطون شفاف", "qty": 3, "unit": "درزن", "avg": 9.2, "last": 9.2, "total": 27.6}, {"cat": "مشتريات أخرى", "name": "كمامه", "qty": 50, "unit": "علبة", "avg": 0.5, "last": 0.5, "total": 25.0}, {"cat": "مشتريات أخرى", "name": "شمع فسفورى", "qty": 12, "unit": "درزن", "avg": 2.0, "last": 2.0, "total": 24.01}, {"cat": "مشتريات أخرى", "name": "بالون تخرج قصدير", "qty": 2, "unit": "حبة", "avg": 11.5, "last": 11.5, "total": 23.0}, {"cat": "مشتريات أخرى", "name": "لولو بالمتر", "qty": 2, "unit": "متر", "avg": 10.0, "last": 10.0, "total": 20.0}, {"cat": "مشتريات أخرى", "name": "شريط ستان صغير", "qty": 4, "unit": "متر", "avg": 5.0, "last": 5.0, "total": 20.0}, {"cat": "مشتريات أخرى", "name": "شريطة وكتابة", "qty": 2, "unit": "حبة", "avg": 10.0, "last": 10.0, "total": 20.0}, {"cat": "مشتريات أخرى", "name": "مكنسة خشنه", "qty": 1, "unit": "حبة", "avg": 16.0, "last": 16.0, "total": 16.0}, {"cat": "مشتريات أخرى", "name": "شرايط ستان ساده", "qty": 1, "unit": "حبة", "avg": 15.0, "last": 15.0, "total": 15.0}, {"cat": "مشتريات أخرى", "name": "ظرف فلوس شفاف", "qty": 2, "unit": "درزن", "avg": 7.01, "last": 7.01, "total": 14.01}, {"cat": "مشتريات أخرى", "name": "حنفية مع شطرطون ابيض", "qty": 1, "unit": "حبة", "avg": 12.0, "last": 12.0, "total": 12.0}, {"cat": "مشتريات أخرى", "name": "مياه شرب", "qty": 6, "unit": "حبة", "avg": 2.0, "last": 2.0, "total": 12.0}, {"cat": "مشتريات أخرى", "name": "قفازات", "qty": 1, "unit": "كيس", "avg": 10.75, "last": 10.75, "total": 10.75}, {"cat": "مشتريات أخرى", "name": "شرائط ستان 5 شدة", "qty": 1, "unit": "حبة", "avg": 7.0, "last": 7.0, "total": 7.0}, {"cat": "مشتريات أخرى", "name": "اكياس سحاب ويتي", "qty": 2, "unit": "حبة", "avg": 3.0, "last": 3.0, "total": 6.0}, {"cat": "مشتريات أخرى", "name": "كرستال قاعدة سادة", "qty": 1, "unit": "درزن", "avg": 5.0, "last": 5.0, "total": 5.0}, {"cat": "مشتريات أخرى", "name": "كيس هدايا صغير", "qty": 3, "unit": "حبة", "avg": 1.5, "last": 1.5, "total": 4.5}, {"cat": "مشتريات الفازات", "name": "فازة 12*25", "qty": 94, "unit": "حبة", "avg": 12.0, "last": 11.0, "total": 1128.42}, {"cat": "مشتريات الفازات", "name": "فازة 12*20", "qty": 60, "unit": "حبة", "avg": 11.8, "last": 13.0, "total": 708.08}, {"cat": "مشتريات الفازات", "name": "فازة 10*25", "qty": 60, "unit": "حبة", "avg": 10.59, "last": 9.95, "total": 635.54}, {"cat": "مشتريات الفازات", "name": "فازة جبس مقعر مرشوش", "qty": 40, "unit": "حبة", "avg": 8.75, "last": 17.0, "total": 350.0}, {"cat": "مشتريات الفازات", "name": "فازة 10*15", "qty": 48, "unit": "حبة", "avg": 5.5, "last": 5.5, "total": 263.85}, {"cat": "مشتريات الفازات", "name": "فازة جبس دائرى كبير مرشوش", "qty": 20, "unit": "حبة", "avg": 12.0, "last": 12.0, "total": 240.0}, {"cat": "مشتريات الفازات", "name": "فازة جبس صدفة", "qty": 20, "unit": "حبة", "avg": 12.0, "last": 12.0, "total": 240.0}, {"cat": "مشتريات الفازات", "name": "فازة كروي زجاج م18", "qty": 27, "unit": "حبة", "avg": 8.0, "last": 8.0, "total": 216.06}, {"cat": "مشتريات الفازات", "name": "فازة جبس مقلم مرشوش", "qty": 10, "unit": "حبة", "avg": 17.0, "last": 17.0, "total": 170.0}, {"cat": "مشتريات الفازات", "name": "فازات 12*25", "qty": 12, "unit": "حبة", "avg": 13.0, "last": 13.0, "total": 156.0}, {"cat": "مشتريات الفازات", "name": "تاج مرشوش", "qty": 25, "unit": "حبة", "avg": 6.0, "last": 6.0, "total": 150.0}, {"cat": "مشتريات الفازات", "name": "جبس وسط مرشوش", "qty": 10, "unit": "حبة", "avg": 10.0, "last": 10.0, "total": 100.0}, {"cat": "مشتريات الفازات", "name": "فازة زجاج مربع", "qty": 5, "unit": "حبة", "avg": 9.0, "last": 9.0, "total": 45.02}, {"cat": "مشتريات الفازات", "name": "فازة ماركن كروي 19 اسود", "qty": 10, "unit": "حبة", "avg": 2.93, "last": 2.93, "total": 29.33}, {"cat": "مشتريات الكيك", "name": "كيك مانجو", "qty": 18, "unit": "حبة", "avg": 76.47, "last": 76.46, "total": 1376.46}, {"cat": "مشتريات الكيك", "name": "كيك بلو فلفت", "qty": 12, "unit": "حبة", "avg": 76.46, "last": 76.46, "total": 917.53}, {"cat": "مشتريات الكيك", "name": "كيك ريد فلفت", "qty": 10, "unit": "حبة", "avg": 76.46, "last": 76.46, "total": 764.6}, {"cat": "هدوء سبا", "name": "باقة مساج مع حمام مغربي", "qty": 3, "unit": "حبة", "avg": 350.0, "last": 350.0, "total": 1050.0}, {"cat": "هدوء سبا", "name": "مساج سويدي مع جاكوزي", "qty": 2, "unit": "حبة", "avg": 175.0, "last": 175.0, "total": 350.0}, {"cat": "مشتريات النباتات", "name": "نبتة الزاميا", "qty": 32, "unit": "حبة", "avg": 35.0, "last": 35.0, "total": 1120.0}, {"cat": "مشتريات النباتات", "name": "نبتة جلد النمر", "qty": 2, "unit": "حبة", "avg": 50.0, "last": 50.0, "total": 100.0}, {"cat": "مشتريات التغليف", "name": "تغليف بلاستيك شدة 20", "qty": 55, "unit": "حبة", "avg": 4.6, "last": 4.6, "total": 253.0}, {"cat": "مشتريات التغليف", "name": "AEساده", "qty": 11.75, "unit": "متر", "avg": 15.0, "last": 15.0, "total": 176.2}, {"cat": "مشتريات التغليف", "name": "تغليف رول شبك", "qty": 18, "unit": "رول", "avg": 7.98, "last": 7.95, "total": 143.72}, {"cat": "مشتريات التغليف", "name": "تغليف جديد مخطط", "qty": 11, "unit": "رول", "avg": 11.99, "last": 11.99, "total": 131.94}, {"cat": "مشتريات التغليف", "name": "تغليف قماش دانتيل ابيض", "qty": 12, "unit": "رول", "avg": 6.0, "last": 6.0, "total": 72.04}, {"cat": "مشتريات التغليف", "name": "تغليف خيش رول", "qty": 6, "unit": "رول", "avg": 11.5, "last": 11.5, "total": 69.0}, {"cat": "مشتريات التغليف", "name": "تغليف فازلين ناعم", "qty": 2, "unit": "رول", "avg": 9.01, "last": 9.01, "total": 18.01}, {"cat": "مشتريات ورد صناعي", "name": "ديكوا بنش سكري", "qty": 3, "unit": "حبة", "avg": 15.0, "last": 15.0, "total": 44.99}, {"cat": "مشتريات ورد صناعي", "name": "اوركيد", "qty": 6, "unit": "حبة", "avg": 5.0, "last": 5.0, "total": 30.02}, {"cat": "مشتريات ورد صناعي", "name": "بنش تنسيق ناعم ملون", "qty": 3, "unit": "حبة", "avg": 10.0, "last": 10.0, "total": 30.01}, {"cat": "مشتريات ورد صناعي", "name": "اغصان بيونيا وسط ملون", "qty": 5, "unit": "حبة", "avg": 6.0, "last": 6.0, "total": 30.01}, {"cat": "مشتريات ورد صناعي", "name": "وكس بنش ملون", "qty": 2, "unit": "حبة", "avg": 15.0, "last": 15.0, "total": 29.99}, {"cat": "مشتريات ورد صناعي", "name": "اغصان اكسسوار2 ملون", "qty": 3, "unit": "حبة", "avg": 7.0, "last": 7.0, "total": 21.01}, {"cat": "مشتريات ورد صناعي", "name": "خظار ناعم بنش", "qty": 2, "unit": "حبة", "avg": 10.01, "last": 10.01, "total": 20.01}, {"cat": "مشتريات ورد صناعي", "name": "انتريوم ابيض صناعي", "qty": 6, "unit": "حبة", "avg": 2.5, "last": 2.5, "total": 14.97}, {"cat": "مشتريات ورد صناعي", "name": "كرات ملمس 3حبات", "qty": 2, "unit": "حبة", "avg": 7.01, "last": 7.01, "total": 14.01}, {"cat": "مشتريات ورد صناعي", "name": "بنش ديوا صغير", "qty": 1, "unit": "حبة", "avg": 5.0, "last": 5.0, "total": 5.0}];
+const COLORS = {
+ 'مشتريات الورد':'#B4436C','مشتريات العطور':'#B7791F','مشتريات الشوكولاتة':'#6B4226',
+ 'مشتريات الإكسسوارات':'#5B6C8F','مشتريات أخرى':'#8A938E','مشتريات الفازات':'#2E6B4F',
+ 'مشتريات الكيك':'#D9879E','هدوء سبا':'#7FA7A0','مشتريات النباتات':'#4E8A3E',
+ 'مشتريات التغليف':'#C2A878','مشتريات ورد صناعي':'#A99BC4'};
+const short = c => c.replace('مشتريات ','');
+const fmt = (n,d=2) => Number(n).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
+const esc = s => String(s).replace(/[&<>"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+
+const total = ITEMS.reduce((a,i)=>a+i.total,0);
+document.getElementById('grandTotal').innerHTML = fmt(total)+'<small>ر.س</small>';
+document.getElementById('avgInv').textContent = fmt(total/251,0);
+
+const cats = {};
+ITEMS.forEach(i=>{cats[i.cat]=cats[i.cat]||{v:0,n:0};cats[i.cat].v+=i.total;cats[i.cat].n++;});
+const catList = Object.entries(cats).sort((a,b)=>b[1].v-a[1].v);
+
+document.getElementById('bouquet').innerHTML = catList.map(([c,o])=>
+ `<i style="width:${o.v/total*100}%;background:${COLORS[c]}" title="${esc(short(c))}: ${fmt(o.v)} ر.س (${(o.v/total*100).toFixed(1)}%)"></i>`).join('');
+document.getElementById('legend').innerHTML = catList.map(([c,o])=>
+ `<span style="--c:${COLORS[c]}">${esc(short(c))} ${(o.v/total*100).toFixed(1)}%</span>`).join('');
+
+const maxCat = catList[0][1].v;
+document.getElementById('catBars').innerHTML = catList.map(([c,o])=>
+ `<div class="bar-row"><span>${esc(short(c))}</span><div class="track"><i style="width:${o.v/maxCat*100}%;background:${COLORS[c]}"></i></div><span class="v">${fmt(o.v,0)}<small>${(o.v/total*100).toFixed(1)}%</small></span></div>`).join('');
+document.getElementById('catTable').innerHTML = catList.map(([c,o])=>
+ `<tr><td>${esc(short(c))}</td><td class="n">${o.n}</td><td class="n">${fmt(o.v)}</td><td class="n">${(o.v/total*100).toFixed(1)}%</td></tr>`).join('')+
+ `<tr style="font-weight:600"><td>الإجمالي</td><td class="n">${ITEMS.length}</td><td class="n">${fmt(total)}</td><td class="n">100%</td></tr>`;
+
+const top10 = [...ITEMS].sort((a,b)=>b.total-a.total).slice(0,10);
+document.getElementById('topBars').innerHTML = top10.map(i=>
+ `<div class="bar-row"><span>${esc(i.name)}</span><div class="track"><i style="width:${i.total/top10[0].total*100}%;background:${COLORS[i.cat]}"></i></div><span class="v">${fmt(i.total,0)}<small>${(i.total/total*100).toFixed(1)}%</small></span></div>`).join('');
+
+const NOTES = {
+ 'فازة جبس مقعر مرشوش':'ارتفاع حاد يستوجب الاستفسار',
+ 'شوكلت بستاني ربع':'ارتفاع ملموس، مراجعة المورد',
+ 'فازة 12*20':'ارتفاع، مراجعة المورد',
+ 'كاليبتوس هولندي':'ارتفاع تدريجي',
+ 'ستاتيس':'ارتفاع تدريجي',
+ 'أكل سمك 100 جرام':'ارتفاع طفيف القيمة',
+ 'كازيلانكا':'يُرجّح اختلاف الوحدة',
+ 'ماثيولا':'يُرجّح اختلاف الوحدة',
+ 'انوش اخضر كبير -روكي بايتس':'انخفاض، تثبيت السعر الجديد',
+ 'بيونيا':'انخفاض، فرصة تثبيت',
+ 'توليب هولندي':'انخفاض، فرصة تثبيت',
+ 'ليليوم كيني':'انخفاض، فرصة تثبيت'};
+const moves = ITEMS.map(i=>({...i,ch:(i.last-i.avg)/i.avg*100})).filter(i=>Math.abs(i.ch)>=5).sort((a,b)=>b.ch-a.ch);
+document.getElementById('priceTable').innerHTML = moves.map(i=>
+ `<tr><td>${esc(i.name)}</td><td>${esc(short(i.cat))}</td><td class="n">${fmt(i.avg)}</td><td class="n">${fmt(i.last)}</td><td class="n ${i.ch>0?'up':'down'}" dir="ltr">${i.ch>0?'+':''}${i.ch.toFixed(1)}%</td><td class="n">${fmt(i.total)}</td><td>${esc(NOTES[i.name]||(i.ch>0?'ارتفاع':'انخفاض'))}</td></tr>`).join('');
+
+const sel = document.getElementById('catSel');
+catList.forEach(([c])=>{const o=document.createElement('option');o.value=c;o.textContent=short(c);sel.appendChild(o);});
+function renderDetail(){
+  const q = document.getElementById('q').value.trim();
+  const c = sel.value;
+  const rows = ITEMS.filter(i=>(!c||i.cat===c)&&(!q||i.name.includes(q))).sort((a,b)=>b.total-a.total);
+  const sum = rows.reduce((a,i)=>a+i.total,0);
+  document.getElementById('count').textContent = `${rows.length} صنفاً | الإجمالي ${fmt(sum)} ر.س`;
+  document.getElementById('detailTable').innerHTML = rows.length ? rows.map(i=>
+   `<tr><td>${esc(i.name)}</td><td>${esc(short(i.cat))}</td><td class="n">${fmt(i.qty,i.qty%1?2:0)}</td><td>${esc(i.unit)}</td><td class="n">${fmt(i.avg)}</td><td class="n">${fmt(i.last)}</td><td class="n">${fmt(i.total)}</td></tr>`).join('')
+   : '<tr><td colspan="7">لا توجد أصناف مطابقة. جرّب اسماً آخر أو اختر «جميع التصنيفات».</td></tr>';
+}
+document.getElementById('q').addEventListener('input',renderDetail);
+sel.addEventListener('change',renderDetail);
+renderDetail();
+</script>
+</body>
+</html>
