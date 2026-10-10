@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>تقرير مبيعات المحل الشهري | سبتمبر 2026 | دوكمنتيشن فلاورز</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --leaf:#1F4A36; --leaf-2:#2E6B4F; --sage:#9DB5A6; --mist:#E7EFEA;
+  --petal:#B4436C; --petal-soft:#F6E3EA; --amber:#B7791F; --amber-soft:#FBF0DC;
+  --ink:#16201B; --ink-2:#4B5A52; --line:#DCE4DF; --paper:#FFFFFF; --bg:#F5F8F6;
+  --sans:'IBM Plex Sans Arabic',Tahoma,'Segoe UI',sans-serif;
+  --serif:'Noto Naskh Arabic','Traditional Arabic',serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.75}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+header.top{background:var(--leaf);color:#fff;padding:40px 0 34px}
+.org{font-size:14px;opacity:.85;margin:0 0 6px}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(28px,4.4vw,44px);line-height:1.3;margin:0}
+.period{margin:8px 0 0;font-size:16px;opacity:.9}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;margin-top:30px;align-items:end}
+.hero .big{font-family:var(--serif);font-size:clamp(44px,7vw,76px);line-height:1;font-weight:700}
+.hero .big small{font-size:.35em;font-family:var(--sans);font-weight:500;opacity:.85;margin-inline-start:8px}
+.hero .lbl{font-size:15px;opacity:.85;margin-top:8px}
+.mini{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.mini div{border:1px solid rgba(255,255,255,.22);border-radius:10px;padding:10px 14px}
+.mini b{display:block;font-size:22px;font-weight:600}
+.mini span{font-size:13px;opacity:.85}
+.bouquet{display:flex;height:46px;border-radius:8px;overflow:hidden;margin-top:28px;background:rgba(255,255,255,.1)}
+.bouquet i{display:block;height:100%;position:relative;transition:filter .2s}
+.bouquet i:hover{filter:brightness(1.12)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:12px;font-size:13px;opacity:.95}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--c);margin-inline-end:6px;vertical-align:-1px}
+nav.toc{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+nav.toc .wrap{display:flex;gap:4px;overflow-x:auto;padding-block:8px}
+nav.toc a{white-space:nowrap;color:var(--ink-2);text-decoration:none;font-size:14px;padding:6px 12px;border-radius:999px}
+nav.toc a:hover,nav.toc a:focus-visible{background:var(--mist);color:var(--leaf);outline:none}
+section{padding:42px 0 8px}
+h2{font-family:var(--serif);font-size:clamp(22px,3vw,28px);color:var(--leaf);margin:0 0 6px;line-height:1.4}
+.sub{color:var(--ink-2);margin:0 0 20px;max-width:75ch}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.exec p{margin:0 0 12px;max-width:80ch}
+.exec ul{margin:0;padding-inline-start:20px}
+.exec li{margin-bottom:8px}
+.bar-row{display:grid;grid-template-columns:150px 1fr 120px;gap:12px;align-items:center;padding:7px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.bar-row:last-child{border-bottom:0}
+.track{height:14px;background:var(--mist);border-radius:7px;overflow:hidden}
+.track i{display:block;height:100%;border-radius:7px}
+.bar-row .v{text-align:left;font-variant-numeric:tabular-nums;direction:ltr}
+.bar-row .v small{color:var(--ink-2);font-size:12px;margin-inline-start:4px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.kpi{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px}
+.kpi b{display:block;font-size:24px;font-weight:600;color:var(--leaf);font-variant-numeric:tabular-nums}
+.kpi span{color:var(--ink-2);font-size:14px}
+.split{display:flex;height:34px;border-radius:8px;overflow:hidden;margin:14px 0 8px}
+.split i{display:flex;align-items:center;justify-content:center;color:#fff;font-style:normal;font-size:14px;font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{padding:9px 10px;text-align:right;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--mist);color:var(--leaf);font-weight:600;position:sticky;top:0}
+td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.scroll{overflow-x:auto;max-width:100%}
+.tbl-scroll{max-height:560px;overflow:auto;border:1px solid var(--line);border-radius:10px}
+.up{color:var(--petal);font-weight:600}
+.down{color:var(--leaf-2);font-weight:600}
+.tag{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;background:var(--mist);color:var(--leaf);white-space:nowrap}
+.tag.w{background:var(--amber-soft);color:#7A4D0B}
+.tag.r{background:var(--petal-soft);color:#7D2547}
+.note{background:var(--amber-soft);border-inline-start:4px solid var(--amber);padding:12px 16px;border-radius:8px;font-size:14.5px;margin-top:16px}
+.recs{counter-reset:r;display:grid;gap:14px}
+.rec{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 20px;display:grid;grid-template-columns:auto 1fr;gap:4px 16px}
+.rec::before{counter-increment:r;content:counter(r);grid-row:span 3;width:34px;height:34px;border-radius:50%;background:var(--leaf);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600}
+.rec h3{margin:0;font-size:17px}
+.rec p{margin:0;color:var(--ink-2);font-size:15px}
+.rec .meta{font-size:13px;color:var(--ink-2)}
+.rec .meta b{color:var(--ink)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.filters input,.filters select{font-family:inherit;font-size:15px;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;min-width:200px;flex:1}
+.filters input:focus-visible,.filters select:focus-visible{outline:2px solid var(--leaf-2);outline-offset:1px}
+.count{font-size:13px;color:var(--ink-2);margin:0 0 8px}
+footer{padding:36px 0 50px;color:var(--ink-2);font-size:13.5px}
+.circles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.circle{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:12px;padding:16px 18px}
+.circle h3{margin:0 0 4px;font-size:17px}.circle .cat{font-weight:600;color:var(--ink);margin:0 0 6px}.circle p{margin:0;color:var(--ink-2);font-size:14.5px}
+.formula{background:var(--mist);border-radius:10px;padding:14px 18px;font-weight:600;color:var(--leaf);margin:14px 0 0;text-align:center}
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.phase{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px}
+.phase h3{margin:0 0 8px;font-size:17px;color:var(--leaf)}.phase ol{margin:0;padding-inline-start:20px;font-size:15px}.phase li{margin-bottom:6px}
+.closing{background:var(--leaf);color:#fff;border-radius:14px;padding:28px;text-align:center;font-family:var(--serif);font-size:clamp(18px,2.4vw,22px);line-height:1.9}
+.rec ul{margin:4px 0 0;padding-inline-start:18px;color:var(--ink-2);font-size:14.5px}
+@media (max-width:820px){.circles,.phases{grid-template-columns:1fr}}
+@media (max-width:820px){
+  .hero,.grid2{grid-template-columns:1fr}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .bar-row{grid-template-columns:110px 1fr 96px;font-size:14px}
+}
+@media print{
+  nav.toc{display:none} body{background:#fff}
+  .panel,.kpi,.rec{break-inside:avoid}
+  header.top{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .tbl-scroll{max-height:none;overflow:visible}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.chart{width:100%;height:auto;display:block}
+.chart .ax{font-size:12px;fill:var(--ink-2);font-family:var(--sans)}
+.chart .gl{stroke:var(--line);stroke-width:1}
+.chart .avgl{stroke:var(--amber);stroke-width:1.5;stroke-dasharray:6 5}
+.chart .avgt{fill:#7A4D0B;font-weight:600}
+.chart rect{transition:opacity .15s}.chart rect:hover{opacity:.75}
+.keys{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--ink-2);margin-top:10px}
+.keys span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--c);margin-inline-end:6px;vertical-align:-1px}
+.muted{color:var(--ink-2);font-size:12px}
+tr.total td{background:var(--mist);border-top:2px solid var(--leaf)}
+.group{margin:30px 0 12px;font-size:19px;color:var(--leaf);font-family:var(--serif);display:flex;align-items:center;gap:10px}
+.group::after{content:"";flex:1;height:1px;background:var(--line)}
+.bar-row span small.muted{font-size:12px}
+.keys span.dash::before{width:18px;height:0;border-top:2px dashed var(--amber);background:none;border-radius:0;vertical-align:3px}
+.rec>*{grid-column:2}
+.stack{display:grid;gap:18px}
+nav.toc .wrap{scrollbar-width:none}
+nav.toc .wrap::-webkit-scrollbar{display:none}
+nav.toc a.active{background:var(--leaf);color:#fff}
+nav.toc a.all{border:1px solid var(--leaf);color:var(--leaf)}
+@media (min-width:900px){nav.toc .wrap{flex-wrap:wrap;overflow:visible}}
+nav.toc a.all.active{background:var(--leaf);color:#fff}
+body.tabbed main section{display:none}
+body.tabbed main section.show{display:block}
+@media print{body.tabbed main section{display:block!important}}
+
+</style>
+
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <p class="org">دوكمنتيشن فلاورز | إدارة التخطيط والتطوير</p>
+    <h1>تقرير مبيعات المحل الشهري</h1>
+    <p class="period">الفترة: 1 – 30 سبتمبر 2026 | المصدر: سجل مبيعات المحل اليومي (الشبكة والنقد)</p>
+    <div class="hero">
+      <div>
+        <div class="big">38,715.98<small>ر.س</small></div>
+        <div class="lbl">إجمالي مبيعات المحل خلال شهر سبتمبر</div>
+      </div>
+      <div class="mini">
+        <div><b>210</b><span>عملية بيع</span></div>
+        <div><b>184</b><span>متوسط قيمة الفاتورة (ر.س)</span></div>
+        <div><b>1,335</b><span>متوسط المبيعات اليومية (ر.س)</span></div>
+        <div><b>7.2</b><span>متوسط العمليات اليومية</span></div>
+      </div>
+    </div>
+    <div class="bouquet" role="img" aria-label="توزيع المبيعات حسب طريقة الدفع">
+      <i style="width:88.2%;background:#9DB5A6" title="الشبكة 88.2%"></i>
+      <i style="width:11.8%;background:#B4436C" title="النقد 11.8%"></i>
+    </div>
+    <div class="legend">
+      <span style="--c:#9DB5A6">الشبكة: 34,155.98 ر.س (88.2%)</span>
+      <span style="--c:#B4436C">النقد: 4,560.00 ر.س (11.8%)</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="أقسام التقرير">
+  <div class="wrap" role="tablist">
+    <a href="#exec" role="tab">الملخص التنفيذي</a>
+    <a href="#daily" role="tab">الجدول اليومي</a>
+    <a href="#chart" role="tab">المبيعات اليومية</a>
+    <a href="#weeks" role="tab">الأسابيع</a>
+    <a href="#days" role="tab">أيام الأسبوع</a>
+    <a href="#pay" role="tab">طرق الدفع</a>
+    <a href="#potential" role="tab">فرص النمو</a>
+    <a href="#recs" role="tab">التوصيات</a>
+    <a href="#plan" role="tab">الخطة التنفيذية</a>
+    <a href="#kpi" role="tab">المؤشرات</a>
+    <a href="#next" role="tab">تقرير أكتوبر</a>
+    <a href="#all" role="tab" class="all">التقرير كاملاً</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="daily">
+  <h2>جدول المبيعات اليومي</h2>
+  <p class="sub">مبيعات المحل لكل يوم من أيام الشهر موزعةً حسب طريقة الدفع، مع متوسط قيمة الفاتورة لكل يوم.</p>
+  <div class="tbl-scroll">
+    <table>
+      <thead><tr><th>#</th><th>التاريخ</th><th>اليوم</th><th>العمليات</th><th>الشبكة (ر.س)</th><th>النقد (ر.س)</th><th>الإجمالي (ر.س)</th><th>متوسط الفاتورة</th><th>ملاحظة</th></tr></thead>
+      <tbody>
+<tr><td class="n">1</td><td class="n">2026-09-01</td><td>الثلاثاء</td><td class="n">3</td><td class="n">580.00</td><td class="n">0.00</td><td class="n"><b>580.00</b></td><td class="n">193</td><td></td></tr>
+<tr><td class="n">2</td><td class="n">2026-09-02</td><td>الأربعاء</td><td class="n">11</td><td class="n">1,964.99</td><td class="n">357.00</td><td class="n"><b>2,321.99</b></td><td class="n">211</td><td><span class="tag">من أعلى 5 أيام</span></td></tr>
+<tr><td class="n">3</td><td class="n">2026-09-03</td><td>الخميس</td><td class="n">5</td><td class="n">1,272.00</td><td class="n">0.00</td><td class="n"><b>1,272.00</b></td><td class="n">254</td><td></td></tr>
+<tr><td class="n">4</td><td class="n">2026-09-04</td><td>الجمعة</td><td class="n">15</td><td class="n">2,365.00</td><td class="n">550.00</td><td class="n"><b>2,915.00</b></td><td class="n">194</td><td><span class="tag">من أعلى 5 أيام</span></td></tr>
+<tr><td class="n">5</td><td class="n">2026-09-05</td><td>السبت</td><td class="n">9</td><td class="n">1,050.00</td><td class="n">0.00</td><td class="n"><b>1,050.00</b></td><td class="n">117</td><td></td></tr>
+<tr><td class="n">6</td><td class="n">2026-09-06</td><td>الأحد</td><td class="n">6</td><td class="n">1,080.00</td><td class="n">0.00</td><td class="n"><b>1,080.00</b></td><td class="n">180</td><td></td></tr>
+<tr><td class="n">7</td><td class="n">2026-09-07</td><td>الاثنين</td><td class="n">12</td><td class="n">1,409.00</td><td class="n">235.00</td><td class="n"><b>1,644.00</b></td><td class="n">137</td><td></td></tr>
+<tr><td class="n">8</td><td class="n">2026-09-08</td><td>الثلاثاء</td><td class="n">6</td><td class="n">891.00</td><td class="n">0.00</td><td class="n"><b>891.00</b></td><td class="n">148</td><td></td></tr>
+<tr><td class="n">9</td><td class="n">2026-09-09</td><td>الأربعاء</td><td class="n">7</td><td class="n">1,185.00</td><td class="n">0.00</td><td class="n"><b>1,185.00</b></td><td class="n">169</td><td></td></tr>
+<tr><td class="n">10</td><td class="n">2026-09-10</td><td>الخميس</td><td class="n">4</td><td class="n">535.00</td><td class="n">0.00</td><td class="n"><b>535.00</b></td><td class="n">134</td><td><span class="tag w">من أدنى 5 أيام</span></td></tr>
+<tr><td class="n">11</td><td class="n">2026-09-11</td><td>الجمعة</td><td class="n">12</td><td class="n">1,419.00</td><td class="n">0.00</td><td class="n"><b>1,419.00</b></td><td class="n">118</td><td></td></tr>
+<tr><td class="n">12</td><td class="n">2026-09-12</td><td>السبت</td><td class="n">12</td><td class="n">2,490.00</td><td class="n">0.00</td><td class="n"><b>2,490.00</b></td><td class="n">208</td><td><span class="tag">من أعلى 5 أيام</span></td></tr>
+<tr><td class="n">13</td><td class="n">2026-09-13</td><td>الأحد</td><td class="n">3</td><td class="n">430.00</td><td class="n">0.00</td><td class="n"><b>430.00</b></td><td class="n">143</td><td><span class="tag w">من أدنى 5 أيام</span></td></tr>
+<tr><td class="n">14</td><td class="n">2026-09-14</td><td>الاثنين</td><td class="n">6</td><td class="n">555.00</td><td class="n">0.00</td><td class="n"><b>555.00</b></td><td class="n">92</td><td></td></tr>
+<tr><td class="n">15</td><td class="n">2026-09-15</td><td>الثلاثاء</td><td class="n">8</td><td class="n">1,865.00</td><td class="n">0.00</td><td class="n"><b>1,865.00</b></td><td class="n">233</td><td></td></tr>
+<tr><td class="n">16</td><td class="n">2026-09-16</td><td>الأربعاء</td><td class="n">11</td><td class="n">1,334.99</td><td class="n">1,123.00</td><td class="n"><b>2,457.99</b></td><td class="n">223</td><td><span class="tag">من أعلى 5 أيام</span></td></tr>
+<tr><td class="n">17</td><td class="n">2026-09-17</td><td>الخميس</td><td class="n">4</td><td class="n">505.00</td><td class="n">100.00</td><td class="n"><b>605.00</b></td><td class="n">151</td><td></td></tr>
+<tr><td class="n">18</td><td class="n">2026-09-18</td><td>الجمعة</td><td class="n">10</td><td class="n">1,950.00</td><td class="n">0.00</td><td class="n"><b>1,950.00</b></td><td class="n">195</td><td></td></tr>
+<tr><td class="n">19</td><td class="n">2026-09-19</td><td>السبت</td><td class="n">2</td><td class="n">380.00</td><td class="n">0.00</td><td class="n"><b>380.00</b></td><td class="n">190</td><td><span class="tag w">من أدنى 5 أيام</span></td></tr>
+<tr><td class="n">20</td><td class="n">2026-09-20</td><td>الأحد</td><td class="n">3</td><td class="n">465.00</td><td class="n">0.00</td><td class="n"><b>465.00</b></td><td class="n">155</td><td><span class="tag w">من أدنى 5 أيام</span></td></tr>
+<tr><td class="n">21</td><td class="n">2026-09-21</td><td>الاثنين</td><td class="n">4</td><td class="n">340.00</td><td class="n">520.00</td><td class="n"><b>860.00</b></td><td class="n">215</td><td></td></tr>
+<tr><td class="n">22</td><td class="n">2026-09-22</td><td>الثلاثاء</td><td class="n">7</td><td class="n">790.00</td><td class="n">300.00</td><td class="n"><b>1,090.00</b></td><td class="n">156</td><td></td></tr>
+<tr><td class="n">23</td><td class="n">2026-09-23</td><td>الأربعاء</td><td class="n">0</td><td class="n">0.00</td><td class="n">0.00</td><td class="n"><b>0.00</b></td><td class="n">—</td><td><span class="tag r">لا مبيعات مسجّلة</span></td></tr>
+<tr><td class="n">24</td><td class="n">2026-09-24</td><td>الخميس</td><td class="n">5</td><td class="n">335.00</td><td class="n">900.00</td><td class="n"><b>1,235.00</b></td><td class="n">247</td><td></td></tr>
+<tr><td class="n">25</td><td class="n">2026-09-25</td><td>الجمعة</td><td class="n">8</td><td class="n">2,242.00</td><td class="n">0.00</td><td class="n"><b>2,242.00</b></td><td class="n">280</td><td></td></tr>
+<tr><td class="n">26</td><td class="n">2026-09-26</td><td>السبت</td><td class="n">1</td><td class="n">515.00</td><td class="n">0.00</td><td class="n"><b>515.00</b></td><td class="n">515</td><td><span class="tag w">من أدنى 5 أيام</span></td></tr>
+<tr><td class="n">27</td><td class="n">2026-09-27</td><td>الأحد</td><td class="n">12</td><td class="n">2,871.00</td><td class="n">0.00</td><td class="n"><b>2,871.00</b></td><td class="n">239</td><td><span class="tag">من أعلى 5 أيام</span></td></tr>
+<tr><td class="n">28</td><td class="n">2026-09-28</td><td>الاثنين</td><td class="n">4</td><td class="n">685.00</td><td class="n">475.00</td><td class="n"><b>1,160.00</b></td><td class="n">290</td><td></td></tr>
+<tr><td class="n">29</td><td class="n">2026-09-29</td><td>الثلاثاء</td><td class="n">7</td><td class="n">1,100.00</td><td class="n">0.00</td><td class="n"><b>1,100.00</b></td><td class="n">157</td><td></td></tr>
+<tr><td class="n">30</td><td class="n">2026-09-30</td><td>الأربعاء</td><td class="n">13</td><td class="n">1,552.00</td><td class="n">0.00</td><td class="n"><b>1,552.00</b></td><td class="n">119</td><td></td></tr>
+<tr class="total"><td colspan="3"><b>إجمالي الشهر</b></td><td class="n"><b>210</b></td><td class="n"><b>34,155.98</b></td><td class="n"><b>4,560.00</b></td><td class="n"><b>38,715.98</b></td><td class="n"><b>184</b></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="exec">
+  <h2>الملخص التنفيذي</h2>
+  <p class="sub">أبرز ما تكشفه أرقام مبيعات المحل خلال الشهر.</p>
+  <div class="panel exec">
+    <p>بلغ إجمالي مبيعات المحل خلال سبتمبر <b>38,715.98 ر.س</b> تحققت عبر <b>210 عملية بيع</b> خلال 29 يوم عمل، بمتوسط فاتورة يبلغ <b>184 ر.س</b> ومتوسط مبيعات يومية يبلغ <b>1,335 ر.س</b>.</p>
+    <ul>
+      <li><b>أفضل يوم من حيث القيمة:</b> الأحد 27 سبتمبر بمبيعات 2,871 ر.س من 12 عملية، و<b>أعلى يوم من حيث عدد العمليات:</b> الجمعة 4 سبتمبر بـ 15 عملية ومبيعات 2,915 ر.س، وهو أيضاً أعلى أيام الشهر قيمةً.</li>
+      <li><b>الجمعة هي اليوم الأقوى أسبوعياً</b> بمتوسط 2,132 ر.س و11.2 عملية يومياً، يليها الأربعاء بمتوسط 1,503 ر.س. ويأتي <b>الخميس في المرتبة الأخيرة</b> بمتوسط 912 ر.س و4.5 عملية فقط، وهو ما يستدعي معالجة خاصة لكونه يوماً يُتوقع فيه ارتفاع الطلب على الهدايا.</li>
+      <li><b>الأسبوع الأول هو الأعلى أداءً</b> بمتوسط 1,552 ر.س يومياً، والأسبوع الثاني هو الأدنى بمتوسط 1,072 ر.س.</li>
+      <li><b>تراجع عدد العمليات وارتفاع قيمة الفاتورة:</b> انخفض عدد العمليات من 119 عملية في النصف الأول من الشهر إلى 91 عملية في النصف الثاني (−24%)، بينما ارتفع متوسط الفاتورة من 170 إلى 203 ر.س، فجاء تراجع المبيعات محدوداً (20,233 مقابل 18,483 ر.س).</li>
+      <li><b>تفاوت كبير بين الأيام:</b> أعلى خمسة أيام حققت 34% من مبيعات الشهر، في حين سجّلت 10 أيام مبيعات دون 1,000 ر.س.</li>
+      <li><b>الدفع الإلكتروني هو السائد</b> بنسبة 88% عبر الشبكة، ولم يظهر الدفع النقدي إلا في 9 أيام من الشهر.</li>
+      <li><b>لم تُسجَّل أي مبيعات يوم الأربعاء 23 سبتمبر</b> الموافق لليوم الوطني، ويلزم التحقق مما إذا كان المحل مغلقاً أو أن المبيعات لم تُسجَّل.</li>
+    </ul>
+    <div class="note"><b>الخلاصة الإدارية:</b> متوسط فاتورة المحل البالغ 184 ر.س يقع دون المستوى المتوقع لعلامة تستهدف الفئة الفاخرة، مما يعني أن أغلب مبيعات المحل الحالية باقات صغيرة ومشتريات سريعة. لذلك فإن <b>رفع قيمة الفاتورة</b> و<b>تحويل المحل إلى وجهة هدايا فاخرة</b> هما الرافعتان الأكبر لنمو مبيعات المحل، قبل زيادة عدد الزوار.</div>
+  </div>
+</section>
+
+<section id="chart">
+  <h2>المبيعات اليومية خلال الشهر</h2>
+  <p class="sub">قيمة المبيعات لكل يوم (ر.س). الخط المتقطع يمثل المتوسط اليومي لأيام العمل.</p>
+  <div class="panel">
+    <svg viewBox="0 0 900 300" role="img" aria-label="المبيعات اليومية لشهر سبتمبر" class="chart"><line x1="10" x2="854" y1="260.0" y2="260.0" class="gl"/><text x="860" y="264.0" class="ax" text-anchor="start">0</text><line x1="10" x2="854" y1="180.0" y2="180.0" class="gl"/><text x="860" y="184.0" class="ax" text-anchor="start">1,000</text><line x1="10" x2="854" y1="100.0" y2="100.0" class="gl"/><text x="860" y="104.0" class="ax" text-anchor="start">2,000</text><line x1="10" x2="854" y1="20.0" y2="20.0" class="gl"/><text x="860" y="24.0" class="ax" text-anchor="start">3,000</text><line x1="10" x2="854" y1="153.2" y2="153.2" class="avgl"/><rect x="828.9" y="213.6" width="22.1" height="46.4" rx="3" fill="var(--leaf-2)"><title>1 سبتمبر (الثلاثاء): 580.00 ر.س — 3 عمليات</title></rect><text x="839.9" y="276" text-anchor="middle" class="ax">1</text><rect x="800.7" y="74.2" width="22.1" height="185.8" rx="3" fill="var(--petal)"><title>2 سبتمبر (الأربعاء): 2,321.99 ر.س — 11 عمليات</title></rect><text x="811.8" y="276" text-anchor="middle" class="ax">2</text><rect x="772.6" y="158.2" width="22.1" height="101.8" rx="3" fill="var(--leaf-2)"><title>3 سبتمبر (الخميس): 1,272.00 ر.س — 5 عمليات</title></rect><text x="783.7" y="276" text-anchor="middle" class="ax">3</text><rect x="744.5" y="26.8" width="22.1" height="233.2" rx="3" fill="var(--petal)"><title>4 سبتمبر (الجمعة): 2,915.00 ر.س — 15 عمليات</title></rect><text x="755.5" y="276" text-anchor="middle" class="ax">4</text><rect x="716.3" y="176.0" width="22.1" height="84.0" rx="3" fill="var(--leaf-2)"><title>5 سبتمبر (السبت): 1,050.00 ر.س — 9 عمليات</title></rect><text x="727.4" y="276" text-anchor="middle" class="ax">5</text><rect x="688.2" y="173.6" width="22.1" height="86.4" rx="3" fill="var(--leaf-2)"><title>6 سبتمبر (الأحد): 1,080.00 ر.س — 6 عمليات</title></rect><text x="699.3" y="276" text-anchor="middle" class="ax">6</text><rect x="660.1" y="128.5" width="22.1" height="131.5" rx="3" fill="var(--leaf-2)"><title>7 سبتمبر (الاثنين): 1,644.00 ر.س — 12 عمليات</title></rect><text x="671.1" y="276" text-anchor="middle" class="ax">7</text><rect x="631.9" y="188.7" width="22.1" height="71.3" rx="3" fill="var(--leaf-2)"><title>8 سبتمبر (الثلاثاء): 891.00 ر.س — 6 عمليات</title></rect><text x="643.0" y="276" text-anchor="middle" class="ax">8</text><rect x="603.8" y="165.2" width="22.1" height="94.8" rx="3" fill="var(--leaf-2)"><title>9 سبتمبر (الأربعاء): 1,185.00 ر.س — 7 عمليات</title></rect><text x="614.9" y="276" text-anchor="middle" class="ax">9</text><rect x="575.7" y="217.2" width="22.1" height="42.8" rx="3" fill="var(--sage)"><title>10 سبتمبر (الخميس): 535.00 ر.س — 4 عمليات</title></rect><text x="586.7" y="276" text-anchor="middle" class="ax">10</text><rect x="547.5" y="146.5" width="22.1" height="113.5" rx="3" fill="var(--leaf-2)"><title>11 سبتمبر (الجمعة): 1,419.00 ر.س — 12 عمليات</title></rect><text x="558.6" y="276" text-anchor="middle" class="ax">11</text><rect x="519.4" y="60.8" width="22.1" height="199.2" rx="3" fill="var(--petal)"><title>12 سبتمبر (السبت): 2,490.00 ر.س — 12 عمليات</title></rect><text x="530.5" y="276" text-anchor="middle" class="ax">12</text><rect x="491.3" y="225.6" width="22.1" height="34.4" rx="3" fill="var(--sage)"><title>13 سبتمبر (الأحد): 430.00 ر.س — 3 عمليات</title></rect><text x="502.3" y="276" text-anchor="middle" class="ax">13</text><rect x="463.1" y="215.6" width="22.1" height="44.4" rx="3" fill="var(--leaf-2)"><title>14 سبتمبر (الاثنين): 555.00 ر.س — 6 عمليات</title></rect><text x="474.2" y="276" text-anchor="middle" class="ax">14</text><rect x="435.0" y="110.8" width="22.1" height="149.2" rx="3" fill="var(--leaf-2)"><title>15 سبتمبر (الثلاثاء): 1,865.00 ر.س — 8 عمليات</title></rect><text x="446.1" y="276" text-anchor="middle" class="ax">15</text><rect x="406.9" y="63.4" width="22.1" height="196.6" rx="3" fill="var(--petal)"><title>16 سبتمبر (الأربعاء): 2,457.99 ر.س — 11 عمليات</title></rect><text x="417.9" y="276" text-anchor="middle" class="ax">16</text><rect x="378.7" y="211.6" width="22.1" height="48.4" rx="3" fill="var(--leaf-2)"><title>17 سبتمبر (الخميس): 605.00 ر.س — 4 عمليات</title></rect><text x="389.8" y="276" text-anchor="middle" class="ax">17</text><rect x="350.6" y="104.0" width="22.1" height="156.0" rx="3" fill="var(--leaf-2)"><title>18 سبتمبر (الجمعة): 1,950.00 ر.س — 10 عمليات</title></rect><text x="361.7" y="276" text-anchor="middle" class="ax">18</text><rect x="322.5" y="229.6" width="22.1" height="30.4" rx="3" fill="var(--sage)"><title>19 سبتمبر (السبت): 380.00 ر.س — 2 عمليات</title></rect><text x="333.5" y="276" text-anchor="middle" class="ax">19</text><rect x="294.3" y="222.8" width="22.1" height="37.2" rx="3" fill="var(--sage)"><title>20 سبتمبر (الأحد): 465.00 ر.س — 3 عمليات</title></rect><text x="305.4" y="276" text-anchor="middle" class="ax">20</text><rect x="266.2" y="191.2" width="22.1" height="68.8" rx="3" fill="var(--leaf-2)"><title>21 سبتمبر (الاثنين): 860.00 ر.س — 4 عمليات</title></rect><text x="277.3" y="276" text-anchor="middle" class="ax">21</text><rect x="238.1" y="172.8" width="22.1" height="87.2" rx="3" fill="var(--leaf-2)"><title>22 سبتمبر (الثلاثاء): 1,090.00 ر.س — 7 عمليات</title></rect><text x="249.1" y="276" text-anchor="middle" class="ax">22</text><rect x="209.9" y="260.0" width="22.1" height="0.5" rx="3" fill="var(--sage)"><title>23 سبتمبر (الأربعاء): 0.00 ر.س — 0 عمليات</title></rect><text x="221.0" y="276" text-anchor="middle" class="ax">23</text><rect x="181.8" y="161.2" width="22.1" height="98.8" rx="3" fill="var(--leaf-2)"><title>24 سبتمبر (الخميس): 1,235.00 ر.س — 5 عمليات</title></rect><text x="192.9" y="276" text-anchor="middle" class="ax">24</text><rect x="153.7" y="80.6" width="22.1" height="179.4" rx="3" fill="var(--leaf-2)"><title>25 سبتمبر (الجمعة): 2,242.00 ر.س — 8 عمليات</title></rect><text x="164.7" y="276" text-anchor="middle" class="ax">25</text><rect x="125.5" y="218.8" width="22.1" height="41.2" rx="3" fill="var(--sage)"><title>26 سبتمبر (السبت): 515.00 ر.س — 1 عمليات</title></rect><text x="136.6" y="276" text-anchor="middle" class="ax">26</text><rect x="97.4" y="30.3" width="22.1" height="229.7" rx="3" fill="var(--petal)"><title>27 سبتمبر (الأحد): 2,871.00 ر.س — 12 عمليات</title></rect><text x="108.5" y="276" text-anchor="middle" class="ax">27</text><rect x="69.3" y="167.2" width="22.1" height="92.8" rx="3" fill="var(--leaf-2)"><title>28 سبتمبر (الاثنين): 1,160.00 ر.س — 4 عمليات</title></rect><text x="80.3" y="276" text-anchor="middle" class="ax">28</text><rect x="41.1" y="172.0" width="22.1" height="88.0" rx="3" fill="var(--leaf-2)"><title>29 سبتمبر (الثلاثاء): 1,100.00 ر.س — 7 عمليات</title></rect><text x="52.2" y="276" text-anchor="middle" class="ax">29</text><rect x="13.0" y="135.8" width="22.1" height="124.2" rx="3" fill="var(--leaf-2)"><title>30 سبتمبر (الأربعاء): 1,552.00 ر.س — 13 عمليات</title></rect><text x="24.1" y="276" text-anchor="middle" class="ax">30</text><text x="450.0" y="294" text-anchor="middle" class="ax">يوم الشهر</text></svg>
+    <div class="keys"><span style="--c:var(--petal)">أعلى 5 أيام</span><span style="--c:var(--leaf-2)">أيام متوسطة</span><span style="--c:var(--sage)">أدنى 5 أيام ويوم بلا مبيعات</span><span class="dash">المتوسط اليومي: 1,335 ر.س</span></div>
+  </div>
+</section>
+
+<section id="weeks">
+  <h2>أداء الأسابيع</h2>
+  <p class="sub">المقارنة على أساس متوسط المبيعات اليومية، لأن الأسبوع الرابع يضم تسعة أيام (22–30 سبتمبر).</p>
+  <div class="stack">
+    <div class="panel">
+      <h3 style="margin:0 0 10px;font-size:16px">متوسط المبيعات اليومية لكل أسبوع</h3>
+      <div class="bar-row"><span>الأسبوع الأول<br><small class="muted">1–7 سبتمبر</small></span><div class="track"><i style="width:100.0%;background:var(--petal)"></i></div><span class="v">1,552<small>ر.س/يوم</small></span></div>
+<div class="bar-row"><span>الأسبوع الثاني<br><small class="muted">8–14 سبتمبر</small></span><div class="track"><i style="width:69.1%;background:var(--leaf-2)"></i></div><span class="v">1,072<small>ر.س/يوم</small></span></div>
+<div class="bar-row"><span>الأسبوع الثالث<br><small class="muted">15–21 سبتمبر</small></span><div class="track"><i style="width:79.0%;background:var(--leaf-2)"></i></div><span class="v">1,226<small>ر.س/يوم</small></span></div>
+<div class="bar-row"><span>الأسبوع الرابع<br><small class="muted">22–30 سبتمبر</small></span><div class="track"><i style="width:84.2%;background:var(--leaf-2)"></i></div><span class="v">1,307<small>ر.س/يوم</small></span></div>
+    </div>
+    <div class="panel scroll">
+      <table>
+        <thead><tr><th>الأسبوع</th><th>الفترة</th><th>الأيام</th><th>المبيعات</th><th>الحصة</th><th>العمليات</th><th>متوسط اليوم</th><th>متوسط الفاتورة</th></tr></thead>
+        <tbody>
+<tr><td>الأسبوع الأول</td><td>1–7 سبتمبر</td><td class="n">7</td><td class="n">10,862.99</td><td class="n">28.1%</td><td class="n">61</td><td class="n">1,552</td><td class="n">178</td></tr>
+<tr><td>الأسبوع الثاني</td><td>8–14 سبتمبر</td><td class="n">7</td><td class="n">7,505.00</td><td class="n">19.4%</td><td class="n">50</td><td class="n">1,072</td><td class="n">150</td></tr>
+<tr><td>الأسبوع الثالث</td><td>15–21 سبتمبر</td><td class="n">7</td><td class="n">8,582.99</td><td class="n">22.2%</td><td class="n">42</td><td class="n">1,226</td><td class="n">204</td></tr>
+<tr><td>الأسبوع الرابع</td><td>22–30 سبتمبر</td><td class="n">9</td><td class="n">11,765.00</td><td class="n">30.4%</td><td class="n">57</td><td class="n">1,307</td><td class="n">206</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="note">جاء الأسبوع الأول في الصدارة بأعلى عدد عمليات (61 عملية). أما الأسبوع الرابع فقد عوّض انخفاض عدد العمليات بأعلى متوسط فاتورة خلال الشهر (206 ر.س)، ويرتفع متوسطه اليومي إلى 1,471 ر.س عند استبعاد يوم 23 سبتمبر.</div>
+</section>
+
+<section id="days">
+  <h2>أداء أيام الأسبوع</h2>
+  <p class="sub">متوسط المبيعات ومتوسط عدد العمليات لكل يوم من أيام الأسبوع خلال الشهر.</p>
+  <div class="grid2">
+    <div class="panel">
+      <h3 style="margin:0 0 10px;font-size:16px">متوسط المبيعات اليومية (ر.س)</h3>
+      <div class="bar-row"><span>الجمعة</span><div class="track"><i style="width:100.0%;background:var(--petal)"></i></div><span class="v">2,132<small>ر.س/يوم</small></span></div>
+<div class="bar-row"><span>الأربعاء</span><div class="track"><i style="width:70.5%;background:var(--leaf-2)"></i></div><span class="v">1,503<small>ر.س/يوم</small></span></div>
+<div class="bar-row"><span>الأحد</span><div class="track"><i style="width:56.8%;background:var(--leaf-2)"></i></div><span class="v">1,212<small>ر.س/يوم</small></span></div>
+<div class="bar-row"><span>السبت</span><div class="track"><i style="width:52.0%;background:var(--leaf-2)"></i></div><span class="v">1,109<small>ر.س/يوم</small></span></div>
+<div class="bar-row"><span>الثلاثاء</span><div class="track"><i style="width:51.9%;background:var(--leaf-2)"></i></div><span class="v">1,105<small>ر.س/يوم</small></span></div>
+<div class="bar-row"><span>الاثنين</span><div class="track"><i style="width:49.5%;background:var(--leaf-2)"></i></div><span class="v">1,055<small>ر.س/يوم</small></span></div>
+<div class="bar-row"><span>الخميس</span><div class="track"><i style="width:42.8%;background:var(--amber)"></i></div><span class="v">912<small>ر.س/يوم</small></span></div>
+    </div>
+    <div class="panel">
+      <h3 style="margin:0 0 10px;font-size:16px">متوسط عدد العمليات</h3>
+      <div class="bar-row"><span>الجمعة</span><div class="track"><i style="width:100.0%;background:var(--sage)"></i></div><span class="v">11.2<small>عملية/يوم</small></span></div>
+<div class="bar-row"><span>الأربعاء</span><div class="track"><i style="width:74.7%;background:var(--sage)"></i></div><span class="v">8.4<small>عملية/يوم</small></span></div>
+<div class="bar-row"><span>الاثنين</span><div class="track"><i style="width:57.8%;background:var(--sage)"></i></div><span class="v">6.5<small>عملية/يوم</small></span></div>
+<div class="bar-row"><span>الثلاثاء</span><div class="track"><i style="width:55.1%;background:var(--sage)"></i></div><span class="v">6.2<small>عملية/يوم</small></span></div>
+<div class="bar-row"><span>الأحد</span><div class="track"><i style="width:53.3%;background:var(--sage)"></i></div><span class="v">6.0<small>عملية/يوم</small></span></div>
+<div class="bar-row"><span>السبت</span><div class="track"><i style="width:53.3%;background:var(--sage)"></i></div><span class="v">6.0<small>عملية/يوم</small></span></div>
+<div class="bar-row"><span>الخميس</span><div class="track"><i style="width:40.0%;background:var(--sage)"></i></div><span class="v">4.5<small>عملية/يوم</small></span></div>
+    </div>
+  </div>
+  <div class="panel scroll" style="margin-top:18px">
+    <table>
+      <thead><tr><th>اليوم</th><th>مرات تكراره</th><th>إجمالي المبيعات</th><th>إجمالي العمليات</th><th>متوسط المبيعات</th><th>متوسط العمليات</th><th>متوسط الفاتورة</th></tr></thead>
+      <tbody>
+<tr><td>الجمعة</td><td class="n">4</td><td class="n">8,526.00</td><td class="n">45</td><td class="n">2,132</td><td class="n">11.2</td><td class="n">189</td></tr>
+<tr><td>الأربعاء</td><td class="n">5</td><td class="n">7,516.98</td><td class="n">42</td><td class="n">1,503</td><td class="n">8.4</td><td class="n">179</td></tr>
+<tr><td>الأحد</td><td class="n">4</td><td class="n">4,846.00</td><td class="n">24</td><td class="n">1,212</td><td class="n">6.0</td><td class="n">202</td></tr>
+<tr><td>السبت</td><td class="n">4</td><td class="n">4,435.00</td><td class="n">24</td><td class="n">1,109</td><td class="n">6.0</td><td class="n">185</td></tr>
+<tr><td>الثلاثاء</td><td class="n">5</td><td class="n">5,526.00</td><td class="n">31</td><td class="n">1,105</td><td class="n">6.2</td><td class="n">178</td></tr>
+<tr><td>الاثنين</td><td class="n">4</td><td class="n">4,219.00</td><td class="n">26</td><td class="n">1,055</td><td class="n">6.5</td><td class="n">162</td></tr>
+<tr><td>الخميس</td><td class="n">4</td><td class="n">3,647.00</td><td class="n">18</td><td class="n">912</td><td class="n">4.5</td><td class="n">203</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">الجمعة والأربعاء هما يوما الذروة، ويجب أن يكونا يومي <b>الجاهزية القصوى</b> من حيث المخزون والباقات الجاهزة وعدد الموظفين. أما الخميس والاثنين والثلاثاء والسبت فهي الأيام المستهدفة بالتنشيط. ويسجّل الاثنين أدنى متوسط فاتورة (162 ر.س)، مما يجعله اليوم الأنسب لتجربة البيع الإضافي.</div>
+</section>
+
+<section id="pay">
+  <h2>طرق الدفع</h2>
+  <p class="sub">توزيع المبيعات بين الشبكة والنقد.</p>
+  <div class="kpis">
+    <div class="kpi"><b>34,155.98</b><span>مبيعات الشبكة (ر.س)</span></div>
+    <div class="kpi"><b>88.2%</b><span>حصة الشبكة</span></div>
+    <div class="kpi"><b>4,560.00</b><span>مبيعات النقد (ر.س)</span></div>
+    <div class="kpi"><b>9 أيام</b><span>أيام ظهر فيها الدفع النقدي</span></div>
+  </div>
+  <div class="note">يتركز الدفع النقدي في أيام محددة وبمبالغ مرتفعة نسبياً، أبرزها 16 سبتمبر (1,123 ر.س) و24 سبتمبر (900 ر.س، أي 73% من مبيعات ذلك اليوم). ويُوصى بإقفال يومي للصندوق ومطابقة النقد الفعلي مع المسجّل في النظام لضمان دقة البيانات.</div>
+</section>
+
+<section id="potential">
+  <h2>فرص النمو المتوقعة</h2>
+  <p class="sub">سيناريوهات تقديرية للمبيعات الشهرية بناءً على أرقام سبتمبر، لإيضاح أثر كل رافعة.</p>
+  <div class="panel scroll">
+    <table>
+      <thead><tr><th>السيناريو</th><th>العمليات</th><th>متوسط الفاتورة</th><th>المبيعات الشهرية</th><th>الزيادة (ر.س)</th><th>نسبة الزيادة</th></tr></thead>
+      <tbody>
+<tr><td>الوضع الحالي</td><td class="n">210</td><td class="n">184</td><td class="n"><b>38,716</b></td><td class="n">—</td><td class="n">—</td></tr>
+<tr><td>رفع متوسط الفاتورة إلى 220 ر.س</td><td class="n">210</td><td class="n">220</td><td class="n"><b>46,200</b></td><td class="n">+7,484</td><td class="n">+19%</td></tr>
+<tr><td>زيادة عدد العمليات 15%</td><td class="n">241</td><td class="n">184</td><td class="n"><b>44,431</b></td><td class="n">+5,715</td><td class="n">+15%</td></tr>
+<tr><td>الجمع بين الأمرين</td><td class="n">241</td><td class="n">220</td><td class="n"><b>53,020</b></td><td class="n">+14,304</td><td class="n">+37%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">هذه أرقام تقديرية تفترض ثبات بقية العوامل، والهدف منها تحديد حجم الأثر لا التنبؤ الدقيق.</div>
+</section>
+
+<section id="recs">
+  <h2>التوصيات</h2>
+  <p class="sub">توصيات عملية لتطوير المحل ورفع مبيعاته، مرتبة في خمسة محاور.</p>
+
+  <div class="group">المحور الأول: واجهة المحل والجذب الخارجي</div>
+  <div class="recs">
+    <div class="rec"><h3>هوية بصرية فاخرة وواضحة للواجهة</h3><p>إبراز اسم «دوكمنتيشن» بخط واضح وطابع راقٍ وهادئ يعتمد على الأسود والأبيض، بحيث تُقرأ العلامة من مسافة ومن السيارة، وتعكس الواجهة من النظرة الأولى أن المحل وجهة هدايا فاخرة لا محل ورد عادي.</p><p class="meta"><b>الأثر:</b> مرتفع على جذب المارّة | <b>المدة:</b> خلال شهر</p></div>
+    <div class="rec"><h3>إضاءة ليلية مدروسة للواجهة الزجاجية</h3><p>إضاءة دافئة موجّهة تسلّط الضوء على الباقات والهدايا خلف الزجاج بعد المغرب، وقت الذروة المعتاد للتسوق. الواجهة المضاءة جيداً تتحول إلى إعلان دائم يعمل طوال المساء.</p><p class="meta"><b>الأثر:</b> مرتفع | <b>المدة:</b> أسبوعان</p></div>
+    <div class="rec"><h3>واجهة عرض تتجدد أسبوعياً وموسمياً</h3><p>تنسيق الواجهة أسبوعياً على قواعد شفافة وأوانٍ فاخرة تعرض أجمل الباقات (التوليب، البيبي روز، الهيدرنجا)، مع تصميم خاص لكل مناسبة. التجدد المستمر يعطي انطباعاً بالحيوية ويمنح الزبون الدائم سبباً للتوقف في كل مرة.</p>
+      <ul><li>تخصيص موظف مسؤول عن الواجهة وتصويرها كل أسبوع.</li><li>تقويم سنوي للواجهات: اليوم الوطني، يوم التأسيس، رمضان والأعياد، يوم الأم، موسم التخرج.</li></ul>
+      <p class="meta"><b>الأثر:</b> مرتفع | <b>المدة:</b> يبدأ فوراً ويستمر</p></div>
+    <div class="rec"><h3>لوحة عرض خارجية بسعر واضح</h3><p>لوحة أنيقة أمام المدخل تعرض باقة الأسبوع بسعرها، أو عبارة من نوع «باقات جاهزة للإهداء خلال دقائق». تخفّف هذه اللوحة رهبة الدخول لدى من يظن أن المحل باهظ الثمن، وتحوّل الفضول إلى زيارة.</p><p class="meta"><b>الأثر:</b> متوسط إلى مرتفع | <b>المدة:</b> أسبوع</p></div>
+    <div class="rec"><h3>ركن تصوير عند المدخل</h3><p>تنسيق زهري ثابت عند المدخل أو على الواجهة يحمل اسم العلامة، يشجع الزوار على التصوير والنشر، فيتحول المحل إلى محتوى مجاني على وسائل التواصل يعزز حضور العلامة في المنطقة.</p><p class="meta"><b>الأثر:</b> متوسط على الوعي بالعلامة | <b>المدة:</b> خلال شهر</p></div>
+  </div>
+
+  <div class="group">المحور الثاني: تجربة الزبون داخل المحل</div>
+  <div class="recs">
+    <div class="rec"><h3>ركن الهدايا الجاهزة بثلاث فئات سعرية</h3><p>طاولة أو قواعد شفافة في منتصف المحل تعرض باقات جاهزة للإهداء السريع بجانب الشوكولاتة والعطور، مقسّمة بوضوح إلى ثلاث فئات (مثلاً: نحو 150 و250 و400 ر.س). وجود فئة أعلى ظاهرة يرفع اختيار الزبون تلقائياً نحو الفئة الوسطى بدلاً من الأدنى.</p><p class="meta"><b>الأثر:</b> مرتفع على متوسط الفاتورة | <b>المدة:</b> أسبوعان</p></div>
+    <div class="rec"><h3>الثلاجة واجهة عرض داخلية</h3><p>ترتيب الزهور داخل الثلاجة حسب ألوانها المتناسقة (الأبيض، الوردي، الألوان الهادئة)، ووضع الأنواع المميزة في أوانٍ زجاجية شفافة تعكس النظافة والانتعاش، مع بطاقة صغيرة لاسم كل نوع.</p><p class="meta"><b>الأثر:</b> متوسط | <b>المدة:</b> أسبوع</p></div>
+    <div class="rec"><h3>التنسيق أمام الزبون جزء من التجربة</h3><p>ترتيب منطقة الكاشير والتغليف بشكل نظيف وأنيق، مع زاوية انتظار مريحة يشاهد منها الزبون موظف التنسيق وهو يجهّز الباقة ويربطها بشرائط «دوكمنتيشن» الخاصة. هذه اللحظة تبرر السعر وتصنع ذكرى تدفع الزبون للعودة.</p><p class="meta"><b>الأثر:</b> متوسط إلى مرتفع | <b>المدة:</b> أسبوعان</p></div>
+    <div class="rec"><h3>هوية حسية موحدة</h3><p>رائحة مميزة ثابتة وموسيقى هادئة ومستوى إضاءة داخلية دافئ، بحيث يرتبط المكان في ذهن الزبون بإحساس واحد يميّز العلامة عن غيرها.</p><p class="meta"><b>الأثر:</b> متوسط على الانطباع | <b>المدة:</b> أسبوع</p></div>
+  </div>
+
+  <div class="group">المحور الثالث: رفع قيمة الفاتورة</div>
+  <div class="recs">
+    <div class="rec"><h3>البيع الإضافي المنظّم مع كل باقة</h3><p>تدريب فريق المحل على اقتراح إضافة واحدة مناسبة مع كل باقة: بطاقة إهداء بشرائط خاصة، أو قطعة من شوكولاتة العلامة، أو عطر. ويُقترح تجهيز عبارة اقتراح موحدة وقياس نسبة الفواتير التي تضمنت إضافة كل أسبوع.</p><p class="meta"><b>الأثر:</b> مرتفع | <b>المدة:</b> تدريب خلال أسبوع</p></div>
+    <div class="rec"><h3>التغليف الفاخر خدمة مدفوعة</h3><p>إتاحة مستويين للتغليف: قياسي ضمن السعر، وفاخر بإضافة محددة (صندوق، شريط مخملي، بطاقة مكتوبة بخط اليد). خدمة منخفضة التكلفة وعالية القيمة في نظر الزبون الفاخر.</p><p class="meta"><b>الأثر:</b> متوسط إلى مرتفع | <b>المدة:</b> أسبوعان</p></div>
+    <div class="rec"><h3>حافز للموظفين مرتبط بمتوسط الفاتورة</h3><p>ربط جزء من حوافز فريق المحل بمتوسط الفاتورة ونسبة البيع الإضافي، لا بعدد العمليات فقط، مع هدف يومي واضح معلن داخل المحل.</p><p class="meta"><b>الأثر:</b> مرتفع | <b>المدة:</b> بعد تفعيل تسجيل اسم الموظف</p></div>
+  </div>
+
+  <div class="group">المحور الرابع: زيادة الزوار وتنشيط الأيام الهادئة</div>
+  <div class="recs">
+    <div class="rec"><h3>برنامج خاص لأيام الخميس والاثنين والثلاثاء والسبت</h3><p>توجيه العروض إلى الأيام الأضعف أداءً وتجنّب الخصم في أيام الذروة (الجمعة والأربعاء) حفاظاً على الهامش. ومن الأمثلة:</p>
+      <ul><li>الخميس: «هدية العزيمة» باقة أنيقة بسعر محدد مخصصة لزيارات نهاية الأسبوع.</li><li>الاثنين والثلاثاء: باقات مصغّرة لتزيين المنازل والمكاتب.</li><li>السبت: إضافة مجانية رمزية مع الباقات فوق مبلغ محدد.</li></ul>
+      <p class="meta"><b>الأثر:</b> مرتفع على الأيام الهادئة | <b>المدة:</b> تجربة لمدة شهر</p></div>
+    <div class="rec"><h3>اشتراكات الورد للمكاتب والمنازل</h3><p>باقة أسبوعية أو نصف شهرية بسعر ثابت للشركات والعيادات والمكاتب والمنازل، تُجهّز في الأيام الهادئة. تمنح دخلاً متكرراً ومضموناً وتوزّع العمل على أيام الأسبوع.</p><p class="meta"><b>الأثر:</b> مرتفع على المدى المتوسط | <b>المدة:</b> خلال شهرين</p></div>
+    <div class="rec"><h3>ربط المحل بالقنوات الرقمية</h3><p>الاستفادة من قوة المتجر الإلكتروني وقناة الواتساب في توجيه الزبائن إلى المحل:</p>
+      <ul><li>تعزيز الاستفادة من خيار «الاستلام من الفرع» المتاح في المتجر الإلكتروني، بإبرازه في صفحات المنتجات ورسائل الواتساب، وتجهيز عرض للإضافات عند حضور الزبون للاستلام.</li><li>تحديث ملف المحل على خرائط Google بالصور وساعات العمل وطلب التقييم من الزبائن الراضين.</li><li>نشر واجهة الأسبوع في حالات الواتساب وحسابات التواصل.</li></ul>
+      <p class="meta"><b>الأثر:</b> مرتفع | <b>المدة:</b> خلال أسبوعين</p></div>
+    <div class="rec"><h3>تقويم المواسم والاستعداد المسبق لها</h3><p>إعداد تقويم سنوي لمواسم الإهداء، وتجهيز باقات ومخزون وواجهة خاصة لكل موسم قبل حلوله بأسبوعين على الأقل، مع ضمان فتح المحل وجاهزيته في أيام المناسبات الكبرى.</p><p class="meta"><b>الأثر:</b> مرتفع في المواسم | <b>المدة:</b> خلال شهر</p></div>
+    <div class="rec"><h3>بناء قاعدة بيانات لزبائن المحل</h3><p>تسجيل رقم جوال الزبون بموافقته عند الشراء، لتذكيره لاحقاً بالمناسبات وإرسال العروض الموسمية إليه، وتمهيداً لبرنامج ولاء بسيط (مثل هدية بعد عدد محدد من الزيارات).</p><p class="meta"><b>الأثر:</b> مرتفع على تكرار الشراء | <b>المدة:</b> ضمن نظام مبيعات المحل</p></div>
+  </div>
+
+  <div class="group">المحور الخامس: ضبط التشغيل والبيانات</div>
+  <div class="recs">
+    <div class="rec"><h3>تسجيل الموظف المسؤول عن كل عملية</h3><p>إدخال اسم الموظف في كل عملية بيع بدلاً من حساب عام واحد، لمعرفة أداء كل موظف وصرف الحوافز بعدالة.</p><p class="meta"><b>الأثر:</b> جوهري للمتابعة | <b>المدة:</b> فوراً في نظام مبيعات المحل</p></div>
+    <div class="rec"><h3>تصنيف نوع الطلب والمنتجات المباعة</h3><p>تسجيل نوع الطلب (بيع مباشر، طلب خاص، استلام طلب إلكتروني) والمنتجات المباعة في كل عملية، لمعرفة ما يُباع فعلاً وتحديد الأصناف الأكثر طلباً والأعلى هامشاً.</p><p class="meta"><b>الأثر:</b> جوهري لتحليل الأشهر القادمة | <b>المدة:</b> فوراً</p></div>
+    <div class="rec"><h3>الإقفال اليومي للصندوق</h3><p>مطابقة يومية للنقد والشبكة مع المسجّل في النظام عند نهاية كل دوام، وتوقيع الموظف المسؤول، مع تسجيل سبب أي يوم يُغلق فيه المحل أو لا تُسجَّل فيه مبيعات.</p><p class="meta"><b>الأثر:</b> مرتفع على دقة البيانات والرقابة | <b>المدة:</b> فوراً</p></div>
+    <div class="rec"><h3>مواءمة جدول الدوام مع حركة الأيام</h3><p>زيادة الجاهزية يومي الجمعة والأربعاء، ومراجعة دوام يوم الخميس للتأكد من أن ضعفه لا يعود إلى أسباب تشغيلية كتأخر الفتح أو نقص الموظفين أو نفاد الباقات الجاهزة.</p><p class="meta"><b>الأثر:</b> متوسط إلى مرتفع | <b>المدة:</b> أسبوعان</p></div>
+  </div>
+</section>
+
+<section id="plan">
+  <h2>الخطة التنفيذية المقترحة</h2>
+  <p class="sub">توزيع التوصيات على ثلاث مراحل زمنية.</p>
+  <div class="phases">
+    <div class="phase"><h3>خلال أسبوعين</h3><ol><li>تسجيل اسم الموظف ونوع الطلب والمنتجات في كل عملية.</li><li>بدء الإقفال اليومي للصندوق.</li><li>إعادة ترتيب الثلاجة ومنطقة الكاشير.</li><li>تجهيز ركن الهدايا الجاهزة بثلاث فئات سعرية.</li><li>تدريب الفريق على البيع الإضافي.</li><li>اللوحة الخارجية وتحديث ملف خرائط Google.</li></ol></div>
+    <div class="phase"><h3>خلال شهر</h3><ol><li>تطوير الهوية البصرية والإضاءة الليلية للواجهة.</li><li>إطلاق برنامج أيام الخميس والاثنين والثلاثاء والسبت.</li><li>إبراز خيار الاستلام من الفرع في المتجر والواتساب.</li><li>إطلاق التغليف الفاخر المدفوع.</li><li>إعداد تقويم المواسم والواجهات.</li></ol></div>
+    <div class="phase"><h3>خلال 3 أشهر</h3><ol><li>إطلاق اشتراكات المكاتب والمنازل.</li><li>بناء قاعدة بيانات الزبائن وبرنامج الولاء.</li><li>ربط حوافز الموظفين بمتوسط الفاتورة.</li><li>ركن التصوير عند المدخل.</li><li>تقييم أثر التوصيات ومقارنة الأشهر.</li></ol></div>
+  </div>
+</section>
+
+<section id="kpi">
+  <h2>مؤشرات الأداء المقترحة</h2>
+  <p class="sub">مؤشرات تُتابع شهرياً، مع القيمة الحالية والهدف المقترح للأشهر الثلاثة القادمة.</p>
+  <div class="panel scroll">
+    <table>
+      <thead><tr><th>المؤشر</th><th>قيمة سبتمبر</th><th>الهدف المقترح</th></tr></thead>
+      <tbody>
+        <tr><td>إجمالي المبيعات الشهرية</td><td class="n">38,716 ر.س</td><td class="n">48,000 ر.س فأكثر</td></tr>
+        <tr><td>متوسط قيمة الفاتورة</td><td class="n">184 ر.س</td><td class="n">220 ر.س</td></tr>
+        <tr><td>متوسط المبيعات اليومية</td><td class="n">1,335 ر.س</td><td class="n">1,600 ر.س</td></tr>
+        <tr><td>متوسط العمليات اليومية</td><td class="n">7.2</td><td class="n">8.5</td></tr>
+        <tr><td>متوسط مبيعات يوم الخميس</td><td class="n">912 ر.س</td><td class="n">1,300 ر.س</td></tr>
+        <tr><td>أيام بمبيعات دون 1,000 ر.س</td><td class="n">10 أيام</td><td class="n">5 أيام أو أقل</td></tr>
+        <tr><td>أيام بلا مبيعات مسجّلة</td><td class="n">1</td><td class="n">0</td></tr>
+        <tr><td>نسبة الفواتير المتضمنة إضافة</td><td class="n">غير مسجّلة</td><td class="n">30%</td></tr>
+        <tr><td>العمليات المسجّلة باسم الموظف</td><td class="n">غير مسجّلة</td><td class="n">100%</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="next">
+  <h2>محتوى تقرير المحل ابتداءً من أكتوبر</h2>
+  <p class="sub">بعد استكمال تسجيل البيانات في نظام مبيعات المحل، يتوسع التقرير الشهري ليشمل:</p>
+  <div class="panel exec">
+    <ul>
+      <li>مبيعات كل موظف ومتوسط فاتورته ونسبة البيع الإضافي لديه.</li>
+      <li>الأصناف الأكثر مبيعاً والأعلى قيمة، وتوزيع المبيعات بين الورد والشوكولاتة والعطور والإكسسوارات.</li>
+      <li>توزيع العمليات حسب نوع الطلب (بيع مباشر، طلب خاص، استلام طلب إلكتروني).</li>
+      <li>المقارنة الشهرية مع سبتمبر لقياس أثر التوصيات المنفذة.</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    أُعدّ هذا التقرير لإدارة التخطيط والتطوير في دوكمنتيشن فلاورز استناداً إلى سجل مبيعات المحل اليومي لشهر سبتمبر 2026. جميع المبالغ بالريال السعودي، والسيناريوهات والأهداف الواردة تقديرية.
+  </div>
+</footer>
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('nav.toc a'));
+  var secs=[].slice.call(document.querySelectorAll('main section'));
+  var nav=document.querySelector('nav.toc');
+  function show(id,scroll){
+    if(!document.getElementById(id) && id!=='all') id='exec';
+    document.body.classList.toggle('tabbed', id!=='all');
+    secs.forEach(function(s){s.classList.toggle('show', s.id===id);});
+    links.forEach(function(a){
+      var on=a.getAttribute('href')==='#'+id;
+      a.classList.toggle('active',on); a.setAttribute('aria-selected',on);
+      if(on && a.scrollIntoView) a.scrollIntoView({block:'nearest',inline:'center'});
+    });
+    var h=document.querySelector('header.top').offsetHeight;
+    if(scroll){ if(window.scrollY>h) window.scrollTo(0,h); } else { window.scrollTo(0,0); }
+  }
+  links.forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      var id=a.getAttribute('href').slice(1);
+      try{history.replaceState(null,'','#'+id);}catch(_){}
+      show(id,true);
+    });
+  });
+  show((location.hash||'#exec').slice(1),false);
+  if('scrollRestoration' in history) history.scrollRestoration='manual';
+  window.addEventListener('load',function(){ setTimeout(function(){ window.scrollTo(0, location.hash && location.hash!=='#exec' ? document.querySelector('header.top').offsetHeight : 0); },0); });
+})();
+</script>
+</body>
+</html>
