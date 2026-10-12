@@ -104,6 +104,14 @@ td.c{min-width:320px;color:var(--ink-2);font-size:14px}
 .method ul{margin:0;padding-inline-start:20px}
 .method li{margin-bottom:8px;max-width:85ch}
 .closing{background:var(--leaf);color:#fff;border-radius:14px;padding:28px;text-align:center;font-family:var(--serif);font-size:clamp(18px,2.4vw,22px);line-height:1.9}
+.absgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.ab{background:var(--paper);border:1px solid var(--line);border-inline-start:5px solid var(--c);border-radius:10px;padding:10px 14px}
+.ab .nm{font-weight:600;font-size:15px}
+.ab .num{font-size:30px;font-weight:700;line-height:1.2;color:var(--c);font-variant-numeric:tabular-nums}
+.ab .num small{font-size:13px;font-weight:500;color:var(--ink-2);margin-inline-start:4px}
+.ab .ex{font-size:12.5px;color:var(--ink-2)}
+.abkey{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--ink-2);margin-top:12px}
+.abkey span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--c);margin-inline-end:6px;vertical-align:-1px}
 footer{padding:36px 0 50px;color:var(--ink-2);font-size:13.5px}
 @media (max-width:980px){.matrix{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:820px){
@@ -146,6 +154,7 @@ footer{padding:36px 0 50px;color:var(--ink-2);font-size:13.5px}
 
 <nav class="toc" aria-label="أقسام التقرير">
   <div class="wrap">
+    <a href="#absq">غياب كل موظف</a>
     <a href="#exec">الملخص التنفيذي</a>
     <a href="#adj">تصحيحات الإدارة</a>
     <a href="#att">الحضور والغياب</a>
@@ -162,6 +171,13 @@ footer{padding:36px 0 50px;color:var(--ink-2);font-size:13.5px}
 </nav>
 
 <main class="wrap">
+
+<section id="absq">
+  <h2>غياب كل موظف هذا الشهر</h2>
+  <p class="sub">نظرة سريعة على أيام الغياب المعتمدة لكل موظف بعد التصحيحات، مرتبةً من الأعلى غياباً إلى الأقل.</p>
+  <div class="absgrid" id="absGrid"></div>
+  <div class="abkey"><span style="--c:var(--leaf-2)">بلا غياب</span><span style="--c:var(--amber)">يوم إلى يومين</span><span style="--c:var(--petal)">3 أيام فأكثر</span><span style="--c:#8A9590">غير خاضع للتسجيل</span></div>
+</section>
 
 <section id="exec">
   <h2>الملخص التنفيذي</h2>
@@ -445,6 +461,12 @@ bars('earlyBars',erL,e=>e.early,erL[0].early,e=>e.early+'',()=> 'var(--amber)');
 document.getElementById('matrixBox').innerHTML=Object.keys(CATS).map(c=>{
   const list=E.filter(e=>e.cat===c);
   return `<div class="card" style="--c:${CATS[c][0]}"><h3>${c}</h3><p class="cat">${list.length===1?'موظف واحد':list.length===2?'موظفان':list.length+' موظفين'}</p><ul>${list.map(e=>`<li>${esc(e.short)}</li>`).join('')}</ul><div class="rule">${RULES[c]}</div></div>`;}).join('');
+// quick absence grid
+document.getElementById('absGrid').innerHTML=[...E].sort((a,b)=>(a.ex-b.ex)||(b.A-a.A)||(a.short.localeCompare(b.short,'ar'))).map(e=>{
+  const c=e.ex?'#8A9590':e.A===0?'var(--leaf-2)':e.A<=2?'var(--amber)':'var(--petal)';
+  const ex=[]; if(e.lv) ex.push(`إجازة ${e.lv} ${e.lv===1?'يوم':'أيام'}`); if(e.adj&&!e.ex) ex.push(`صُحّح يوم نسيان تسجيل`);
+  const num=e.ex?'—<small>غير خاضع</small>':`${e.A}<small>${e.A===0?'بلا غياب':e.A===1?'يوم':e.A===2?'يومان':'أيام'}</small>`;
+  return `<div class="ab" style="--c:${c}"><div class="nm">${esc(e.short)}</div><div class="num">${num}</div><div class="ex">${e.ex?'لا يسجّل الحضور وليس غائباً':(ex.join(' · ')||'حضور '+e.P+' يوماً')}</div></div>`;}).join('');
 // detail
 const sel=document.getElementById('catSel');
 Object.keys(CATS).forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;sel.appendChild(o);});
