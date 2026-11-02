@@ -1,0 +1,862 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تقرير الثلاجة أكتوبر 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#F1F4EE; --surface:#FFFFFF; --surface-2:#E7EDE3; --line:#DCE2D7;
+  --ink:#1E3326; --ink-2:#2A332C; --muted:#69736A;
+  --brand:#2F5A3F; --brand-2:#5E8A6C; --brand-soft:#DDE8DC; --track:#E9EEE5;
+  --gold:#B97E1E; --gold-soft:#F5EBD6;
+  --ok:#2F5A3F; --ok-soft:#DDE8DC;
+  --warn:#A6383C; --warn-soft:#F4E0DF;
+  --rose:#B8436B;
+  --s1:#2F5A3F; --s2:#B97E1E; --s3:#B8436B; --s4:#B7C1B3;
+  --shadow:0 1px 2px rgba(30,26,23,.04),0 6px 24px rgba(30,26,23,.05);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#111813; --surface:#19231C; --surface-2:#213028; --line:#2C3A30;
+    --ink:#E4EDE4; --ink-2:#D3DCD3; --muted:#9AA79C;
+    --brand:#7DB592; --brand-2:#5E9473; --brand-soft:#243A2C; --track:#24302A;
+    --gold:#E0AE55; --gold-soft:#33291A;
+    --ok:#7DB592; --ok-soft:#243A2C;
+    --warn:#E57B7E; --warn-soft:#3A2224;
+    --rose:#E487A8;
+    --s1:#7DB592; --s2:#E0AE55; --s3:#E487A8; --s4:#5B6A5F;
+    --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+    --bg:#111813; --surface:#19231C; --surface-2:#213028; --line:#2C3A30;
+    --ink:#E4EDE4; --ink-2:#D3DCD3; --muted:#9AA79C;
+    --brand:#7DB592; --brand-2:#5E9473; --brand-soft:#243A2C; --track:#24302A;
+    --gold:#E0AE55; --gold-soft:#33291A;
+    --ok:#7DB592; --ok-soft:#243A2C;
+    --warn:#E57B7E; --warn-soft:#3A2224;
+    --rose:#E487A8;
+    --s1:#7DB592; --s2:#E0AE55; --s3:#E487A8; --s4:#5B6A5F;
+    --shadow:none;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;font-size:16.5px;line-height:1.9;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+.num{font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate;display:inline-block}
+
+/* hero */
+header.hero{background:var(--bg);color:var(--ink);padding:44px 0 34px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero .eyebrow{font-size:15px;color:var(--brand);font-weight:600}
+.hero h1{font-family:"Reem Kufi","IBM Plex Sans Arabic",sans-serif;font-size:clamp(28px,4.6vw,44px);line-height:1.35;margin:8px 0 6px;font-weight:600;max-width:860px;color:var(--ink)}
+.hero .sub{color:var(--muted);font-size:15px}
+.hero .scope{margin-top:20px;background:var(--surface);border:1px solid var(--line);border-inline-start:5px solid var(--brand);border-radius:14px;padding:14px 18px;font-size:15px;max-width:860px;color:var(--ink-2)}
+.hero svg.petals{position:absolute;inset-inline-start:-80px;top:-60px;width:340px;opacity:.07;animation:spin 60s linear infinite}
+.hero svg.petals g{fill:var(--brand)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.theme-btn{position:absolute;top:16px;inset-inline-start:16px;background:var(--surface);border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:6px 14px;font:inherit;font-size:13px;cursor:pointer}
+
+/* toc */
+nav.toc{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.toc .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
+nav.toc a{flex:none;font-size:13px;color:var(--ink-2);text-decoration:none;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);white-space:nowrap}
+nav.toc a.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+
+/* sections */
+section{padding:44px 0 8px}
+h2{font-family:"Reem Kufi","IBM Plex Sans Arabic",sans-serif;font-weight:600;font-size:clamp(22px,3vw,28px);margin:0 0 18px;line-height:1.4;display:flex;align-items:center;gap:12px}
+h2 .no{font-size:13px;font-weight:600;color:var(--brand);background:var(--brand-soft);border-radius:999px;padding:3px 12px;flex:none}
+h3{font-family:"Reem Kufi","IBM Plex Sans Arabic",sans-serif;font-weight:600;font-size:19px;margin:28px 0 8px;color:var(--ink)}
+p{margin:0 0 14px;color:var(--ink-2)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow);margin:18px 0}
+.card h4{margin:0 0 4px;font-size:16px}
+.card .cap{font-size:13.5px;color:var(--muted);margin:0 0 16px}
+.callout{border-inline-start:4px solid var(--brand);background:var(--surface);border-radius:12px;padding:16px 18px;margin:18px 0;color:var(--ink)}
+.callout b{color:var(--brand)}
+.note{background:var(--surface-2);border-radius:12px;padding:14px 18px;margin:16px 0;font-size:15px;color:var(--ink-2)}
+ul.bul{list-style:none;padding:0;margin:10px 0}
+ul.bul li{position:relative;padding-inline-start:24px;margin:8px 0;color:var(--ink-2)}
+ul.bul li::before{content:"";position:absolute;inset-inline-start:4px;top:.75em;width:8px;height:8px;border-radius:50%;background:var(--brand-2)}
+
+/* additions */
+.add{background:var(--gold-soft);border:1px solid color-mix(in srgb,var(--gold) 35%,transparent);border-radius:16px;padding:18px 20px;margin:20px 0}
+.add p,.add li{color:var(--ink)}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--gold);margin-bottom:6px}
+.tag::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--gold)}
+.upd{background:var(--ok-soft);border:1px solid color-mix(in srgb,var(--ok) 35%,transparent);border-radius:16px;padding:16px 20px;margin:18px 0;color:var(--ink)}
+.upd .tag{color:var(--ok)} .upd .tag::before{background:var(--ok)}
+.legend-add{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:16px}
+.legend-add span{display:inline-flex;align-items:center;gap:6px}
+.legend-add i{width:12px;height:12px;border-radius:3px;display:inline-block}
+
+/* KPI */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:18px 0}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow)}
+.kpi .l{font-size:13.5px;color:var(--muted)}
+.kpi .v{font-size:28px;font-weight:700;line-height:1.3;margin-top:4px;color:var(--ink)}
+.kpi .v small{font-size:14px;font-weight:500;color:var(--ink-2);margin-inline-start:4px}
+.kpi.hl{background:var(--brand);border-color:var(--brand)}
+.kpi.hl .l,.kpi.hl .v,.kpi.hl .v small{color:#fff}
+.kpi.gold{background:var(--gold-soft);border-color:color-mix(in srgb,var(--gold) 35%,transparent)}
+
+/* tables */
+.tbl-wrap{overflow-x:auto;margin:14px 0;border-radius:14px;border:1px solid var(--line);background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{padding:11px 14px;text-align:right;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--surface-2);font-weight:600;color:var(--ink);font-size:14px;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+td.n,th.n{text-align:left;font-variant-numeric:tabular-nums;direction:ltr}
+tr.total td{font-weight:700;background:var(--surface-2)}
+.pill{display:inline-block;font-size:12.5px;padding:2px 10px;border-radius:999px;font-weight:600}
+.pill.hi{background:var(--warn-soft);color:var(--warn)}
+.pill.md{background:var(--gold-soft);color:var(--gold)}
+
+/* hbar */
+.hbars{display:flex;flex-direction:column;gap:10px}
+.hb{display:grid;grid-template-columns:minmax(96px,160px) 1fr auto;align-items:center;gap:12px;cursor:default}
+.hb .lab{font-size:14px;color:var(--ink);line-height:1.4}
+.hb .lab small{display:block;color:var(--muted);font-size:12px}
+.hb .tr{height:14px;background:var(--track);border-radius:4px;overflow:hidden;position:relative}
+.hb .fi{position:absolute;inset-block:0;inset-inline-start:0;width:0;background:var(--s4);border-radius:4px;transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
+.hb.hl .fi{background:var(--brand)}
+.hb.g .fi{background:var(--gold)}
+.hb .val{font-size:14px;font-weight:600;min-width:72px;text-align:left;font-variant-numeric:tabular-nums;direction:ltr}
+.hb:hover .tr{outline:2px solid var(--line);outline-offset:2px}
+@media (max-width:560px){.hb{grid-template-columns:92px 1fr auto;gap:8px}.hb .val{min-width:54px;font-size:13px}}
+
+/* donut */
+.donut-row{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.donut{width:200px;height:200px;flex:none;position:relative}
+.donut svg{width:100%;height:100%;transform:rotate(-90deg)}
+.donut circle.seg{fill:none;stroke-width:26;transition:stroke-dasharray 1.3s cubic-bezier(.2,.8,.2,1);cursor:default}
+.donut .center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.donut .center b{font-size:26px;line-height:1.2}
+.donut .center span{font-size:12.5px;color:var(--muted)}
+.lg{display:flex;flex-direction:column;gap:10px;flex:1;min-width:200px}
+.lg div{display:flex;align-items:center;gap:10px;font-size:14.5px}
+.lg i{width:14px;height:14px;border-radius:4px;flex:none}
+.lg .lv{margin-inline-start:auto;font-weight:600;font-variant-numeric:tabular-nums;direction:ltr}
+
+/* columns */
+.cols{display:flex;align-items:flex-end;gap:4px;height:200px;padding-top:10px;border-bottom:1px solid var(--line)}
+.cols .c{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;position:relative;cursor:default}
+.cols .c .b{width:100%;max-width:34px;background:var(--brand-2);border-radius:4px 4px 0 0;height:0;transition:height 1s cubic-bezier(.2,.8,.2,1)}
+.cols .c.pk .b{background:var(--brand)}
+.cols .c .t{position:absolute;bottom:calc(var(--h) + 4px);font-size:11.5px;font-weight:600;color:var(--ink);opacity:0;transition:opacity .4s .9s;direction:ltr}
+.in .cols .c .t{opacity:1}
+.cols-x{display:flex;gap:4px;margin-top:6px}
+.cols-x span{flex:1;text-align:center;font-size:11px;color:var(--muted)}
+
+/* stacked */
+.stk{display:flex;flex-direction:column;gap:12px}
+.stk .r{display:grid;grid-template-columns:minmax(90px,130px) 1fr auto;gap:12px;align-items:center}
+.stk .bar{display:flex;height:18px;border-radius:4px;overflow:hidden;background:var(--track);gap:2px}
+.stk .bar span{width:0;transition:width 1.1s cubic-bezier(.2,.8,.2,1);cursor:default}
+.stk .lab{font-size:14px}
+.stk .cnt{font-size:12.5px;color:var(--muted);direction:ltr}
+
+/* line */
+.linebox{position:relative}
+.linebox svg{width:100%;height:auto;display:block;overflow:visible}
+.linebox .ln{fill:none;stroke:var(--brand);stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round}
+.linebox .ar{fill:var(--brand);opacity:.08}
+.linebox .grid line{stroke:var(--line);stroke-width:1}
+.linebox .ax{font-size:11px;fill:var(--muted);font-family:inherit}
+.linebox .avg{stroke:var(--gold);stroke-dasharray:5 5;stroke-width:1.5}
+.linebox .dot{fill:var(--surface);stroke:var(--brand);stroke-width:2}
+.linebox .xh{stroke:var(--muted);stroke-width:1;opacity:0}
+
+/* tooltip */
+#tip{position:fixed;z-index:50;pointer-events:none;background:var(--ink);color:var(--bg);font-size:13px;padding:8px 12px;border-radius:10px;opacity:0;transform:translateY(4px);transition:opacity .15s,transform .15s;max-width:260px;line-height:1.6}
+#tip.on{opacity:1;transform:none}
+
+/* steps / plan */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.mini{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.mini h4{margin:0 0 6px;font-size:16px;color:var(--brand)}
+.mini p{margin:0;font-size:15px}
+.recs{counter-reset:r;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.recs li{counter-increment:r;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 18px 14px 18px;padding-inline-start:60px;position:relative;color:var(--ink-2)}
+.recs li::before{content:counter(r);position:absolute;inset-inline-start:16px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--brand-soft);color:var(--brand);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.when{font-size:12.5px;font-weight:600;padding:2px 10px;border-radius:999px;background:var(--brand-soft);color:var(--brand);white-space:nowrap}
+
+.final{background:var(--brand);color:#fff;border-radius:22px;padding:28px;margin:22px 0}
+.final p{color:rgba(255,255,255,.9)}
+.final h3{color:#fff;margin-top:0}
+:root[data-theme="dark"] .final{background:#213028}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .final{background:#213028}}
+
+footer{padding:40px 0 60px;color:var(--muted);font-size:13.5px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .hb .fi,.stk .bar span,.cols .c .b,.donut circle.seg{transition:none}
+  .hero svg.petals{animation:none}
+}
+@media print{
+  nav.toc,.theme-btn{display:none}
+  .rv{opacity:1;transform:none}
+  section{break-inside:avoid-page}
+}
+</style>
+</head>
+<body>
+<div id="tip" role="tooltip"></div>
+
+<header class="hero">
+  <svg class="petals" viewBox="0 0 200 200" aria-hidden="true"><g>
+    <ellipse cx="100" cy="50" rx="22" ry="48"/><ellipse cx="100" cy="150" rx="22" ry="48"/>
+    <ellipse cx="50" cy="100" rx="48" ry="22"/><ellipse cx="150" cy="100" rx="48" ry="22"/>
+    <ellipse cx="65" cy="65" rx="20" ry="44" transform="rotate(-45 65 65)"/><ellipse cx="135" cy="135" rx="20" ry="44" transform="rotate(-45 135 135)"/>
+    <ellipse cx="135" cy="65" rx="20" ry="44" transform="rotate(45 135 65)"/><ellipse cx="65" cy="135" rx="20" ry="44" transform="rotate(45 65 135)"/></g></svg>
+  <button class="theme-btn" id="themeBtn" type="button">الوضع الليلي</button>
+  <div class="wrap" style="position:relative">
+    <div class="eyebrow">دوكمنتيشن فلاورز | إدارة التخطيط والتطوير</div>
+    <h1>التقرير التحليلي الشامل لأداء الثلاجة وإدارة مخزون الورود الطبيعية</h1>
+    <div class="sub">أكتوبر 2026 | نسخة موسعة للعرض على الإدارة العليا</div>
+    <div class="scope">نطاق التقرير: المشتريات والموردون، الأرصدة الافتتاحية، حركة الوارد والصادر، الاستهلاك حسب القنوات والأصناف والألوان، التلف وأسبابه، الرقابة على المخزون، التوصيات وخطة العمل.</div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="أقسام التقرير"><div class="wrap" id="toc"></div></nav>
+
+<main class="wrap">
+
+<div class="legend-add rv">
+  <span><i style="background:var(--gold)"></i>إضافة من مراجعة بيانات النظام (ملف الإكسل)</span>
+  <span><i style="background:var(--ok)"></i>ملاحظة حُدّثت بعد المطابقة</span>
+</div>
+
+<!-- 1 -->
+<section id="s1" data-t="الملخص التنفيذي">
+  <h2 class="rv"><span class="no">أولًا</span>الملخص التنفيذي</h2>
+  <p class="rv">تمثل الثلاجة أحد أهم المكونات التشغيلية في دوكمنتيشن فلاورز؛ فهي ليست مجرد مكان لحفظ الورود، بل نقطة التقاء المشتريات والمخزون والإنتاج والمبيعات. فالورد الذي يدخل الثلاجة يمثل تكلفة تتحملها الشركة، والورد الذي يخرج منها يدخل في تنفيذ المنتجات، أما الورد الذي يتلف فيمثل خسارة مباشرة وقد يؤثر كذلك على سرعة التنفيذ وجودة التنسيق.</p>
+
+  <div class="kpis rv">
+    <div class="kpi hl"><div class="l">قيمة المشتريات المسجلة</div><div class="v"><span class="num" data-count="72487.38" data-dec="2">0</span><small>ريال</small></div></div>
+    <div class="kpi"><div class="l">الصادر بالأغصان</div><div class="v"><span class="num" data-count="16414">0</span><small>غصن</small></div></div>
+    <div class="kpi"><div class="l">تكلفة التالف التقديرية</div><div class="v"><span class="num" data-count="943.34" data-dec="2">0</span><small>ريال</small></div></div>
+    <div class="kpi"><div class="l">حصة المورد رفيق</div><div class="v"><span class="num" data-count="53.92" data-dec="2" data-suf="%">0</span></div></div>
+  </div>
+
+  <p class="rv">خلال أكتوبر 2026 بلغت قيمة المشتريات المسجلة 72,487.38 ريال، وبلغ الصادر من الأغصان 16,414 غصنًا، إضافة إلى كميات مسجلة بالربطات والحبات. وفي المقابل بلغ التالف 145 غصنًا و5 ربطات و29 حبة، بتكلفة تقديرية قدرها 943.34 ريال.</p>
+  <p class="rv">قد يبدو مبلغ التلف محدودًا مقارنة بقيمة المشتريات، لكن القراءة الإدارية الأهم هي طبيعة الأسباب التي أدت إليه؛ فقد ارتبط جزء من التلف ببقاء الورود فترات طويلة، وبعضه بعدم استخدام الدفعات القديمة، بينما سُجلت حالات أخرى تحت وصف الذبول الطبيعي. وهذه أسباب تتطلب إجراءات مختلفة، ولا يصح التعامل معها على أنها مشكلة واحدة.</p>
+  <div class="add rv"><div class="tag">إضافة من مراجعة البيانات</div>
+    <p style="margin:0">بالرجوع إلى تكلفة كل سبب في النظام، فإن <b>647.29 ريال (68.6%) من تكلفة التالف ارتبطت بالتخزين الطويل أو الكميات الكبيرة</b>، و36.01 ريال (3.8%) بورود لم تُستخدم في الثلاجة الصغيرة، بينما لم يتجاوز الذبول الطبيعي المجرد 260.03 ريال (27.6%). أي أن نحو <b>72% من خسارة التلف ناتجة عن إدارة المخزون</b> وليست عن طبيعة الورد، وهي الجزء القابل للتحكم.</p>
+  </div>
+  <p class="rv">كما أظهر التقرير اعتمادًا مرتفعًا على المورد رفيق، الذي يمثل 53.92% من قيمة المشتريات. ووفق المعلومات التشغيلية فهو يوفر الورد الهولندي الذي يصعب الحصول عليه من موردين آخرين محليًا في خميس مشيط وأبها، ولذلك فإن معالجة الاعتماد عليه لا تكون بوقف التعامل معه، بل بتطوير بدائل توريد واختبارها وتحسين القدرة التفاوضية.</p>
+  <div class="callout rv"><b>الاستنتاج الرئيسي:</b> المطلوب هو الانتقال من متابعة ما دخل وما خرج من الثلاجة إلى إدارة دورة الورد كاملة؛ من قرار الشراء، إلى الاستلام، ثم التخزين والصرف، وصولًا إلى قياس الاستهلاك والتالف والتكلفة.</div>
+</section>
+
+<!-- 7 -->
+<section id="s7" data-t="الأصناف الأعلى">
+  <h2 class="rv"><span class="no">ثانيًا</span>أكثر عشرة أصناف وألوان استهلاكًا</h2>
+  <div class="card rv">
+    <h4>أعلى 10 أصناف وألوان صرفًا</h4>
+    <p class="cap">بالأغصان — مجموعها 8,046 غصنًا (49% من الصادر). لون كل شريط هو لون الورد نفسه</p>
+    <div class="hbars" data-hbar='{"unit":"غصن","rows":[["جوري أحمر",1200,"","","احمر"],["بيبي روز سكري",1050,"","","سكري"],["بيبي روز دبل كلر",1020,"","","دبل كلر"],["بيبي روز أبيض",870,"","","ابيض"],["بيبي روز فوشي غامق",827,"","تلف منه 27 غصنًا","فوشي غامق"],["بيبي روز وردي فاتح",720,"","","وردي فاتح"],["بيبي روز وردي",670,"","","وردي"],["بيبي روز أصفر",620,"","","اصفر"],["بيبي جاردن وردي",540,"","","وردي"],["ليليوم (غير محدد)",529,"","","—"]]}'></div>
+  </div>
+  <div class="tbl-wrap rv"><table>
+    <tr><th>الترتيب</th><th>الصنف</th><th>اللون</th><th class="n">الكمية بالأغصان</th></tr>
+    <tr><td>1</td><td>جوري</td><td>أحمر</td><td class="n">1,200</td></tr>
+    <tr><td>2</td><td>بيبي روز</td><td>سكري</td><td class="n">1,050</td></tr>
+    <tr><td>3</td><td>بيبي روز</td><td>دبل كلر</td><td class="n">1,020</td></tr>
+    <tr><td>4</td><td>بيبي روز</td><td>أبيض</td><td class="n">870</td></tr>
+    <tr><td>5</td><td>بيبي روز</td><td>فوشي غامق</td><td class="n">827</td></tr>
+    <tr><td>6</td><td>بيبي روز</td><td>وردي فاتح</td><td class="n">720</td></tr>
+    <tr><td>7</td><td>بيبي روز</td><td>وردي</td><td class="n">670</td></tr>
+    <tr><td>8</td><td>بيبي روز</td><td>أصفر</td><td class="n">620</td></tr>
+    <tr><td>9</td><td>بيبي جاردن</td><td>وردي</td><td class="n">540</td></tr>
+    <tr><td>10</td><td>ليليوم</td><td>غير محدد</td><td class="n">529</td></tr>
+    <tr class="total"><td></td><td>الإجمالي</td><td></td><td class="n">8,046</td></tr>
+  </table></div>
+  <p class="rv">تمثل هذه الأصناف العشرة نحو 49% من إجمالي الأغصان المصروفة. وظهر البيبي روز في سبعة مراكز بإجمالي 5,777 غصنًا، ما يعكس دوره الكبير في عمليات التنسيق. لكن ارتفاع استهلاك البيبي روز لا يعني أن جميع ألوانه مطلوبة بالمستوى نفسه؛ لذلك يجب التخطيط لكل لون بصورة مستقلة.</p>
+  <div class="add rv"><div class="tag">إضافة من مراجعة البيانات</div>
+    <p style="margin:0">بإضافة ألوان البيبي روز الأخرى (فوشي فاتح 500، أحمر 490، أورنج 440) يصل إجمالي البيبي روز إلى <b>7,207 أغصان، أي 43.9% من كل الأغصان المصروفة</b>، بتكلفة متوسطة 4.23 ريال للغصن. فهو الصنف الذي يحدد تكلفة الثلاجة أكثر من أي صنف آخر.</p>
+  </div>
+
+  <h3 class="rv">2.1 الجوري الأحمر</h3>
+  <p class="rv">جاء في المركز الأول بواقع 1,200 غصن، بمتوسط حسابي يقارب 39 غصنًا يوميًا. ويستدعي ذلك ضمان توفره بصورة مستمرة مع مراعاة تفاوت الطلب بين الأيام ومدة التوريد والرصيد المتاح، بدل تحويل المتوسط اليومي إلى كمية شراء ثابتة.</p>
+  <h3 class="rv">2.2 السكري والدبل كلر والأبيض</h3>
+  <p class="rv">بلغ مجموع استهلاك ألوان البيبي روز السكري والدبل كلر والأبيض 2,940 غصنًا. وهذا يبرر منحها أولوية في التخطيط، مع الحرص على ألا يؤدي ضمان توفرها إلى شراء كميات تفوق القدرة على استهلاكها خلال فترة مناسبة.</p>
+  <h3 class="rv">2.3 الفوشي الغامق: استهلاك مرتفع مع وجود تلف</h3>
+  <p class="rv">بلغ استهلاك البيبي روز الفوشي الغامق 827 غصنًا، ومع ذلك تلف منه 27 غصنًا، بينها 20 غصنًا تغير لونها بعد بقائها شهرًا في الثلاجة. وهذا يشير إلى أن ارتفاع الطلب لا يمنع التلف إذا لم تُدار الدفعات جيدًا. لذلك لا ينبغي خفض مشترياته تلقائيًا قبل مراجعة ترتيب صرف الدفعات القديمة.</p>
+  <h3 class="rv">2.4 الاستخدام العملي للقائمة</h3>
+  <p class="rv">تقترح إدارة التخطيط والتطوير تصنيف الأصناف والألوان إلى مرتفعة ومتوسطة ومنخفضة الاستهلاك، مع اعتماد بيانات عدة أشهر قبل اتخاذ قرارات طويلة المدى. وتُعطى الأولوية للأصناف الأعلى دورانًا، بينما تُشترى الأصناف الأقل حركة بكميات مرنة وفق الاحتياج.</p>
+  <div class="add rv"><div class="tag">إضافة من مراجعة البيانات — أصناف اشتُريت ولم تُصرف</div>
+    <p>9 أصناف اشتُريت في أكتوبر بقيمة <b>1,058.34 ريال</b> ولم يُسجل لها أي صرف خلال الشهر، أبرزها:</p>
+    <div class="hbars" data-hbar='{"unit":"ريال","dec":2,"rows":[["رنكلس وردي",460,"g","50 غصنًا"],["بامبو",172.5,"","10 أغصان"],["بيببي روز سكري",115.57,"","30 غصنًا — خطأ إملائي في اسم الصنف"],["كريز ديكو",92,"","10 أغصان"],["ليليوم أورنج",72.45,"","20 غصنًا"],["أخرى (4 أصناف)",145.82,"","سفاري، كريسبديا، ماتيولا ربطة، هابريكوم أحمر"]]}'></div>
+    <p style="margin:12px 0 0">قد تكون هذه الكميات ما زالت في الثلاجة، لكنها مرشحة لأن تكون تالف نوفمبر إن لم تُتابع. ولاحظ أن 30 غصن بيبي روز سكري سُجلت باسم «بيببي روز»، فظهرت كصنف مستقل لم يُصرف.</p>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="s8" data-t="التالف حسب الصنف">
+  <h2 class="rv"><span class="no">ثالثًا</span>تحليل التالف وربط السبب بالصنف واللون</h2>
+  <p class="rv">بلغ التالف 145 غصنًا و5 ربطات و29 حبة، وبالتحويل الحسابي للربطات يعادل ذلك 195 غصنًا إضافة إلى 29 حبة. وتبلغ التكلفة التقديرية 943.34 ريال. والأهم من الكمية الإجمالية هو تحديد الصنف واللون والسبب والمرحلة التي ظهر فيها التلف.</p>
+
+  <div class="card rv">
+    <h4>التالف بالأغصان حسب الصنف واللون</h4>
+    <p class="cap">أعلى الأصناف تالفًا — لون كل شريط هو لون الورد نفسه</p>
+    <div class="hbars" data-hbar='{"unit":"غصن","rows":[["بيبي روز أورنج",40,"","30 تخزين أكثر من شهر · 10 ذبول طبيعي","اورنج"],["بيبي روز فوشي غامق",27,"","20 تغير لون بعد شهر · 7 ذبول طبيعي","فوشي غامق"],["جربيرا أحمر",20,"","كميات قديمة/كبيرة وعدم استخدام","احمر"],["توليب أصفر",8,"","ذبول طبيعي بعد الخروج","اصفر"],["بيبي روز أحمر",7,"","ذبول طبيعي بعد الخروج","احمر"],["كريز أصفر",6,"","كمية كبيرة أكثر من شهر","اصفر"],["بيبي روز وردي",5,"","4 أيام في الثلاجة الصغيرة","وردي"],["كالا أسود",4,"","ذبول بعد تخزين طويل","اسود"],["قرنفل موف",4,"","كمية كبيرة أكثر من شهر","موف"],["أخرى (7 أصناف)",24,"","جوري أبيض/فوشي/أحمر، جربيرا أورنج، بيبي روز سكري/أصفر/دبل كلر"]]}'></div>
+  </div>
+
+  <div class="tbl-wrap rv"><table>
+    <tr><th>الصنف</th><th>اللون</th><th>التالف</th><th>الأسباب المسجلة</th></tr>
+    <tr><td>بيبي روز</td><td>أورنج</td><td>40 غصنًا</td><td>30 تخزين أكثر من شهر، و10 ذبول طبيعي</td></tr>
+    <tr><td>بيبي روز</td><td>فوشي غامق</td><td>27 غصنًا</td><td>20 تخزين شهر وتغير اللون، و7 ذبول طبيعي</td></tr>
+    <tr><td>جربيرا</td><td>أحمر</td><td>20 غصنًا</td><td>كميات قديمة أو كبيرة، وذبول، وعدم استخدام بعضها في الثلاجة الصغيرة</td></tr>
+    <tr><td>توليب</td><td>أصفر</td><td>8 أغصان</td><td>ذبول طبيعي بعد الخروج</td></tr>
+    <tr><td>بيبي روز</td><td>أحمر</td><td>7 أغصان</td><td>ذبول طبيعي بعد الخروج</td></tr>
+    <tr><td>كريز</td><td>أصفر</td><td>6 أغصان</td><td>كمية كبيرة بقيت أكثر من شهر</td></tr>
+    <tr><td>بيبي روز</td><td>وردي</td><td>5 أغصان</td><td>بقيت أربعة أيام في الثلاجة الصغيرة دون استخدام</td></tr>
+    <tr><td>جوري</td><td>أبيض</td><td>4 أغصان</td><td>ذبول طبيعي بعد الخروج</td></tr>
+    <tr><td>جوري</td><td>فوشي</td><td>4 أغصان</td><td>ذبول طبيعي قبل الخروج</td></tr>
+    <tr><td>جربيرا</td><td>أورنج</td><td>4 أغصان</td><td>ذبول طبيعي بعد الخروج</td></tr>
+    <tr><td>بيبي روز</td><td>سكري</td><td>4 أغصان</td><td>ذبول طبيعي بعد الخروج</td></tr>
+    <tr><td>كالا</td><td>أسود</td><td>4 أغصان</td><td>ذبول بعد تخزين طويل</td></tr>
+    <tr><td>قرنفل</td><td>موف</td><td>4 أغصان</td><td>كمية كبيرة بقيت أكثر من شهر</td></tr>
+    <tr><td>بيبي روز</td><td>أصفر</td><td>3 أغصان</td><td>ذبول طبيعي بعد الخروج</td></tr>
+    <tr><td>بيبي روز</td><td>دبل كلر</td><td>3 أغصان</td><td>ذبول طبيعي بعد الخروج</td></tr>
+    <tr><td>جوري</td><td>أحمر</td><td>غصنان</td><td>ذبول طبيعي بعد الخروج</td></tr>
+    <tr><td>دوار الشمس</td><td>—</td><td>25 حبة</td><td>كميات كبيرة بقيت شهرًا</td></tr>
+    <tr><td>هيدرنجا</td><td>سماوي</td><td>4 حبات</td><td>تخزين أكثر من شهر، وبعضها أكثر من شهر ونصف</td></tr>
+    <tr><td>استاتس</td><td>موف</td><td>ربطتان</td><td>كمية كبيرة بقيت أكثر من شهر</td></tr>
+    <tr><td>كاب</td><td>غير محدد</td><td>ربطتان</td><td>كمية كبيرة بقيت أكثر من شهر</td></tr>
+    <tr><td>هابريكوم</td><td>أخضر</td><td>ربطة</td><td>كمية كبيرة بقيت شهرًا</td></tr>
+  </table></div>
+  <div class="upd rv"><div class="tag">حُدّثت بعد المطابقة مع ملف النظام</div>
+    <p style="margin:0">تمت مطابقة الجدول مع سجلات التالف التفصيلية (35 سجلًا)، وجاء مجموعه مطابقًا تمامًا لإجمالي التالف المعلن: <b>145 غصنًا و5 ربطات و29 حبة</b>. وبذلك لم يعد هناك فرق يستدعي التسوية.</p>
+  </div>
+
+  <h3 class="rv">3.1 بيبي روز أورنج: التخزين الطويل</h3>
+  <p class="rv">بلغ التالف 40 غصنًا، منها 30 غصنًا ارتبطت ببقاء كمية كبيرة أكثر من شهر، أي 75% من تلف هذا اللون. والسؤال الإداري هنا ليس فقط لماذا تلف الورد، بل لماذا بقيت الكمية دون استهلاك: هل كانت المشتريات أعلى من الطلب؟ أم انخفض الطلب على المنتجات التي تستخدمه؟ أم لم تُستخدم الدفعات الأقدم؟</p>
+  <p class="rv">ظهر استهلاك فعلي للبيبي روز الأورنج بواقع 440 غصنًا خلال الشهر، لكنه أقل من عدة ألوان أخرى من البيبي روز. لذلك ينبغي مراجعة الكمية المشتراة ومعدل دورانها، مع الالتزام بصرف الدفعات القديمة الصالحة أولًا.</p>
+  <h3 class="rv">3.2 بيبي روز فوشي غامق: الطلب موجود والدفعة القديمة بقيت</h3>
+  <p class="rv">بلغ التالف 27 غصنًا، منها 20 تغير لونها بعد بقائها شهرًا. وفي المقابل بلغ استهلاك اللون 827 غصنًا. وهذا يجعل مراجعة ترتيب الدفعات أولوية؛ لأن خفض الشراء وحده قد يسبب نقصًا في لون مرتفع الطلب دون أن يعالج أصل المشكلة.</p>
+  <h3 class="rv">3.3 جربيرا أحمر: التخزين والصرف إلى الإنتاج</h3>
+  <p class="rv">بلغ التالف 20 غصنًا، وتظهر الملاحظات أن بعض الكميات كانت قديمة أو كبيرة، وأن ثلاثة أغصان بقيت في الثلاجة الصغيرة دون استخدام بينما سُجلت حالات أخرى تحت الذبول الطبيعي. لذلك يحتاج التحسين إلى ضبط الشراء والصرف معًا، لا إلى إجراء منفصل في الثلاجة الرئيسية.</p>
+  <div class="add rv"><div class="tag">إضافة من مراجعة البيانات — دليل مباشر</div>
+    <p style="margin:0">في 10 أكتوبر سُجل شراء 20 غصن جربيرا أحمر من فلوراناو مع ملاحظة نصّها: <b>«كمية مالها داعي لأنه في الثلاجة حوالي 70 غصن من سابق»</b>. وبعدها تلف من الصنف نفسه 20 غصنًا خلال الشهر، وهي أعلى نسبة تلف بين أصناف الأغصان المتداولة بكميات كبيرة (14.6% من صادر الصنف وتالفه). هذا مثال موثق على أن قرار الشراء تم دون الرجوع إلى الرصيد المتاح.</p>
+  </div>
+  <h3 class="rv">3.4 دوار الشمس: حجم الشراء</h3>
+  <p class="rv">بلغ التالف 25 حبة، وارتبط ببقاء كميات كبيرة نحو شهر. ويستدعي ذلك مراجعة الطلب على المنتجات التي تتضمن دوار الشمس، ودراسة شراء دفعات أصغر وأكثر تكرارًا إذا كانت تكاليف التوريد تسمح بذلك.</p>
+  <h3 class="rv">3.5 الهيدرنجا السماوي: متابعة العمر التخزيني</h3>
+  <p class="rv">بلغ التالف أربع حبات، وتشير الملاحظات إلى بقاء بعض الكميات أكثر من شهر ونصف. ورغم أن العدد محدود، فإن الحالة تكشف أهمية متابعة الأصناف بطيئة الحركة، خصوصًا إذا كانت مرتفعة التكلفة.</p>
+  <h3 class="rv">3.6 بيبي روز وردي: عدم استخدام الموجود</h3>
+  <p class="rv">بلغ التالف خمسة أغصان، وورد أنها بقيت أربعة أيام في الثلاجة الصغيرة دون استخدام، بينما استُخدمت ورود أخرى. وهذه حالة تشغيلية واضحة تستدعي تنظيم ترتيب الورد ومراجعة المتبقي قبل صرف كميات جديدة من الصنف واللون نفسيهما.</p>
+</section>
+
+<!-- 2 -->
+<section id="s2" data-t="المؤشرات">
+  <h2 class="rv"><span class="no">رابعًا</span>المؤشرات التشغيلية والمالية</h2>
+  <div class="tbl-wrap rv"><table>
+    <tr><th>المؤشر</th><th class="n">القيمة</th></tr>
+    <tr><td>إجمالي المشتريات المسجلة</td><td class="n">72,487.38 ريال</td></tr>
+    <tr><td>التالف التقديري</td><td class="n">943.34 ريال</td></tr>
+    <tr><td>التالف مقارنة بالمشتريات</td><td class="n">1.30%</td></tr>
+    <tr><td>الصادر المسجل بالأغصان</td><td class="n">16,414 غصنًا</td></tr>
+    <tr><td>حصة المورد رفيق</td><td class="n">53.92%</td></tr>
+  </table></div>
+
+  <div class="card rv">
+    <h4>حركة المخزون حسب الوحدة</h4>
+    <p class="cap">الوارد والصادر والتالف خلال أكتوبر — مرّر المؤشر على أي شريط لرؤية القيمة</p>
+    <div class="tbl-wrap" style="margin-top:0"><table>
+      <tr><th>نوع الحركة</th><th class="n">غصن</th><th class="n">ربطة</th><th class="n">حبة</th></tr>
+      <tr><td>الوارد</td><td class="n">15,373</td><td class="n">131</td><td class="n">129</td></tr>
+      <tr><td>الصادر</td><td class="n">16,414</td><td class="n">154</td><td class="n">161</td></tr>
+      <tr><td>التالف</td><td class="n">145</td><td class="n">5</td><td class="n">29</td></tr>
+    </table></div>
+    <div class="hbars" data-hbar='{"unit":"غصن","rows":[["الوارد",15373,""],["الصادر",16414,"hl"],["التالف",145,"g"]]}'></div>
+  </div>
+  <p class="rv">تجاوز الصادر للوارد لا يُفسَّر تلقائيًا باعتباره عجزًا؛ لأن النظام يتضمن أرصدة افتتاحية، ولأن بعض الكميات كانت موجودة في الثلاجة قبل الفترة محل التحليل. لذلك ينبغي التفريق بين حركات المخزون وحركات الشراء المالية.</p>
+
+  <div class="add rv"><div class="tag">إضافة من مراجعة البيانات</div>
+    <p>يُظهر ملخص النظام نسبة الهالك من الوارد لكل وحدة، وهي تكشف ما لا يظهر في الإجمالي المالي:</p>
+    <div class="kpis" style="margin:10px 0 6px">
+      <div class="kpi"><div class="l">الهالك من وارد الأغصان</div><div class="v"><span class="num" data-count="0.9" data-dec="1" data-suf="%">0</span></div></div>
+      <div class="kpi"><div class="l">الهالك من وارد الربطات</div><div class="v"><span class="num" data-count="3.8" data-dec="1" data-suf="%">0</span></div></div>
+      <div class="kpi gold"><div class="l">الهالك من وارد الحبات</div><div class="v"><span class="num" data-count="22.5" data-dec="1" data-suf="%">0</span></div></div>
+    </div>
+    <p style="margin:0">التلف في الأغصان منخفض، لكن <b>الحبات (دوار الشمس والهيدرنجا) تالفها يعادل 22.5% من واردها</b>؛ إذ تلفت 25 حبة دوار شمس مقابل 36 حبة واردة فقط خلال الشهر. وهذا يجعل أصناف الحبات أولوية رقابية رغم صغر عددها.</p>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="s3" data-t="الأرصدة الافتتاحية">
+  <h2 class="rv"><span class="no">خامسًا</span>الأرصدة الافتتاحية وتفسير حركة الدخول</h2>
+  <p class="rv">أكدت الإدارة التشغيلية أن الأرصدة الافتتاحية أُدخلت فعلًا عند تشغيل النظام، وأن بعض حركات «الدخول» قد تعكس إثبات ورد كان موجودًا في الثلاجة مسبقًا. وعليه، لا يجوز افتراض أن كل حركة دخول هي فاتورة شراء جديدة، كما لا يجوز افتراض أن الصنف الذي لا يظهر له وارد جديد لم يكن متوفرًا أصلًا.</p>
+  <div class="tbl-wrap rv"><table>
+    <tr><th>نوع الحركة</th><th>المعنى الإداري والمحاسبي</th></tr>
+    <tr><td>رصيد افتتاحي</td><td>كمية كانت موجودة قبل بداية الفترة أو عند بدء استخدام النظام</td></tr>
+    <tr><td>دخول مشتريات</td><td>كمية استُلمت من مورد بموجب فاتورة شراء</td></tr>
+    <tr><td>إثبات مخزون سابق</td><td>كمية موجودة فعليًا أُدخلت في النظام لاحقًا</td></tr>
+    <tr><td>تسوية مخزون</td><td>تصحيح ناتج عن جرد أو اختلاف في التسجيل</td></tr>
+  </table></div>
+  <p class="rv">إذا ظهر صنف لأول مرة في النظام تحت مسمى «دخول»، فلا يصبح رصيدًا افتتاحيًا تلقائيًا؛ بل يتحدد ذلك بحسب تاريخ امتلاك الكمية ومصدرها. فالصنف الجديد على النظام قد يكون شراءً جديدًا أو إثباتًا لكمية قديمة.</p>
+  <div class="callout rv"><b>معادلة الجرد المرجعية:</b> رصيد آخر المدة = رصيد أول المدة + الوارد − الصادر − التالف، بشرط ألا يكون التالف محتسبًا ضمن الصادر سابقًا، وألا تؤدي التحويلات الداخلية إلى تكرار تسجيل الكمية.</div>
+  <p class="rv"><b>الإجراء المقترح:</b> اعتماد نوع واضح لكل حركة دخول، وربطها بمصدرها، حتى تتمكن الإدارة من استخراج تقرير يفصل المشتريات الفعلية عن الأرصدة الافتتاحية والتسويات، وتقييم حركة المخزون دون تضخيم أو سوء تفسير.</p>
+
+  <div class="add rv"><div class="tag">إضافة من مراجعة البيانات</div>
+    <p>بمقارنة الوارد بالصادر والتالف لكل صنف ولون، يتبيّن أن الثلاجة صرفت من مخزون سابق لأكتوبر ما لا يقل عن <b>1,889 غصنًا و43 ربطة و72 حبة</b>. وفي المقابل زاد رصيد أصناف أخرى بنحو 703 أغصان، فيكون صافي السحب من المخزون السابق 1,186 غصنًا. هذا هو الرقم الذي يفسّر تجاوز الصادر للوارد.</p>
+    <div class="card" style="margin:12px 0 4px">
+      <h4>أكبر الأصناف صرفًا من مخزون سابق</h4>
+      <p class="cap">(الصادر + التالف − الوارد) بالأغصان — أصناف خرجت دون وارد يغطيها في أكتوبر</p>
+      <div class="hbars" data-hbar='{"unit":"غصن","rows":[["كريز هولندي موف",340,"","وارد 0 · صادر 340","موف"],["قرنفل موف",184,"","وارد 0 · صادر 180 · تالف 4","موف"],["قرنفل أخضر",140,"","وارد 40 · صادر 180","اخضر"],["كريز أصفر",136,"","وارد 0 · صادر 130 · تالف 6","اصفر"],["بيبي روز أورنج",110,"","وارد 370 · صادر 440 · تالف 40","اورنج"],["جربيرا أصفر",106,"","وارد 150 · صادر 256","اصفر"],["كريز أخضر",85,"","وارد 10 · صادر 95","اخضر"],["كريز هولندي وردي",80,"","وارد 35 · صادر 115","وردي"]]}'></div>
+    </div>
+    <p style="margin:0">التوصية العملية: إثبات جرد ختامي لأكتوبر في النظام ليصبح رصيدًا افتتاحيًا معتمدًا لنوفمبر، حتى لا يتكرر هذا الفرق دون رقم مرجعي.</p>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="s5" data-t="الموردون">
+  <h2 class="rv"><span class="no">سادسًا</span>تحليل المشتريات والموردين بعد توحيد الأسماء</h2>
+  <p class="rv">بلغ إجمالي المشتريات المسجلة 72,487.38 ريال. وبعد دمج «الورد الأصفر» و«الوردالاصفر» بناءً على تأكيد الإدارة، أصبح الورد الأصفر ثاني أكبر مورد للشركة.</p>
+
+  <div class="card rv">
+    <h4>حصص الموردين من قيمة المشتريات</h4>
+    <p class="cap">بالريال — رفيق والورد الأصفر معًا نحو 70.4%</p>
+    <div class="hbars" data-hbar='{"unit":"ريال","dec":2,"rows":[["رفيق",39085.63,"hl","53.92% · 15 فاتورة"],["الورد الأصفر",11940.45,"hl","16.47% · 10 فواتير"],["إيتاء",9924.96,"","13.69% · 7 فواتير"],["أزهار النجوم",5214.67,"","7.19% · فاتورتان"],["فلوراناو",4368.96,"","6.03% · 7 فواتير"],["موردون آخرون",1952.71,"","2.69%"]]}'></div>
+  </div>
+
+  <div class="tbl-wrap rv"><table>
+    <tr><th>الترتيب</th><th>المورد</th><th class="n">قيمة المشتريات</th><th class="n">النسبة</th></tr>
+    <tr><td>1</td><td>رفيق</td><td class="n">39,085.63 ريال</td><td class="n">53.92%</td></tr>
+    <tr><td>2</td><td>الورد الأصفر</td><td class="n">11,940.45 ريال</td><td class="n">16.47%</td></tr>
+    <tr><td>3</td><td>إيتاء</td><td class="n">9,924.96 ريال</td><td class="n">13.69%</td></tr>
+    <tr><td>4</td><td>أزهار النجوم</td><td class="n">5,214.67 ريال</td><td class="n">7.19%</td></tr>
+    <tr><td>5</td><td>فلوراناو</td><td class="n">4,368.96 ريال</td><td class="n">6.03%</td></tr>
+    <tr><td>—</td><td>موردون آخرون</td><td class="n">1,952.71 ريال</td><td class="n">2.69%</td></tr>
+    <tr class="total"><td></td><td>الإجمالي</td><td class="n">72,487.38 ريال</td><td class="n">100%</td></tr>
+  </table></div>
+  <div class="note rv"><b>ملاحظة بيانات:</b> يظهر ضمن الموردين الآخرين اسم ثالث «الود الاصفر» بقيمة 607.20 ريال، ولم يُدمج مع الورد الأصفر لأن تطابقه لم يؤكد بعد. وفي حال تأكيده يجب تعديل الحصص وفق ذلك.</div>
+  <div class="add rv"><div class="tag">إضافة من مراجعة البيانات</div>
+    <p style="margin:0">«الموردون الآخرون» (1,952.71 ريال) يتضمنون كذلك <b>مؤسسة فرح عبدالحميد الأحمدي مسجلة باسمين مختلفين</b> (1,017.75 + 224.25 = 1,242.00 ريال)، إضافة إلى «الود الاصفر» (607.20) و«روز كلاود» (103.50). وفي حال تأكيد «الود الاصفر» تصبح حصة الورد الأصفر 12,547.65 ريال (17.31%).</p>
+  </div>
+
+  <h3 class="rv">6.1 ماذا يكشف توزيع الموردين؟</h3>
+  <p class="rv">يستحوذ رفيق والورد الأصفر معًا على نحو 70.4% من إجمالي المشتريات. وهذا التركّز يجعل أي تغير في أسعارهما أو قدرتهما على التوريد مؤثرًا في التكلفة واستمرارية الإنتاج، لكنه لا يكفي وحده للحكم على كفاءة قرارات الشراء؛ إذ يجب النظر إلى طبيعة الأصناف التي يوفرها كل مورد.</p>
+
+  <h3 class="rv">6.2 رفيق: مورد استراتيجي مع محدودية البدائل</h3>
+  <p class="rv">تعتمد الشركة على رفيق لتوفير الورد الهولندي الذي يصعب الحصول عليه محليًا من موردين آخرين في خميس مشيط وأبها. وبالتالي فإن ارتفاع حصته من المشتريات مرتبط بقدرته على توفير أصناف أساسية، وليس بالضرورة لأنه يقدم أفضل الأسعار.</p>
+  <p class="rv">المشكلة الاستراتيجية هنا هي محدودية الخيارات: كلما قل عدد الموردين القادرين على توفير الصنف المطلوب، ضعفت قدرة الشركة على التفاوض بشأن السعر وشروط التوريد. ولا يعني ذلك أن أسعار رفيق غير عادلة بصورة مثبتة؛ فالحكم يتطلب مقارنة الصنف واللون والجودة والسعر النهائي بعد النقل.</p>
+
+  <div class="add rv"><div class="tag">إضافة من مراجعة البيانات — جودة الاستلام حسب المورد</div>
+    <p>يسجّل مسؤول الثلاجة تقييمًا للجودة عند كل استلام. وعند تجميع سطور الاستلام (332 سطرًا) حسب المورد:</p>
+    <div class="card" style="margin:10px 0">
+      <div class="legend-add" style="margin:0 0 14px">
+        <span><i style="background:var(--s3)"></i>ممتازة</span><span><i style="background:var(--s4)"></i>جيدة</span><span><i style="background:var(--s2)"></i>متوسطة</span><span><i style="background:var(--warn)"></i>ضعيفة</span>
+      </div>
+      <div class="stk" data-stk='[["رفيق",177,[25,140,12,0]],["إيتاء",61,[36,21,4,0]],["الورد الأصفر",43,[7,34,1,1]],["فلوراناو",20,[3,16,1,0]],["أزهار النجوم",13,[4,8,1,0]],["فرح الأحمدي",12,[1,4,6,1]]]'></div>
+    </div>
+    <p style="margin:0"><b>إيتاء</b> صاحب أعلى نسبة استلام «ممتازة» (59%)، مقابل 14% فقط لدى <b>رفيق</b> الذي يغلب على استلاماته تقييم «جيدة» (79%). أما <b>فرح الأحمدي</b> فأكثر من نصف استلاماته «متوسطة» أو «ضعيفة». هذا التقييم شخصي من المستلم، لكنه يعطي مدخلًا موضوعيًا لمفاوضة رفيق ولقرار الاستمرار مع الموردين الصغار.</p>
+  </div>
+
+  <h3 class="rv">6.3 الفرصة المالية لتحسين تكلفة الشراء</h3>
+  <div class="card rv">
+    <h4>الوفر المتوقع من خفض أسعار رفيق مقارنة بتكلفة التالف</h4>
+    <p class="cap">بالريال في شهر مماثل لأكتوبر</p>
+    <div class="hbars" data-hbar='{"unit":"ريال","dec":2,"rows":[["خفض 3%",1172.57,""],["خفض 5%",1954.28,"hl"],["خفض 10%",3908.56,""],["تكلفة التالف",943.34,"g"]]}'></div>
+  </div>
+  <p class="rv">هذه السيناريوهات توضيحية وليست وفورات مضمونة. وقد يختلف الوفر الفعلي بعد إضافة تكاليف الشحن أو فروقات الجودة. ومع ذلك، فإن خفضًا افتراضيًا بنسبة 5% في مشتريات رفيق يعادل أكثر من ضعف تكلفة التالف التقديرية في أكتوبر، ما يؤكد أن تحسين التوريد قد يكون ذا أثر مالي مهم بجانب تقليل التلف.</p>
+
+  <h3 class="rv">6.4 خطة تطوير الموردين</h3>
+  <ul class="bul rv">
+    <li>البحث عن مستوردين وموردين للورد الهولندي خارج المنطقة، وعدم حصر الخيارات في خميس مشيط وأبها.</li>
+    <li>طلب عروض أسعار للصنف واللون والدرجة والجودة نفسها، مع احتساب تكلفة النقل إلى الفرع.</li>
+    <li>اختبار موردين جدد بكميات محدودة، ومتابعة جودة الورود عند الاستلام ومدة بقائها صالحة للاستخدام.</li>
+    <li>الاستفادة من حجم المشتريات للتفاوض مع رفيق على أسعار الأصناف الأعلى استهلاكًا وشروط النقل والاستبدال.</li>
+  </ul>
+
+  <h3 class="rv">6.5 تقرير مقارنة أسعار الموردين</h3>
+  <p class="rv">أوضحت الإدارة أن النظام يحتوي بالفعل على تقرير لمقارنة أسعار الموردين. وهذه ميزة ينبغي تحويلها إلى أداة لاتخاذ القرار؛ إذ لا تكفي مقارنة قيمة الفاتورة الإجمالية أو سعر الجوري بصورة عامة، بل يجب مقارنة الصنف واللون والدرجة ووحدة القياس وتكلفة النقل.</p>
+  <p class="rv">لم تكن تفاصيل مقارنة الأسعار لكل صنف ولون ضمن بيانات التصدير المستخدمة في هذا التحليل، لذلك لا يصح إصدار حكم موثق على المورد الأرخص لكل صنف قبل مراجعة ذلك التقرير.</p>
+  <div class="tbl-wrap rv"><table>
+    <tr><th>معيار المقارنة</th><th>سبب أهميته</th></tr>
+    <tr><td>سعر الغصن أو الربطة</td><td>تحديد تكلفة الوحدة</td></tr>
+    <tr><td>الجودة عند الاستلام</td><td>منع المقارنة بين درجات جودة مختلفة</td></tr>
+    <tr><td>مدة بقاء الورد صالحًا</td><td>تقييم التكلفة التشغيلية الحقيقية</td></tr>
+    <tr><td>تكلفة النقل</td><td>حساب السعر النهائي عند الوصول</td></tr>
+    <tr><td>انتظام التوريد</td><td>تقليل مخاطر نفاد الأصناف</td></tr>
+    <tr><td>شروط الاستبدال</td><td>تقليل أثر التوريد غير المطابق</td></tr>
+  </table></div>
+  <div class="add rv"><div class="tag">إضافة من مراجعة البيانات — متوسط تكلفة الوحدة</div>
+    <p>من قيمة المشتريات وكمياتها في النظام (لكل الموردين مجتمعين)، كمرجع أولي لحين مراجعة تقرير المقارنة:</p>
+    <div class="hbars" data-hbar='{"unit":"ريال/غصن","dec":2,"rows":[["توليب",6.63,"","متوسط كل الألوان"],["جربيرا",5.28,"",""],["بيبي جاردن",4.86,"",""],["بيبي روز",4.23,"hl","الأعلى استهلاكًا"],["ليليوم",3.83,"",""],["كريز",3.41,"",""],["جوري",2.93,"hl",""],["قرنفل",2.49,"",""]]}'></div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="s6" data-t="قنوات البيع">
+  <h2 class="rv"><span class="no">سابعًا</span>تحليل الاستهلاك حسب قنوات البيع</h2>
+  <div class="card rv">
+    <div class="donut-row">
+      <div class="donut" data-donut='{"total":16414,"center":"16,414","sub":"غصن مصروف","segs":[["الموقع الإلكتروني",12430,"var(--s1)"],["المحل",3834,"var(--s2)"],["أخرى",150,"var(--s3)"]]}'></div>
+      <div class="lg" data-lg></div>
+    </div>
+  </div>
+  <div class="tbl-wrap rv"><table>
+    <tr><th>وجهة الصرف</th><th class="n">الأغصان</th><th class="n">النسبة</th></tr>
+    <tr><td>الموقع الإلكتروني</td><td class="n">12,430</td><td class="n">75.7%</td></tr>
+    <tr><td>المحل</td><td class="n">3,834</td><td class="n">23.4%</td></tr>
+    <tr><td>أخرى</td><td class="n">150</td><td class="n">0.9%</td></tr>
+    <tr class="total"><td>الإجمالي</td><td class="n">16,414</td><td class="n">100%</td></tr>
+  </table></div>
+  <p class="rv">استحوذ الموقع الإلكتروني على أكثر من ثلاثة أرباع الصرف المسجل بالأغصان، وهو ما يؤكد أنه المحرك الرئيسي للاستهلاك. لذلك ينبغي أن ترتبط قرارات الشراء بمبيعات المنتجات الإلكترونية ومكوناتها الفعلية، لا بالتقدير العام وحده.</p>
+  <p class="rv">فعندما تحقق باقة معينة مبيعات مرتفعة وتستهلك عددًا محددًا من أغصان لون معين، يمكن تحويل مبيعاتها إلى احتياج متوقع. وفي المقابل، إذا كان الصرف الفعلي أعلى من المتوقع وفق مواصفات المنتجات، فينبغي مراجعة أسباب الفرق، سواء كان تعديل التنسيق أو الهدر أثناء التجهيز أو عدم دقة المواصفات.</p>
+  <p class="rv"><b>التوصية:</b> مطابقة الصرف مع الطلبات المنفذة ومكونات الباقات، مع توضيح طبيعة الحركات المصنفة «أخرى» قبل إدخالها في حساب الاستهلاك الإنتاجي.</p>
+  <div class="add rv"><div class="tag">إضافة من مراجعة البيانات</div>
+    <p style="margin:0">تم توضيح طبيعة «أخرى»: الأغصان الـ150 كلها صُرفت يوم 31 أكتوبر بملاحظة <b>«مسكة خارجية — تنسيق خارجي»</b> (فيرونيكا 50، كريز هولندي 70، جوري أبيض 20، كريز أبيض 10)، ومعها 40 حبة هيدرنجا. أي أنها طلب تنسيق واحد خارج المتجر والمحل، ولا تمثل استهلاكًا إنتاجيًا متكررًا. كما صُرفت بالربطات والحبات: الموقع 119 ربطة و90 حبة، والمحل 35 ربطة و31 حبة.</p>
+  </div>
+
+  <div class="add rv"><div class="tag">إضافة من مراجعة البيانات — الصرف اليومي</div>
+    <div class="card" style="margin:8px 0 12px">
+      <h4>الأغصان المصروفة يوميًا — أكتوبر 2026</h4>
+      <p class="cap">الخط المتقطع = المتوسط اليومي (529 غصنًا). مرّر المؤشر على الخط لرؤية كل يوم.</p>
+      <div class="linebox" id="dailyLine"></div>
+    </div>
+    <p style="margin:0">يتراوح الصرف اليومي بين 294 غصنًا (20 أكتوبر) و885 غصنًا (1 أكتوبر)، بمتوسط 529 غصنًا. وأعلى أيام الأسبوع صرفًا في المتوسط <b>الخميس (595)</b> ثم الجمعة (565)، وأقلها <b>الأحد (470)</b>. وهذا يدعم جدولة استلام الدفعات قبل الخميس بدل الشراء بكميات ثابتة طوال الأسبوع.</p>
+  </div>
+</section>
+
+<!-- 9 -->
+<section id="s9" data-t="أسباب التلف">
+  <h2 class="rv"><span class="no">ثامنًا</span>تحليل أسباب التلف ومراحله</h2>
+  <div class="add rv"><div class="tag">إضافة من مراجعة البيانات — تكلفة التالف حسب السبب</div>
+    <div class="donut-row" style="margin-top:8px">
+      <div class="donut" data-donut='{"total":943.33,"center":"943","sub":"ريال تالف","dec":2,"segs":[["تخزين طويل / كميات كبيرة",647.29,"var(--s1)"],["ذبول طبيعي",260.03,"var(--s4)"],["لم يُستخدم في الثلاجة الصغيرة",36.01,"var(--s2)"]]}'></div>
+      <div class="lg" data-lg></div>
+    </div>
+    <p style="margin:14px 0 0">كذلك فإن 14 سجلًا من أصل 35 سجل تالف منسوبة إلى «كينيا»، ولا توجد لهذا المصدر أي مشتريات في أكتوبر، وتشير ملاحظاتها إلى دفعة <b>دخلت الثلاجة في 6 سبتمبر 2026</b>. وتشمل هذه السجلات 64 غصنًا وكل الربطات الخمس وكل الحبات الـ29 التالفة، بتكلفة تقارب 530 ريالًا (نحو 56% من تكلفة التالف). أي أن أكثر من نصف خسارة أكتوبر ناتج عن قرار شراء تم في سبتمبر.</p>
+  </div>
+  <h3 class="rv">8.1 التخزين الطويل</h3>
+  <p class="rv">تكررت ملاحظات بقاء الورود شهرًا أو أكثر. ولا يعني ذلك أن كل ورد يبقى هذه المدة سيتلف بالضرورة، لكنه يشير إلى ضرورة مراقبة عمر الدفعات وتفسير أسباب بقائها، خاصة في الأصناف التي تحقق استهلاكًا مستمرًا.</p>
+  <h3 class="rv">8.2 عدم استخدام الدفعات الأقدم</h3>
+  <p class="rv">ظهرت حالات بقيت فيها ورود قديمة داخل الثلاجة الصغيرة دون استخدام. وهذه فرصة مباشرة للتحسين من خلال تنظيم الصرف وفق أولوية الدفعات الأقدم الصالحة، مع عدم استخدام أي ورد تراجعت جودته عن مستوى المنتج المطلوب.</p>
+  <h3 class="rv">8.3 الذبول الطبيعي</h3>
+  <p class="rv">لا ينبغي اعتبار وصف «ذبول طبيعي» نهاية التحليل؛ إذ قد يرتبط الذبول بعمر الورد عند الاستلام، أو ظروف التخزين، أو المناولة، أو مدة بقائه. ويجب عدم تحميل المورد مسؤولية التلف بعد التخزين الطويل دون دليل على أن المشكلة بدأت عند التوريد.</p>
+  <h3 class="rv">8.4 تغير اللون</h3>
+  <p class="rv">سُجل تغير لون 20 غصنًا من البيبي روز الفوشي الغامق بعد التخزين الطويل. وهذه مشكلة جودة مختلفة عن الذبول؛ لأن الورد قد يصبح غير مطابق للون المطلوب في المنتج، حتى لو بدا مقبولًا من حيث الشكل.</p>
+  <h3 class="rv">8.5 مرحلة تسجيل التلف</h3>
+  <div class="card rv">
+    <h4>سجلات التلف حسب المرحلة</h4>
+    <p class="cap">عدد السجلات (35 سجلًا)</p>
+    <div class="hbars" data-hbar='{"unit":"سجل","rows":[["قبل الخروج",15,"hl","42.9%"],["بعد الخروج",20,"","57.1%"]]}'></div>
+  </div>
+  <p class="rv">هذه النسب تخص عدد سجلات التلف وليست الكميات أو التكلفة. كما أن تسجيل التلف بعد الخروج لا يعني تلقائيًا أن قسم الإنتاج تسبب فيه؛ فقد تبدأ المشكلة قبل الصرف. لذلك ينبغي تسجيل حالة الورد عند التسليم والاستلام، ثم التحقق من السبب الفعلي قبل إسناد المسؤولية.</p>
+</section>
+
+<!-- 10 -->
+<section id="s10" data-t="التالف اليومي">
+  <h2 class="rv"><span class="no">تاسعًا</span>التالف اليومي وربطه بتاريخ الدفعة</h2>
+  <p class="rv">يساعد التقرير اليومي على معرفة متى حدث التلف، لكنه يصبح أكثر فائدة عندما يُربط بتاريخ دخول الدفعة ومكان وجودها وسبب بقائها. فعندما يظهر تلف كبير في يوم واحد، يجب أن تتمكن الإدارة من تتبع الكمية إلى تاريخ استلامها وحركة صرفها السابقة.</p>
+  <div class="card rv">
+    <h4>الأغصان التالفة يوميًا</h4>
+    <p class="cap">الأيام التي سُجل فيها تلف — مرّر المؤشر لرؤية الربطات والحبات</p>
+    <div id="dmgCols"></div>
+  </div>
+  <div class="tbl-wrap rv"><table id="dmgTbl">
+    <tr><th>التاريخ</th><th class="n">أغصان</th><th class="n">ربطات</th><th class="n">حبات</th></tr>
+  </table></div>
+  <div class="upd rv"><div class="tag">حُدّثت بعد المطابقة مع ملف النظام</div>
+    <p style="margin:0">تمت مطابقة الجدول اليومي مع الحركات التفصيلية، ومجموعه مطابق تمامًا للإجمالي الشهري: <b>145 غصنًا و5 ربطات و29 حبة</b>.</p>
+  </div>
+  <p class="rv">من أبرز الملاحظات تركّز تلف 30 غصنًا يوم 7 أكتوبر، ووجود تلف 25 حبة من دوار الشمس في يومي 4 و5 أكتوبر. وتشير الملاحظات إلى ارتباط هذه الحالات بكميات بقيت فترة طويلة، وهو ما يجعل مراقبة عمر الدفعة إجراءً وقائيًا أهم من انتظار تسجيل التلف.</p>
+  <p class="rv"><b>التوصية:</b> إضافة رقم الدفعة وتاريخ الدخول وسبب التلف وموقع الورد وقت التلف إلى سجل التالف اليومي، مع فصل السبب الأساسي عن الملاحظات التوضيحية.</p>
+  <div class="add rv"><div class="tag">إضافة من مراجعة البيانات</div>
+    <p style="margin:0">سجلات التالف تحتوي على 17 صيغة مختلفة للسبب مكتوبة يدويًا (مثل «كميه كبيره اكثر من شهر» و«ذبول طبيعي كميه كبيره اكثر من شهر» و«شهر الثلاجه وكميه كبره»)، وهو ما يصعّب المقارنة بين الأشهر. يمكن اختصارها إلى أربعة أسباب ثابتة فقط: <b>تخزين طويل، عدم استخدام الأقدم، ذبول طبيعي، تغير لون</b>، مع حقل حر للملاحظات.</p>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="s11" data-t="الأثر المالي">
+  <h2 class="rv"><span class="no">عاشرًا</span>الأثر المالي للتالف</h2>
+  <p class="rv">بلغت تكلفة التالف التقديرية 943.34 ريال، بما يعادل نحو 1.30% من قيمة المشتريات المسجلة. وهذه نسبة مالية مرجعية وليست معدل تلف مخزنيًا نهائيًا؛ لأن المشتريات لا تمثل كل الكمية المتاحة في ظل وجود أرصدة افتتاحية.</p>
+  <div class="card rv">
+    <h4>تكلفة التلف إذا استمر بمستوى أكتوبر</h4>
+    <p class="cap">بالريال — أرقام توضيحية</p>
+    <div class="hbars" data-hbar='{"unit":"ريال","dec":2,"rows":[["شهر",943.34,""],["ثلاثة أشهر",2830.02,""],["ستة أشهر",5660.04,""],["سنة",11320.08,"hl"]]}'></div>
+  </div>
+  <p class="rv">هذه الأرقام توضيحية وليست توقعات مؤكدة. كما أن الخسارة المباشرة قد لا تشمل تكاليف الشراء العاجل أو إعادة التنسيق أو التأخير، ولا يمكن تقدير هذه الآثار دون بيانات مستقلة.</p>
+  <p class="rv">تؤكد المقارنة بين تكلفة التلف وفرص خفض أسعار الشراء أن تحسين أداء الثلاجة يجب أن يجمع بين تقليل الهدر وتحسين تكلفة التوريد، لأن التركيز على أحدهما وحده قد يفوّت فرصًا مالية وتشغيلية أكبر.</p>
+</section>
+
+<!-- 12 -->
+<section id="s12" data-t="تقييم الكفاءة">
+  <h2 class="rv"><span class="no">الحادي عشر</span>تقييم كفاءة إدارة الثلاجة</h2>
+  <div class="tbl-wrap rv"><table>
+    <tr><th>المجال</th><th>الملاحظة</th><th>الأولوية</th></tr>
+    <tr><td>تخطيط المشتريات</td><td>الحاجة إلى ربط الكميات بالاستهلاك حسب اللون</td><td><span class="pill hi">مرتفعة</span></td></tr>
+    <tr><td>الأرصدة الافتتاحية</td><td>موجودة وتحتاج إلى فصل واضح عن المشتريات والتسويات</td><td><span class="pill hi">مرتفعة</span></td></tr>
+    <tr><td>دوران المخزون</td><td>وجود دفعات بقيت شهرًا أو أكثر</td><td><span class="pill hi">مرتفعة</span></td></tr>
+    <tr><td>الصرف إلى الإنتاج</td><td>حالات لم تُستخدم فيها ورود قديمة</td><td><span class="pill hi">مرتفعة</span></td></tr>
+    <tr><td>إدارة الموردين</td><td>اعتماد مرتفع على رفيق بسبب محدودية البدائل</td><td><span class="pill hi">مرتفعة</span></td></tr>
+    <tr><td>مقارنة الأسعار</td><td>تقرير موجود يحتاج إلى تفعيل إداري منتظم</td><td><span class="pill hi">مرتفعة</span></td></tr>
+    <tr><td>متابعة التلف</td><td>أسباب تفصيلية تحتاج إلى تصنيف موحد</td><td><span class="pill md">متوسطة</span></td></tr>
+        <tr><td>جودة البيانات</td><td>توحيد أسماء الموردين والأصناف</td><td><span class="pill md">متوسطة</span></td></tr>
+  </table></div>
+  <div class="add rv"><div class="tag">إضافة من مراجعة البيانات — أمثلة على جودة البيانات</div>
+    <ul class="bul" style="margin:0">
+      <li>أصناف مكررة بأسماء مختلفة: «استموريا» و«استوميريا»، «ماتيولا» و«ماثيولا»، «هابريكوم» و«هبركام»، «كاز» و«كازا»، «بيبي روز» و«بيببي روز».</li>
+      <li>موردون مكررون: «الورد الأصفر» و«الوردالاصفر» و«الود الاصفر»، ومؤسسة فرح الأحمدي باسمين.</li>
+      <li>الحل الأبسط: قائمة منسدلة ثابتة للأصناف والموردين في النظام بدل الكتابة الحرة.</li>
+    </ul>
+  </div>
+  <p class="rv">تُظهر البيانات أن الشركة تمتلك أساسًا جيدًا للمعلومات، لكن القيمة الحقيقية تظهر عندما تُستخدم لتوجيه المشتريات، ومتابعة المخزون القديم، وضبط الصرف، وتحسين التفاوض مع الموردين. فالمطلوب ليس زيادة عدد التقارير، وإنما تحسين القرارات الناتجة عنها.</p>
+</section>
+
+<!-- 13 -->
+<section id="s13" data-t="دور التخطيط">
+  <h2 class="rv"><span class="no">الثاني عشر</span>دور إدارة التخطيط والتطوير</h2>
+  <div class="grid2 rv">
+    <div class="mini"><h4>12.1 تخطيط المشتريات</h4><p>إعداد تقرير أسبوعي بالأصناف والألوان الأعلى استهلاكًا، ومقارنته بالمخزون المتاح والطلبات المتوقعة، لتقليل الشراء التقديري دون تعريض الأصناف الأساسية للنفاد.</p></div>
+    <div class="mini"><h4>12.2 تطوير الموردين</h4><p>قيادة مشروع البحث عن بدائل للورد الهولندي، وإجراء المقارنات والتجارب، وتقديم توصيات توريد مدعومة بالتكلفة والجودة والاستمرارية.</p></div>
+    <div class="mini"><h4>12.3 الرقابة على المخزون الراكد</h4><p>إعداد كشف أسبوعي بالدفعات القديمة، ومتابعة الإجراءات المتخذة بشأنها مع مسؤول الثلاجة وقسم الإنتاج قبل تدهور الجودة.</p></div>
+    <div class="mini"><h4>12.4 التنسيق بين الأقسام</h4><p>تنظيم العلاقة بين المشتريات والثلاجة والإنتاج، بحيث تُراجع الكميات المتبقية قبل طلب دفعات إضافية، ويكون الصرف مبنيًا على الاحتياج الفعلي.</p></div>
+    <div class="mini"><h4>12.5 المتابعة الشهرية</h4><p>إعداد مقارنة شهرية تشمل المشتريات والاستهلاك والتالف وأسباب التلف وأداء الموردين، مع توضيح الإجراءات المنفذة ونتائجها، لا مجرد إعادة عرض الأرقام.</p></div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section id="s14" data-t="التوصيات">
+  <h2 class="rv"><span class="no">الثالث عشر</span>التوصيات التنفيذية</h2>
+  <ol class="recs rv">
+    <li>اعتماد خطة مشتريات أسبوعية حسب الصنف واللون، ترتبط بالاستهلاك الفعلي والرصيد المتاح ومدة التوريد، مع مراجعة الألوان التي ظهرت فيها خسائر بسبب التخزين الطويل.</li>
+    <li>تطبيق أولوية استخدام الدفعات الأقدم الصالحة، ووضع تاريخ دخول واضح لكل دفعة، وتوثيق أسباب تجاوز الدفعات القديمة عند صرف دفعات أحدث.</li>
+    <li>متابعة الثلاجة الصغيرة يوميًا وتوثيق الكميات المنقولة إليها والمستخدمة والمتبقية، خصوصًا الجربيرا والبيبي روز اللذين ظهرت فيهما ملاحظات عدم الاستخدام.</li>
+    <li>إطلاق مشروع لتنويع موردي الورد الهولندي، يبدأ بجمع عروض أسعار وتجارب توريد محدودة، ثم تقييم التكلفة النهائية والجودة وانتظام التوريد.</li>
+    <li>تفعيل تقرير مقارنة الأسعار الموجود في النظام ضمن مراجعة شهرية، وعدم اعتماد المورد الأرخص دون مراعاة درجة الجودة وتكلفة النقل والاستبدال.</li>
+    <li>الفصل بين الرصيد الافتتاحي ودخول المشتريات والتسويات، مع اعتماد معاملات تحويل الوحدات وتجنب تكرار تسجيل الربطات والأغصان.</li>
+    <li>توحيد أسباب التلف في قائمة واضحة، مع حقل للملاحظات ورقم الدفعة وتاريخ الدخول وموقع التلف، بما يتيح مقارنة دقيقة بين الأشهر.</li>
+    <li>ربط صرف الورود بمبيعات المنتجات ومكوناتها، لاكتشاف الاختلافات بين الاستهلاك المتوقع والفعلي وتحسين تقدير الاحتياج.</li>
+    <li>اعتماد مراجعة شهرية من إدارة التخطيط والتطوير تتابع نتائج الإجراءات التصحيحية وتحدد القرارات التالية وفق الأدلة.</li>
+  </ol>
+  <div class="add rv"><div class="tag">إضافة من مراجعة البيانات — توصيتان مستندتان إلى الأرقام</div>
+    <ul class="bul" style="margin:0">
+      <li><b>منع الشراء عند وجود رصيد كافٍ:</b> إظهار الرصيد الحالي للصنف واللون أمام المستلم قبل تسجيل أي دخول جديد، كما حدث في حالة الجربيرا الأحمر في 10 أكتوبر.</li>
+      <li><b>رقابة خاصة على أصناف الحبات:</b> شراء دوار الشمس والهيدرنجا بدفعات صغيرة وفق الطلب، لأن تالفها بلغ 22.5% من واردها.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 15 -->
+<section id="s15" data-t="خطة نوفمبر">
+  <h2 class="rv"><span class="no">الرابع عشر</span>خطة العمل لشهر نوفمبر 2026</h2>
+  <div class="tbl-wrap rv"><table>
+    <tr><th>الإجراء</th><th>المسؤول المقترح</th><th>الموعد</th></tr>
+    <tr><td>مراجعة تصنيف الأرصدة وحركات الدخول</td><td>مسؤول الثلاجة والمشتريات</td><td><span class="when">الأسبوع الأول</span></td></tr>
+    <tr><td>توحيد أسماء الموردين والأصناف</td><td>مسؤول النظام والمشتريات</td><td><span class="when">الأسبوع الأول</span></td></tr>
+    <tr><td>متابعة الدفعات القديمة</td><td>مسؤول الثلاجة</td><td><span class="when">يوميًا</span></td></tr>
+    <tr><td>مراجعة المتبقي في الثلاجة الصغيرة</td><td>مدير الإنتاج</td><td><span class="when">يوميًا</span></td></tr>
+    <tr><td>إعداد خطة شراء حسب الاستهلاك</td><td>المشتريات والإنتاج</td><td><span class="when">أسبوعيًا</span></td></tr>
+    <tr><td>مراجعة أسباب التلف حسب الصنف واللون</td><td>الثلاجة والإنتاج</td><td><span class="when">أسبوعيًا</span></td></tr>
+    <tr><td>البحث عن بدائل للورد الهولندي</td><td>التخطيط والتطوير والمشتريات</td><td><span class="when">خلال الشهر</span></td></tr>
+    <tr><td>مقارنة أسعار الموردين وجودتهم</td><td>المشتريات والتخطيط</td><td><span class="when">خلال الشهر</span></td></tr>
+    <tr><td>مطابقة الجرد مع حركات النظام</td><td>الثلاجة والجهة المالية</td><td><span class="when">نهاية الشهر</span></td></tr>
+    <tr><td>تقييم أثر الإجراءات</td><td>إدارة التخطيط والتطوير</td><td><span class="when">بداية ديسمبر</span></td></tr>
+  </table></div>
+</section>
+
+<!-- 16 -->
+<section id="s16" data-t="مؤشرات الأداء">
+  <h2 class="rv"><span class="no">الخامس عشر</span>مؤشرات الأداء المقترحة</h2>
+  <div class="tbl-wrap rv"><table>
+    <tr><th>المؤشر</th><th>الهدف من متابعته</th></tr>
+    <tr><td>تكلفة التالف الشهرية</td><td>قياس الخسارة المالية المباشرة</td></tr>
+    <tr><td>معدل التلف لكل صنف ولون</td><td>تحديد الأصناف الأعلى تعرضًا للهدر</td></tr>
+    <tr><td>متوسط عمر المخزون</td><td>اكتشاف بطء دوران الدفعات</td></tr>
+    <tr><td>كمية المخزون الراكد</td><td>التدخل قبل تدهور الجودة</td></tr>
+    <tr><td>دقة الجرد</td><td>التأكد من سلامة الأرصدة</td></tr>
+    <tr><td>الالتزام باستخدام الأقدم</td><td>تحسين دوران المخزون</td></tr>
+    <tr><td>تكلفة شراء الوحدة حسب المورد</td><td>تحسين قرارات التوريد</td></tr>
+    <tr><td>حصة المورد الرئيسي</td><td>متابعة مخاطر الاعتماد على مصدر واحد</td></tr>
+    <tr><td>استهلاك الورد لكل طلب</td><td>قياس كفاءة الاستخدام في الإنتاج</td></tr>
+    <tr><td>التالف قبل الخروج وبعده</td><td>تحديد مراحل التشغيل التي تحتاج إلى تحسين</td></tr>
+  </table></div>
+  <div class="add rv"><div class="tag">إضافة من مراجعة البيانات — قيم أكتوبر المرجعية</div>
+    <div class="kpis" style="margin:8px 0 0">
+      <div class="kpi"><div class="l">تكلفة التالف الشهرية</div><div class="v"><span class="num">943.34</span><small>ريال</small></div></div>
+      <div class="kpi"><div class="l">تالف قابل للتحكم (تخزين/عدم استخدام)</div><div class="v"><span class="num">72.4%</span></div></div>
+      <div class="kpi"><div class="l">حصة المورد الرئيسي</div><div class="v"><span class="num">53.92%</span></div></div>
+      <div class="kpi"><div class="l">تالف الحبات من واردها</div><div class="v"><span class="num">22.5%</span></div></div>
+    </div>
+  </div>
+  <p class="rv">ينبغي تحديد المستهدفات الرقمية بعد جمع بيانات مرجعية كافية، بدل اعتماد نسب لا تستند إلى واقع التشغيل أو اختلاف حجم النشاط بين الأشهر.</p>
+</section>
+
+<!-- 17 -->
+<section id="s17" data-t="الخلاصة">
+  <h2 class="rv"><span class="no">السادس عشر</span>الخلاصة النهائية والتوصية المرفوعة للإدارة</h2>
+  <p class="rv">توضح نتائج أكتوبر 2026 أن إدارة الثلاجة في دوكمنتيشن فلاورز تمتلك بيانات تشغيلية مهمة يمكن تحويلها إلى أداة فعالة لضبط المشتريات وتحسين المخزون وتقليل الهدر. وقد كشف التقرير أن الاستهلاك يتركز في أصناف وألوان محددة، أبرزها الجوري الأحمر والبيبي روز، وأن الموقع الإلكتروني يمثل الوجهة الرئيسية لصرف الأغصان.</p>
+  <p class="rv">وفي المقابل، ظهرت حالات تلف مرتبطة بالتخزين الطويل وعدم استخدام الدفعات القديمة، وهي مؤشرات تؤكد أهمية تنظيم حركة المخزون بين الثلاجة الرئيسية وقسم الإنتاج. كما تبين أن الاعتماد الكبير على رفيق يرتبط بمحدودية البدائل المتاحة للورد الهولندي، ما يجعل تطوير شبكة الموردين أحد أهم المسارات لتحسين القدرة التفاوضية وضبط التكاليف.</p>
+  <div class="grid2 rv" style="margin:18px 0">
+    <div class="mini"><h4>المحور الأول</h4><p>رفع كفاءة المشتريات وفق الاستهلاك والرصيد المتاح.</p></div>
+    <div class="mini"><h4>المحور الثاني</h4><p>تحسين دوران المخزون ومتابعة الدفعات.</p></div>
+    <div class="mini"><h4>المحور الثالث</h4><p>تنويع مصادر التوريد مع تفعيل مقارنة الأسعار والجودة.</p></div>
+  </div>
+  <p class="rv">وعليه، توصي إدارة التخطيط والتطوير باعتماد ثلاثة محاور رئيسية: رفع كفاءة المشتريات وفق الاستهلاك والرصيد المتاح، وتحسين دوران المخزون ومتابعة الدفعات، وتنويع مصادر التوريد مع تفعيل مقارنة الأسعار والجودة.</p>
+  <p class="rv">ولا ينبغي قياس نجاح هذه الإجراءات بانخفاض قيمة التالف وحدها؛ بل يجب أن يشمل التقييم مدى توفر الأصناف المطلوبة، واستقرار الجودة، ودقة الأرصدة، وتحسن تكلفة الشراء، وانخفاض المخزون الراكد.</p>
+  <div class="final rv">
+    <p style="margin:0;font-size:17.5px">الهدف النهائي ليس فقط شراء ورد بسعر أفضل أو تقليل التالف، بل ضمان وصول الورد المناسب بالكمية المناسبة وفي الوقت المناسب، واستخدامه بأعلى كفاءة ممكنة قبل تراجع جودته. وهذا هو التحول الذي ينبغي أن تقوده إدارة التخطيط والتطوير: من متابعة حركة الثلاجة بعد حدوثها إلى التخطيط لها وقياس نتائجها بصورة مستمرة.</p>
+  </div>
+  <h3 class="rv">ملاحظة منهجية قبل الاعتماد النهائي</h3>
+  <p class="rv">استند التقرير إلى بيانات أكتوبر 2026 المسجلة في تقرير الثلاجة، وإلى التوضيحات التشغيلية بشأن الأرصدة الافتتاحية وتحويل الربطات وطبيعة المورد رفيق وتوحيد اسم الورد الأصفر. وتبقى تكلفة التالف تقديرية. كما أن المطابقة المحاسبية النهائية للأرصدة ومقارنة أسعار الأصناف بين الموردين تتطلب مراجعة الحركات التفصيلية وتقرير الأسعار الموجود في النظام.</p>
+  <div class="upd rv"><div class="tag">مراجعة البيانات</div>
+    <p style="margin:0">رُوجعت أرقام التقرير مقابل تصدير النظام لشهر أكتوبر (1,808 حركات: 332 دخول، 1,441 خروج، 35 تالف). وجاءت جميع الأرقام الرئيسية مطابقة: المشتريات، الوارد والصادر والتالف بكل وحدة، حصص الموردين، قنوات الصرف، أعلى الأصناف، التالف حسب الصنف واليوم والمرحلة.</p>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">دوكمنتيشن فلاورز | إدارة التخطيط والتطوير — التقرير التحليلي لأداء الثلاجة، أكتوبر 2026</div></footer>
+
+<script>
+(function(){
+  const fmt=(v,d=0)=>Number(v).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
+  const tip=document.getElementById('tip');
+  function showTip(e,html){tip.innerHTML=html;tip.classList.add('on');moveTip(e)}
+  function moveTip(e){const w=tip.offsetWidth,h=tip.offsetHeight;let x=e.clientX-w/2,y=e.clientY-h-14;x=Math.max(8,Math.min(innerWidth-w-8,x));if(y<8)y=e.clientY+18;tip.style.left=x+'px';tip.style.top=y+'px'}
+  function hideTip(){tip.classList.remove('on')}
+  function bindTip(el,html){el.addEventListener('mouseenter',e=>showTip(e,html));el.addEventListener('mousemove',moveTip);el.addEventListener('mouseleave',hideTip);el.addEventListener('touchstart',e=>{showTip(e.touches[0],html);setTimeout(hideTip,2200)},{passive:true})}
+
+  // theme toggle
+  const root=document.documentElement,btn=document.getElementById('themeBtn');
+  function isDark(){const t=root.getAttribute('data-theme');return t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches}
+  function label(){btn.textContent=isDark()?'الوضع النهاري':'الوضع الليلي'}
+  try{const s=localStorage.getItem('fr-theme');if(s)root.setAttribute('data-theme',s)}catch(e){}
+  label();
+  btn.addEventListener('click',()=>{const n=isDark()?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('fr-theme',n)}catch(e){}label()});
+
+  // flower colors (same as September report)
+  const FC={"ابيض":"#F4F1E8","وردي":"#EE9AB5","سكري":"#F3C3BA","احمر":"#C0283A","اصفر":"#F2C94C","فوشي":"#D63384","فوشي غامق":"#9E1F60","فوشي فاتح":"#F07AB4","موف":"#9B7BC4","اورنج":"#EE8A3B","اخضر":"#7FA65A","دبل كلر":"#E8A23F","وردي فاتح":"#F8D0DD","اسود":"#2E2A2B","سماوي":"#86C2E4","—":"#B7BFB3"};
+  const LIGHT=['ابيض','سكري','وردي فاتح','اصفر'];
+  const flBg=c=>c==='دبل كلر'?'linear-gradient(90deg,#F2C94C,#E0607E)':(FC[c]||'#B7BFB3');
+  // hbars
+  document.querySelectorAll('[data-hbar]').forEach(box=>{
+    const cfg=JSON.parse(box.dataset.hbar),max=Math.max(...cfg.rows.map(r=>r[1])),d=cfg.dec||0;
+    cfg.rows.forEach(([lab,val,cls,note,col])=>{
+      const row=document.createElement('div');row.className='hb '+(cls||'');
+      row.innerHTML=`<div class="lab">${lab}${note?`<small>${note}</small>`:''}</div><div class="tr"><div class="fi" data-w="${(val/max*100).toFixed(2)}"${col?` style="background:${flBg(col)};${LIGHT.includes(col)?'box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)':col==='اسود'?'box-shadow:inset 0 0 0 1px rgba(255,255,255,.28)':''}"`:''}></div></div><div class="val">${fmt(val,Number.isInteger(val)?0:d)}</div>`;
+      bindTip(row,`<b>${lab}</b><br>${fmt(val,Number.isInteger(val)?0:d)} ${cfg.unit}${note?'<br>'+note:''}`);
+      box.appendChild(row);
+    });
+    box.classList.add('anim');
+  });
+
+  // stacked quality
+  const qn=['ممتازة','جيدة','متوسطة','ضعيفة'],qc=['var(--s3)','var(--s4)','var(--s2)','var(--warn)'];
+  document.querySelectorAll('[data-stk]').forEach(box=>{
+    JSON.parse(box.dataset.stk).forEach(([name,n,parts])=>{
+      const r=document.createElement('div');r.className='r';
+      const bar=parts.map((p,i)=>p?`<span data-w="${(p/n*100).toFixed(2)}" style="background:${qc[i]}" data-k="${i}" data-p="${p}"></span>`:'').join('');
+      r.innerHTML=`<div class="lab">${name}</div><div class="bar">${bar}</div><div class="cnt">${n} سطر</div>`;
+      r.querySelectorAll('span').forEach(s=>bindTip(s,`<b>${name}</b><br>${qn[s.dataset.k]}: ${s.dataset.p} سطر (${Math.round(s.dataset.p/n*100)}%)`));
+      box.appendChild(r);
+    });
+    box.classList.add('anim');
+  });
+
+  // donuts
+  document.querySelectorAll('[data-donut]').forEach(box=>{
+    const cfg=JSON.parse(box.dataset.donut),R=80,C=2*Math.PI*R;let off=0;
+    let svg=`<svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="${R}" fill="none" stroke="var(--track)" stroke-width="26"/>`;
+    cfg.segs.forEach(([n,v,c],i)=>{const len=v/cfg.total*C,gap=cfg.segs.length>1?2:0;svg+=`<circle class="seg" data-i="${i}" cx="100" cy="100" r="${R}" stroke="${c}" stroke-dasharray="0 ${C}" data-len="${Math.max(len-gap,0)}" data-c="${C}" stroke-dashoffset="${-off}"/>`;off+=len});
+    svg+='</svg>';
+    box.innerHTML=svg+`<div class="center"><b class="num">${cfg.center}</b><span>${cfg.sub}</span></div>`;
+    const lg=box.parentElement.querySelector('[data-lg]');
+    cfg.segs.forEach(([n,v,c],i)=>{const pct=(v/cfg.total*100).toFixed(1);const d=document.createElement('div');d.innerHTML=`<i style="background:${c}"></i><span>${n}</span><span class="lv">${fmt(v,Number.isInteger(v)?0:2)} · ${pct}%</span>`;lg.appendChild(d);
+      const seg=box.querySelector(`circle[data-i="${i}"]`);bindTip(seg,`<b>${n}</b><br>${fmt(v,Number.isInteger(v)?0:2)} (${pct}%)`);});
+    box.classList.add('anim');
+  });
+
+  // daily damage columns
+  const dd=[["1",20,1,0],["2",4,0,0],["4",3,0,10],["5",0,0,15],["6",5,0,0],["7",30,4,1],["11",3,0,0],["12",6,0,0],["13",3,0,1],["14",10,0,0],["15",4,0,1],["16",3,0,0],["19",4,0,0],["21",5,0,0],["22",3,0,0],["23",7,0,0],["25",11,0,0],["26",4,0,0],["28",10,0,1],["29",4,0,0],["31",6,0,0]];
+  (function(){
+    const box=document.getElementById('dmgCols'),mx=30;
+    let h='<div class="cols anim">';dd.forEach(([d,g,b,p])=>{const pct=g/mx*100;h+=`<div class="c ${g>=20?'pk':''}" style="--h:${pct}%" data-d="${d}" data-g="${g}" data-b="${b}" data-p="${p}"><span class="t">${g||''}</span><div class="b" data-h="${pct}"></div></div>`});
+    h+='</div><div class="cols-x">'+dd.map(r=>`<span>${r[0]}</span>`).join('')+'</div>';
+    box.innerHTML=h;
+    box.querySelectorAll('.c').forEach(c=>bindTip(c,`<b>${c.dataset.d} أكتوبر</b><br>${c.dataset.g} غصن · ${c.dataset.b} ربطة · ${c.dataset.p} حبة`));
+    const t=document.getElementById('dmgTbl');
+    dd.forEach(([d,g,b,p])=>{const tr=document.createElement('tr');tr.innerHTML=`<td>${d} أكتوبر</td><td class="n">${g}</td><td class="n">${b}</td><td class="n">${p}</td>`;t.appendChild(tr)});
+    const tr=document.createElement('tr');tr.className='total';tr.innerHTML='<td>الإجمالي</td><td class="n">145</td><td class="n">5</td><td class="n">29</td>';t.appendChild(tr);
+  })();
+
+  // daily outflow line
+  const daily=[885,623,591,548,462,598,459,477,666,486,375,544,500,420,491,463,590,533,478,294,450,490,527,303,422,623,589,658,630,547,692];
+  const wd=['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+  (function(){
+    const box=document.getElementById('dailyLine'),W=900,H=260,pl=40,pr=12,pt=14,pb=28,mx=1000;
+    const x=i=>W-pr-(i/(daily.length-1))*(W-pl-pr); // RTL: day 1 on the right
+    const y=v=>pt+(1-v/mx)*(H-pt-pb);
+    let g='';[0,250,500,750,1000].forEach(v=>{g+=`<line x1="${pl}" x2="${W-pr}" y1="${y(v)}" y2="${y(v)}"/><text class="ax" x="${pl-6}" y="${y(v)+4}" text-anchor="end">${v}</text>`});
+    const pts=daily.map((v,i)=>[x(i),y(v)]);
+    const d='M'+pts.map(p=>p.map(n=>n.toFixed(1)).join(',')).join(' L');
+    const area=d+` L${x(daily.length-1)},${y(0)} L${x(0)},${y(0)} Z`;
+    const avg=529.5;
+    let xt='';[1,5,10,15,20,25,31].forEach(dn=>{xt+=`<text class="ax" x="${x(dn-1)}" y="${H-6}" text-anchor="middle">${dn}</text>`});
+    box.innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="الصرف اليومي بالأغصان">
+      <g class="grid">${g}</g>${xt}
+      <path class="ar" d="${area}" style="opacity:0;transition:opacity 1s .8s"/>
+      <line class="avg" x1="${pl}" x2="${W-pr}" y1="${y(avg)}" y2="${y(avg)}"/>
+      <path class="ln" d="${d}"/>
+      <line class="xh" y1="${pt}" y2="${H-pb}"/>
+      <circle class="dot" r="5" style="opacity:0"/>
+      <rect x="${pl}" y="0" width="${W-pl-pr}" height="${H}" fill="transparent" class="hit"/>
+    </svg>`;
+    const svg=box.querySelector('svg'),ln=svg.querySelector('.ln'),L=ln.getTotalLength();
+    ln.style.strokeDasharray=L;ln.style.strokeDashoffset=L;ln.style.transition='stroke-dashoffset 2s cubic-bezier(.4,.1,.2,1)';
+    box.dataset.len=L;
+    const xh=svg.querySelector('.xh'),dot=svg.querySelector('.dot'),hit=svg.querySelector('.hit');
+    function onMove(ev){
+      const e=ev.touches?ev.touches[0]:ev,r=svg.getBoundingClientRect(),sx=(e.clientX-r.left)/r.width*W;
+      let i=Math.round((W-pr-sx)/(W-pl-pr)*(daily.length-1));i=Math.max(0,Math.min(daily.length-1,i));
+      xh.setAttribute('x1',x(i));xh.setAttribute('x2',x(i));xh.style.opacity=.6;
+      dot.setAttribute('cx',x(i));dot.setAttribute('cy',y(daily[i]));dot.style.opacity=1;
+      const day=wd[new Date(2026,9,i+1).getDay()];
+      showTip(e,`<b>${day} ${i+1} أكتوبر</b><br>${fmt(daily[i])} غصن مصروف`);
+    }
+    hit.addEventListener('mousemove',onMove);hit.addEventListener('touchmove',onMove,{passive:true});
+    hit.addEventListener('mouseleave',()=>{hideTip();xh.style.opacity=0;dot.style.opacity=0});
+  })();
+
+  // count-up
+  function countUp(el){
+    const t=parseFloat(el.dataset.count),d=+(el.dataset.dec||0),suf=el.dataset.suf||'',dur=1400,s=performance.now();
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=fmt(t,d)+suf;return}
+    (function step(n){const p=Math.min(1,(n-s)/dur),e=1-Math.pow(1-p,3);el.textContent=fmt(t*e,d)+suf;if(p<1)requestAnimationFrame(step)})(s);
+  }
+
+  function animate(el){
+    el.querySelectorAll('.fi').forEach(f=>f.style.width=f.dataset.w+'%');
+    el.querySelectorAll('.stk .bar span').forEach(f=>f.style.width=f.dataset.w+'%');
+    el.querySelectorAll('.cols .c .b').forEach(b=>b.style.height=b.dataset.h+'%');
+    el.querySelectorAll('circle.seg').forEach(c=>c.setAttribute('stroke-dasharray',`${c.dataset.len} ${c.dataset.c}`));
+    el.querySelectorAll('[data-count]').forEach(n=>{if(!n.dataset.done){n.dataset.done=1;countUp(n)}});
+    el.querySelectorAll('.linebox .ln').forEach(l=>l.style.strokeDashoffset=0);
+    el.querySelectorAll('.linebox .ar').forEach(a=>a.style.opacity=.08);
+    el.classList.add('in');
+  }
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){animate(e.target);io.unobserve(e.target)}}),{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv,.card,.add').forEach(el=>io.observe(el));
+
+  // toc
+  const toc=document.getElementById('toc'),secs=[...document.querySelectorAll('section[data-t]')];
+  secs.forEach(s=>{const a=document.createElement('a');a.href='#'+s.id;a.textContent=s.dataset.t;toc.appendChild(a)});
+  const links=[...toc.querySelectorAll('a')];
+  const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id));const a=toc.querySelector('a.on');if(a)a.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'})}}),{rootMargin:'-45% 0px -50% 0px'});
+  secs.forEach(s=>so.observe(s));
+})();
+</script>
+</body>
+</html>
